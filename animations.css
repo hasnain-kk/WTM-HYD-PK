@@ -1,0 +1,95 @@
+/* WTM Hyderabad & IWD 2026: Animation and Motion Library */
+
+/* Dynamic Text Gradients */
+.cloud-next-gradient-text {
+  background: linear-gradient(90deg, var(--deep-blue), var(--light-cyan), var(--vibrant-teal), var(--google-blue));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+  animation: gradientShift 10s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.text-mono {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--google-blue);
+  font-size: 0.875rem;
+}
+
+/* Dynamic Surfaces */
+.surface-card {
+  background-color: var(--surface-bg);
+  backdrop-filter: blur(24px);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--border-radius-card);
+  box-shadow: var(--surface-shadow);
+  transition: all var(--transition-standard);
+}
+.surface-card:hover {
+  border-color: var(--surface-border-hover);
+  box-shadow: var(--surface-shadow-hover);
+  transform: translateY(-4px);
+}
+
+/* Base Pill Button */
+.btn-pill {
+  background: var(--btn-bg);
+  border: 2px solid var(--btn-border);
+  color: var(--text-primary);
+  border-radius: var(--border-radius-pill); 
+  padding: 12px 32px; 
+  font-family: var(--font-header);
+  font-weight: bold; 
+  transition: all var(--transition-standard);
+  text-decoration: none; 
+  display: inline-block; 
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+}
+.btn-pill:hover { 
+  background: var(--btn-bg-hover); 
+  border-color: var(--btn-border-hover); 
+  box-shadow: 0 0 16px rgba(0,0,0,0.05); 
+  transform: translateY(-2px); 
+}
+
+/* Enhanced Primary Gradient Button */
+.btn-pill.primary {
+  background: linear-gradient(135deg, var(--deep-blue) 0%, var(--google-blue) 50%, var(--vibrant-teal) 100%);
+  background-size: 200% 200%;
+  border: none;
+  color: #FFFFFF;
+  box-shadow: 0 4px 16px rgba(66, 133, 244, 0.3);
+  animation: gradientShift 8s ease infinite;
+}
+.btn-pill.primary:hover {
+  box-shadow: 0 8px 32px rgba(0, 196, 163, 0.4);
+  transform: translateY(-2px);
+  color: #FFFFFF;
+}
+
+/* Entrances */
+.hero-entrance {
+  opacity: 0; transform: translateY(20px);
+  animation: heroEntrance var(--transition-standard) forwards;
+}
+.hero-entrance:nth-child(1) { animation-delay: 100ms; }
+.hero-entrance:nth-child(2) { animation-delay: 200ms; }
+.hero-entrance:nth-child(3) { animation-delay: 300ms; }
+
+@keyframes heroEntrance {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.mesh-gradient-baithak {
+  position: relative;
+  background: var(--feature-gradient);
+}

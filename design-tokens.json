@@ -1,0 +1,72 @@
+{
+  "name": "wtm-hyderabad-iwd2026",
+  "version": "1.0.0",
+  "themes": {
+    "core": {
+      "colors": {
+        "primary": {"value": "#4285F4", "type": "color"},
+        "secondary": {"value": "#EA4335", "type": "color"},
+        "tertiary": {"value": "#FBBC04", "type": "color"},
+        "success": {"value": "#34A853", "type": "color"},
+        "surface": {
+          "default": {"value": "#FFFFFF", "type": "color"},
+          "tint": {"value": "rgba(66, 133, 244, 0.05)", "type": "color"}
+        },
+        "text": {
+          "primary": {"value": "#202124", "type": "color"},
+          "secondary": {"value": "#5F6368", "type": "color"}
+        }
+      }
+    },
+    "iwd_disruptive": {
+      "colors": {
+        "primary": {"value": "#673AB7", "type": "color"},
+        "secondary": {"value": "#009688", "type": "color"},
+        "tertiary": {"value": "#FF7043", "type": "color"},
+        "surface": {
+          "default": {"value": "#FAF8FF", "type": "color"},
+          "tint": {"value": "rgba(103, 58, 183, 0.05)", "type": "color"}
+        }
+      }
+    }
+  },
+  "typography": {
+    "fontFamilies": {
+      "heading": {"value": "'Google Sans Bold', sans-serif"},
+      "body": {"value": "'Google Sans Text', sans-serif"}
+    },
+    "scale": {
+      "h1": {"value": "64px"},
+      "h2": {"value": "48px"},
+      "h3": {"value": "32px"},
+      "body": {"value": "18px"},
+      "button": {"value": "16px"}
+    }
+  },
+  "spacing": {
+    "section": {"value": "120px", "description": "Google Cloud Next breathing room"},
+    "component": {"value": "32px"},
+    "inline": {"value": "16px"}
+  },
+  "elevation": {
+    "shadow1": {"value": "0px 1px 2px 0px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15)"},
+    "shadow2": {"value": "0px 1px 2px 0px rgba(60, 64, 67, 0.3), 0px 2px 6px 2px rgba(60, 64, 67, 0.15)"},
+    "shadow3": {"value": "0px 4px 8px 3px rgba(60, 64, 67, 0.15), 0px 1px 3px 0px rgba(60, 64, 67, 0.3)"}
+  },
+  "motion": {
+    "duration": {
+      "standard": {"value": "400ms"},
+      "fast": {"value": "150ms"},
+      "backgroundLoop": {"value": "60s"}
+    },
+    "easing": {
+      "standard": {"value": "cubic-bezier(0.2, 0.0, 0, 1.0)", "description": "Seamless, non-jerky Material Standard"}
+    }
+  },
+  "shape": {
+    "radius": {
+      "pill": {"value": "100px"},
+      "card": {"value": "24px"}
+    }
+  }
+}

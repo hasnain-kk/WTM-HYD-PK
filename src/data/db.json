@@ -1,0 +1,53 @@
+{
+  "team": [
+    {
+      "id": "t-001",
+      "name": "Hasnain KK",
+      "role": "Lead Organizer",
+      "socials": {
+        "linkedin": "https://linkedin.com/in/hasnainkk",
+        "twitter": "https://twitter.com/hasnainkk"
+      },
+      "image": "/assets/team/hasnain-kk.jpg"
+    },
+    {
+      "id": "t-002",
+      "name": "Local Organizer",
+      "role": "Community Manager",
+      "socials": {
+        "linkedin": "#"
+      },
+      "image": "/assets/team/organizer-1.jpg"
+    }
+  ],
+  "eventsArchive": [
+    {
+      "id": "evt-2024",
+      "title": "Impact the Future 2024",
+      "year": 2024,
+      "description": "Inspiring innovators to pave the way globally.",
+      "url": "/archive/2024"
+    },
+    {
+      "id": "evt-2025",
+      "title": "Accelerate Action 2025",
+      "year": 2025,
+      "description": "Empowering local tech communities into massive action.",
+      "url": "/archive/2025"
+    }
+  ],
+  "partners": [
+    {
+      "id": "p-001",
+      "name": "SheCloud",
+      "logoUrl": "/assets/partners/shecloud-logo.png",
+      "link": "https://shecloud.org"
+    },
+    {
+      "id": "p-002",
+      "name": "Vibe Coders Pakistan",
+      "logoUrl": "/assets/partners/vibecoders-logo.png",
+      "link": "https://vibecoders.pk"
+    }
+  ]
+}

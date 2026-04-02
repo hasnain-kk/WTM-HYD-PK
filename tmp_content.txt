@@ -1,0 +1,902 @@
+﻿    const HomePage = ({ setRoute }) => (
+      <div>
+        <section className="layout-section" style={{ minHeight: '80vh', display: 'flex', alignItems: 'center', background: 'linear-gradient(rgba(255,255,255,0.65), rgba(255,255,255,0.8)), url("./src/WTM Events Pictures/RAH00576.jpg") center/cover no-repeat' }}>
+          <div className="grid-container" style={{ textAlign: 'center', width: '100%', position: 'relative', zIndex: 1 }}>
+            <div style={{ maxWidth: '900px', margin: '0 auto', color: 'var(--text-primary)' }}>
+              
+              <h1 className="hero-entrance" style={{ fontSize: 'clamp(3rem, 6vw, 5rem)', lineHeight: 1.1, marginBottom: '24px' }}>
+                <span style={{ color: 'var(--deep-blue)', display: 'block' }}>Women Techmakers</span>
+                <span style={{ color: 'var(--vibrant-teal)', display: 'block' }}>Hyderabad Chapter</span>
+              </h1>
+              
+              <p className="hero-entrance" style={{ fontSize: '1.5rem', marginBottom: '48px', color: 'var(--text-secondary)', maxWidth: '700px', margin: '0 auto 48px auto' }}>
+                An inclusive ecosystem building community, visibility, and resources to accelerate equity and empower women across all professions.
+              </p>
+              
+              <div className="hero-entrance" style={{ display: 'flex', gap: '24px', justifyContent: 'center' }}>
+                <span className="btn-pill primary" style={{fontSize:'1.125rem'}} onClick={() => setRoute('/events')}>Explore Events</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="layout-section">
+          <div className="grid-container">
+            <div style={{ textAlign: 'center', marginBottom: '80px' }}>
+              <h2 style={{ fontSize: '2rem', margin: 0, color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '2px' }}>THE MISSION</h2>
+            </div>
+            <div className="surface-card" style={{ padding: '48px', borderLeft: '4px solid var(--vibrant-teal)', background: 'linear-gradient(135deg, rgba(25, 103, 210, 0.85), rgba(0, 196, 163, 0.85)), url("./src/WTM Events Pictures/DSC00684.jpg") center/cover' }}>
+              <div className="flex-responsive" style={{ alignItems: 'center' }}>
+                <div>
+                  <h3 style={{ fontSize: '3rem', margin: 0, marginBottom: '24px', color: '#FFFFFF' }}>Empowering Professionals, Focusing on Tech</h3>
+                  <p style={{ fontSize: '1.25rem', color: '#FFFFFF', lineHeight: 1.8, textAlign: 'left' }}>
+                    Women Techmakers Hyderabad Pakistan is dedicated to empowering women of every profession and at any age. While we gather and support women from all general fields, our core focus and passion remain rooted in technology.
+                  </p>
+                </div>
+                <div>
+                  <img src="./src/WTM Events Pictures/DSC09677.jpg" alt="WTM Audience" className="side-frame-img" style={{borderColor: '#FFFFFF'}} />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* What We Do Section (GDG Layout) */}
+        <section className="layout-section" style={{ backgroundColor: 'var(--bg-secondary)', borderTop: '1px solid var(--surface-border)' }}>
+          <div className="grid-container" style={{ display: 'flex', gap: '64px', alignItems: 'center', flexWrap: 'wrap' }}>
+            <div style={{ flex: '1 1 300px', textAlign: 'center' }}>
+              <h2 style={{ fontSize: '3rem', marginBottom: '24px', color: 'var(--text-primary)' }}>What we do?</h2>
+              <p style={{ fontSize: '1.125rem', color: 'var(--text-secondary)', lineHeight: 1.8, marginBottom: '24px' }}>
+                Women Techmakers Hyderabad organizes high-impact events for professionals and enthusiasts who are interested in continuous knowledge transfer and professional networking.
+              </p>
+              <span className="btn-pill" style={{ borderColor: 'var(--vibrant-teal)', display: 'inline-block', color: 'var(--vibrant-teal)' }} onClick={() => setRoute('/events')}>Learn More</span>
+            </div>
+            
+            <div style={{ flex: '2 1 500px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '40px', textAlign: 'center' }}>
+              <div>
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--text-secondary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '16px' }}><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                <h3 style={{ fontSize: '1.25rem', marginBottom: '12px' }}>Tech Conferences</h3>
+                <p style={{ fontSize: '1rem', color: 'var(--text-secondary)' }}>Get updated with the latest industry news and ecosystem announcements.</p>
+              </div>
+              <div>
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--text-secondary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '16px' }}><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                <h3 style={{ fontSize: '1.25rem', marginBottom: '12px' }}>Workshops</h3>
+                <p style={{ fontSize: '1rem', color: 'var(--text-secondary)' }}>Get hands-on experience and guidance from leading technical community members.</p>
+              </div>
+              <div>
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--text-secondary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '16px' }}><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                <h3 style={{ fontSize: '1.25rem', marginBottom: '12px' }}>Meetups</h3>
+                <p style={{ fontSize: '1rem', color: 'var(--text-secondary)' }}>Share knowledge, expand your network, and connect with engineers across Sindh.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="layout-section">
+          <div className="grid-container">
+            <div style={{ textAlign: 'center', marginBottom: '80px' }}>
+              <h2 style={{ fontSize: '2rem', margin: 0, color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '2px' }}>MEET THE AMBASSADOR</h2>
+            </div>
+            <div className="flex-responsive" style={{ alignItems: 'center' }}>
+              <div>
+                <img src="./src/WTM Events Pictures/Robina Picture/Robina Mirbahar.jpg" alt="Robina Mirbahar - WTM Ambassador" className="side-frame-img" style={{ borderColor: 'var(--google-blue)' }} />
+              </div>
+              <div>
+                <h3 style={{ fontSize: '3rem', margin: 0, marginBottom: '24px', color: 'var(--deep-blue)' }}>Robina Mirbahar</h3>
+                <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', lineHeight: 1.8, textAlign: 'left' }}>
+                  As the official ambassador of Women Techmakers Hyderabad, Robina continuously pioneers initiatives that elevate women of all professions and ages, with a passionate core focus on engineers and technologists across the region. Under her leadership, the community has seen unparalleled technical scaling and inclusive empowerment initiatives.
+                </p>
+                <div style={{ marginTop: '32px' }}>
+                  <span className="btn-pill" style={{ borderColor: 'var(--vibrant-teal)', display: 'inline-block' }} onClick={() => setRoute('/team')}>View Leadership Directory</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Together We Rise Banner Section */}
+        <section style={{ padding: '64px 0', textAlign: 'center', backgroundColor: '#FFFFFF' }}>
+          <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)', color: 'var(--deep-blue)', fontStyle: 'italic', margin: 0 }}>
+            Together we Rise. <span style={{ color: 'var(--vibrant-teal)' }}>Together We Lead.</span>
+          </h2>
+        </section>
+
+        <section className="layout-section" style={{ position: 'relative' }}>
+          <div className="grid-container" style={{ position: 'relative', zIndex: 1 }}>
+            <h2 style={{ fontSize: '3rem', marginBottom: '40px', textAlign: 'center' }}>Flagship Event</h2>
+            <div className="surface-card" style={{ padding: '64px', position: 'relative', overflow: 'hidden', maxWidth: '800px', margin: '0 auto', textAlign: 'center', background: 'linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.85)), url("./src/WTM Events Pictures/477327603_592980400364678_3971829522026014964_n.jpg") center/cover' }}>
+              <span style={{ display: 'inline-block', backgroundColor: 'rgba(0, 196, 163, 0.1)', color: 'var(--vibrant-teal)', border: '1px solid var(--vibrant-teal)', padding: '6px 16px', borderRadius: '100px', fontFamily: 'var(--font-header)', fontSize: '0.875rem', fontWeight: 'bold', marginBottom: '24px', textTransform:'uppercase' }}>â€¢ Live Now</span>
+              <h3 style={{ fontSize: '2.5rem', marginBottom: '16px' }}>IWD 2026 Baithak</h3>
+              <p className="text-accent" style={{ color: 'var(--google-blue)', fontSize: '1rem', marginBottom: '24px' }}>International Women's Day | Invite Only</p>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '1.125rem', marginBottom: '40px' }}>
+                International Women's Day is our flagship annual milestone. Each year features a unique, dynamic theme focusing on breaking patterns and highlighting technical leadership. Apply now to step into the ecosystem.
+              </p>
+              <span className="btn-pill" style={{ borderColor: 'var(--deep-blue)', display: 'inline-block', backdropFilter: 'blur(8px)' }} onClick={() => setRoute('/register')}>Request Invitation</span>
+            </div>
+          </div>
+        </section>
+      </div>
+    );
+
+    const AboutPage = () => (
+      <div>
+        <section className="layout-section" style={{ background: 'linear-gradient(rgba(0, 196, 163, 0.85), rgba(66, 133, 244, 0.85)), url("./src/WTM Events Pictures/DSC09380.jpeg") center/cover border-box' }}>
+          <div className="grid-container">
+            <div style={{ textAlign: 'center', marginBottom: '64px' }}>
+              <h2 style={{ fontSize: '3.5rem', margin: 0, color: '#FFFFFF' }}>About Our Chapter</h2>
+            </div>
+            <div className="flex-responsive" style={{ alignItems: 'center' }}>
+              <div className="surface-card" style={{ padding: '64px', maxWidth: '900px', margin: '0 auto', background: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(16px)' }}>
+                <p style={{ fontSize: '1.25rem', color: '#FFFFFF', lineHeight: 1.8, textAlign: 'left' }}>
+                  Women Techmakers Hyderabad Pakistan is a highly active and inclusive community initiative by Women Techmakers. Built to concentrate the mentorship and empowerment efforts of professionals across Sindh, our goal is to help women from all professional fields, with a core focus on technology, to learn, scale, and become highly productive. 
+                  <br /><br />
+                  We operate large-scale workshops, host our massive flagship International Women's Day events, and foster a culture of continuous knowledge transfer for women of every age and background.
+                </p>
+              </div>
+              <div>
+                <img src="./src/WTM Events Pictures/RAH00558.jpeg" alt="WTM Community" className="side-frame-img" style={{borderColor: '#FFFFFF'}} />
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <section className="layout-section" style={{ background: 'linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.9)), url("./src/WTM Events Pictures/478403869_596286476700737_8847670728925164592_n.jpg") center/cover border-box', transition: 'background-color var(--transition-standard)' }}>
+          <div className="grid-container" style={{ textAlign: 'center' }}>
+            <h2 style={{ fontSize: '3rem', marginBottom: '24px', textAlign: 'center' }}>Our Partners and Collaborators</h2>
+            <p style={{ textAlign: 'center', color: 'var(--text-secondary)', fontSize: '1.25rem', marginBottom: '64px' }}>Collaborating to empower the next generation of technical leaders.</p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '32px' }}>
+              {['WTM', 'NIC Hyderabad', 'SheCloud', 'Vibe Coders Pakistan'].map((partner, i) => (
+                <div key={i} className="surface-card" style={{ padding: '40px 32px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <span style={{ fontFamily: 'var(--font-header)', fontWeight: 'bold', fontSize: '1.5rem' }}>{partner}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="layout-section" style={{ backgroundColor: 'var(--bg-secondary)', borderTop: '1px solid var(--surface-border)' }}>
+          <div className="grid-container">
+            <h2 style={{ fontSize: '3rem', textAlign: 'center', marginBottom: '64px' }}>Get Involved</h2>
+            
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '32px' }}>
+              <div id="sponsor" className="surface-card" style={{ padding: '48px', textAlign: 'center', display: 'flex', flexDirection: 'column' }}>
+                <h3 style={{ fontSize: '2rem', marginBottom: '16px', color: 'var(--google-blue)' }}>Sponsor Us</h3>
+                <p style={{ fontSize: '1.125rem', color: 'var(--text-secondary)', marginBottom: '32px', flexGrow: 1 }}>Empower the ecosystem by partnering with our annual flagship initiatives.</p>
+                <a href="mailto:women.techmakers.hyd.pk@gmail.com?subject=Sponsor Inquiry" className="btn-pill" style={{ borderColor: 'var(--google-blue)', display: 'inline-block' }}>Email Partnership Team</a>
+              </div>
+
+              <div id="mentor" className="surface-card" style={{ padding: '48px', textAlign: 'center', display: 'flex', flexDirection: 'column' }}>
+                <h3 style={{ fontSize: '2rem', marginBottom: '16px', color: 'var(--vibrant-teal)' }}>Mentor or Speaker</h3>
+                <p style={{ fontSize: '1.125rem', color: 'var(--text-secondary)', marginBottom: '32px', flexGrow: 1 }}>Share your journey, teach a workshop, and inspire the next generation.</p>
+                <a href="mailto:women.techmakers.hyd.pk@gmail.com?subject=Speaker/Mentor Inquiry" className="btn-pill" style={{ borderColor: 'var(--vibrant-teal)', display: 'inline-block' }}>Submit Interest</a>
+              </div>
+
+              <div id="join" className="surface-card" style={{ padding: '48px', textAlign: 'center', display: 'flex', flexDirection: 'column' }}>
+                <h3 style={{ fontSize: '2rem', marginBottom: '16px', color: 'var(--deep-blue)' }}>Join the Team</h3>
+                <p style={{ fontSize: '1.125rem', color: 'var(--text-secondary)', marginBottom: '32px', flexGrow: 1 }}>We are actively looking for passionate community organizers to scale our mission.</p>
+                <a href="mailto:women.techmakers.hyd.pk@gmail.com?subject=Team Application" className="btn-pill" style={{ borderColor: 'var(--deep-blue)', display: 'inline-block' }}>Apply for Core</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    );
+
+    const TeamPage = ({ setRoute }) => {
+      const teamData = sharedTeamData;
+      return (
+        <div>
+          <section className="layout-section" style={{ textAlign: 'center', background: 'linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.85)), url("./src/WTM Events Pictures/DSC01169.jpg") center/cover border-box' }}>
+            <div className="grid-container">
+          <section className="layout-section" style={{ minHeight: '80vh', display: 'flex', alignItems: 'center', background: 'linear-gradient(rgba(255,255,255,0.65), rgba(255,255,255,0.8)), url("./src/WTM Events Pictures/RAH00576.jpg") center/cover no-repeat' }}>
+            <div className="grid-container" style={{ textAlign: 'center', width: '100%', position: 'relative', zIndex: 1 }}>
+              <div style={{ maxWidth: '900px', margin: '0 auto', color: 'var(--text-primary)' }}>
+                <h1 className="hero-entrance" style={{ fontSize: 'clamp(3rem, 6vw, 5rem)', lineHeight: 1.1, marginBottom: '24px' }}>
+                  <span style={{ color: 'var(--deep-blue)', display: 'block' }}>Women Techmakers</span>
+                  <span style={{ color: 'var(--vibrant-teal)', display: 'block' }}>Hyderabad Chapter</span>
+                </h1>
+                <p className="hero-entrance" style={{ fontSize: '1.5rem', marginBottom: '48px', color: 'var(--text-secondary)', maxWidth: '700px', margin: '0 auto 48px auto' }}>
+                  An inclusive ecosystem building community, visibility, and resources to accelerate equity and empower women across all professions.
+                </p>
+                <div className="hero-entrance" style={{ display: 'flex', gap: '24px', justifyContent: 'center' }}>
+                  <span className="btn-pill primary" style={{fontSize:'1.125rem'}} onClick={() => setRoute('/events')}>Explore Events</span>
+                </div>
+              </div>
+            </div>
+          </section>
+          
+          <div className="layout-section">
+            <div className="grid-container">
+              <h2 className="header-divider h2-centered">Mission Statement</h2>
+              <div className="surface-card" style={{ padding: '80px 48px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+                <p style={{ fontSize: '2rem', lineHeight: 1.6, color: 'var(--text-primary)', maxWidth: '900px', margin: '0 auto', fontWeight: '500' }}>
+                  Women Techmakers Hyderabad Pakistan is a highly active and inclusive community initiative by Women Techmakers. Built to concentrate the mentorship and empowerment efforts of professionals across Sindh, our goal is to help women from all professional fields, with a core focus on technology, to learn, scale, and become highly productive. 
+                </p>
+                <div style={{ marginTop: '48px', display: 'flex', gap: '24px', justifyContent: 'center' }}>
+                  <span className="btn-pill primary" onClick={() => setRoute('/about')}>Learn Our Architecture</span>
+                  <span className="btn-pill" style={{ borderColor: 'var(--google-blue)', color: 'var(--google-blue)' }} onClick={() => setRoute('/register')}>Connect with Us</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="layout-section" style={{ backgroundColor: 'var(--surface-bg)' }}>
+            <div className="grid-container">
+              <h2 className="header-divider h2-centered">Meet the Ambassadors</h2>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '48px' }}>
+                {displayTeam.map(member => (
+                   <div key={member.id} className="surface-card" style={{ padding: '40px', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+                     <div style={{ width: '160px', height: '160px', borderRadius: '50%', overflow: 'hidden', marginBottom: '24px', border: '3px solid var(--vibrant-teal)', padding: '4px' }}>
+                       <img src={member.photoUrl} alt={member.name} style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%' }} />
+                     </div>
+                     <h3 style={{ fontSize: '1.75rem', marginBottom: '8px' }}>{member.name}</h3>
+                     <p className="text-accent" style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', marginBottom: '32px' }}>{member.role}</p>
+                     <span className="btn-pill" style={{marginTop:'auto'}} onClick={() => setRoute(`/team/${member.slug}`)}>Review Identity</span>
+                   </div>
+                ))}
+              </div>
+              <div style={{ textAlign: 'center', marginTop: '64px' }}>
+                <span className="btn-pill" style={{ borderColor: 'var(--surface-border)' }} onClick={() => setRoute('/team')}>View All Contributors</span>
+              </div>
+            </div>
+          </div>
+
+          <div style={{ padding: '120px 24px', textAlign: 'center', backgroundColor: 'var(--google-blue)', position: 'relative' }}>
+             <h2 style={{ fontSize: '4rem', color: '#FFF', margin: '0 0 24px 0', letterSpacing: '-1px' }}>Together We Rise. Together We Lead.</h2>
+             <p style={{ color: 'rgba(255,255,255,0.9)', fontSize: '1.5rem' }}>The architectural hub for technical diversity in Sindh.</p>
+          </div>
+        </div>
+      );
+    };
+
+    const TeamPage = ({ setRoute, teamData = [] }) => {
+      const visibleTeam = teamData.filter(m => !m.hidden);
+      return (
+        <div className="layout-section">
+          <section className="grid-container">
+            <h1 style={{ fontSize: '4rem', marginBottom: '64px', textAlign: 'center', color: 'var(--deep-blue)' }}>Our Ambassadors</h1>
+            
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '32px' }}>
+              {visibleTeam.map((member) => (
+                <div key={member.id} className="surface-card" style={{ padding: '40px', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', transition: 'transform 0.3s ease' }}>
+                  <div style={{ width: '180px', height: '180px', borderRadius: '50%', overflow: 'hidden', marginBottom: '32px', border: '1px solid var(--surface-border)' }}>
+                    <img src={member.photoUrl} alt={member.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  </div>
+                  <h3 style={{ fontSize: '1.75rem', marginBottom: '8px' }}>{member.name}</h3>
+                  <p className="text-accent" style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', marginBottom: '32px' }}>{member.role}</p>
+                  <span className="btn-pill" style={{marginTop:'auto'}} onClick={() => setRoute(`/team/${member.slug}`)}>Review Identity</span>
+                </div>
+              ))}
+            </div>
+          </section>
+        </div>
+      );
+    }
+
+    const EventsPage = ({ setRoute, eventData = [] }) => {
+      const [activeTab, setActiveTab] = useState('upcoming');
+      const events = eventData.filter(e => !e.hidden && (activeTab === 'upcoming' ? e.status === 'Upcoming' : e.status === 'Past'));
+
+      return (
+        <div className="layout-section" style={{ background: 'linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.95)), url("./src/WTM Events Pictures/DSC01149.jpeg") center/cover border-box' }}>
+          <div className="grid-container">
+            <h1 style={{ fontSize: '4rem', marginBottom: '48px', textAlign: 'center', paddingBottom: '12px', color: 'var(--deep-blue)' }}>Session Catalog</h1>
+            <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '64px', backgroundColor: 'var(--surface-bg)', padding: '6px', borderRadius: '100px', maxWidth: '500px', margin: '0 auto 64px auto', border: '1px solid var(--surface-border)' }}>
+              <button className={`btn-pill ${activeTab === 'upcoming' ? 'primary' : ''}`} style={{ flex: 1, border: 'none', background: activeTab === 'upcoming' ? 'var(--google-blue)' : 'transparent', color: activeTab === 'upcoming' ? '#FFF' : 'var(--text-secondary)' }} onClick={() => setActiveTab('upcoming')}>Scheduled</button>
+              <button className={`btn-pill ${activeTab === 'archive' ? 'primary' : ''}`} style={{ flex: 1, border: 'none', background: activeTab === 'archive' ? 'var(--google-blue)' : 'transparent', color: activeTab === 'archive' ? '#FFF' : 'var(--text-secondary)' }} onClick={() => setActiveTab('archive')}>Archived</button>
+            </div>
+            
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(360px, 1fr))', gap: '40px' }}>
+              {events.map((e, i) => (
+                <div key={i} className="surface-card" style={{ padding: '40px', display: 'flex', flexDirection: 'column' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '32px' }}>
+                    <span className="text-accent" style={{ padding: '6px 12px', border: '1px solid var(--surface-border)', borderRadius: '6px', color: activeTab === 'upcoming' ? 'var(--vibrant-teal)' : 'var(--text-secondary)' }}>{e.status}</span>
+                    <span className="text-accent" style={{ color: 'var(--text-secondary)' }}>{e.date}</span>
+                  </div>
+                  <h3 style={{ fontSize: '2.25rem', marginBottom: '24px' }}>{e.title}</h3>
+                  <p style={{ color: 'var(--text-secondary)', lineHeight: 1.8, fontSize: '1.125rem', marginBottom: '40px', flexGrow: 1 }}>{e.description}</p>
+                  <button onClick={() => setRoute(`/events/${e.slug}`)} className={`btn-pill ${activeTab==='upcoming'?'primary':''}`} style={{ width: '100%' }}>{activeTab === 'upcoming' ? 'Initialize Registration' : 'View Details'}</button>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    const PressPage = ({ posts = [] }) => {
+      const visiblePosts = posts.filter(p => !p.hidden);
+      return (
+        <div className="layout-section" style={{ background: 'linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.95)), url("./src/WTM Events Pictures/478132654_596286623367389_7431807413535639842_n.jpg") center/cover border-box' }}>
+          <div className="grid-container">
+            <h1 style={{ fontSize: '4rem', marginBottom: '24px', textAlign: 'center', paddingBottom: '10px', color: 'var(--deep-blue)' }}>Press & Announcements</h1>
+            <p style={{ fontSize: '1.5rem', color: 'var(--text-secondary)', textAlign: 'center', marginBottom: '80px' }}>
+              Official WTM Hyderabad releases, news, and community blog posts.
+            </p>
+            
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))', gap: '40px' }}>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    const RegistrationFormPage = () => {
+      const [role, setRole] = useState('');
+      const [email, setEmail] = useState('');
+      const [submitted, setSubmitted] = useState(false);
+      const [error, setError] = useState('');
+
+      const handleRegister = (e) => {
+        e.preventDefault();
+        const roleLower = role.toLowerCase();
+        if (!roleLower.includes('developer') && !roleLower.includes('engineer') && !roleLower.includes('professional') && roleLower !== 'tech') {
+          setError("Notice: Looking for 'Tech Professional' aligned roles at this time.");
+          return;
+        }
+        setError('');
+        setSubmitted(true);
+      };
+
+      if (submitted) {
+        return (
+          <div className="layout-section">
+            <div className="grid-container">
+              <div className="surface-card" style={{ textAlign: 'center', padding: '64px', maxWidth: '600px', margin: '0 auto', border: '1px solid var(--vibrant-teal)' }}>
+                <p className="text-accent" style={{ color: 'var(--vibrant-teal)', marginBottom: '16px' }}>Status OK</p>
+                <h2 style={{ fontSize: '2.5rem', marginBottom: '24px' }}>Registration Received</h2>
+                <p style={{ fontSize: '1.125rem', color: 'var(--text-secondary)', lineHeight: 1.8 }}>
+                  We've successfully received your request for the Baithak. We're reviewing invitations now to keep the circle intimate. We'll deploy an email to you soon.
+                </p>
+              </div>
+            </div>
+          </div>
+        );
+      }
+
+      return (
+        <div className="layout-section" style={{ background: 'linear-gradient(rgba(25, 103, 210, 0.85), rgba(0, 196, 163, 0.9)), url("./src/WTM Events Pictures/RAH00585.jpg") center/cover no-repeat' }}>
+           <div className="grid-container">
+                <form className="surface-card" onSubmit={handleRegister} style={{ padding: '64px', maxWidth: '600px', margin: '0 auto' }}>
+                  <p className="text-accent" style={{ color: 'var(--deep-blue)', marginBottom: '16px' }}>SECURE ACCESS</p>
+                  <h2 style={{ fontSize: '2.5rem', marginBottom: '32px' }}>Request Baithak Invitation</h2>
+                  {error && <p className="text-accent" style={{ color: 'var(--google-blue)', marginBottom: '24px' }}>{error}</p>}
+                  
+                  <div style={{ marginBottom: '24px' }}>
+                    <label htmlFor="email" className="text-accent" style={{ display: 'block', marginBottom: '12px' }}>Email Address</label>
+                    <input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} required style={{ width: '100%', padding: '16px', boxSizing: 'border-box' }} />
+                  </div>
+                  <div style={{ marginBottom: '40px' }}>
+                    <label htmlFor="role" className="text-accent" style={{ display: 'block', marginBottom: '12px' }}>Current System Role</label>
+                    <input type="text" id="role" placeholder="e.g. Lead Engineer, Tech Professional" value={role} onChange={(e) => setRole(e.target.value)} required style={{ width: '100%', padding: '16px', boxSizing: 'border-box' }} />
+                  </div>
+                  <button type="submit" className="btn-pill primary" style={{ width: '100%' }}>Execute Request</button>
+                </form>
+           </div>
+        </div>
+      );
+    }
+
+    const ProfilePage = ({ setRoute }) => (
+      <div className="layout-section">
+        <div className="grid-container">
+          <section style={{ marginBottom: '48px' }}>
+            <span className="text-accent" onClick={() => setRoute('/team')} style={{ display: 'inline-block', marginBottom: '32px', color: 'var(--text-secondary)', cursor: 'pointer' }}>Return to Directory</span>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '32px' }}>
+              <div style={{ width: '160px', height: '160px', borderRadius: '50%', border: '2px solid var(--surface-border)', overflow: 'hidden' }}>
+                 <img src={`https://ui-avatars.com/api/?name=Hasnain+KK&background=EAEAEA&color=4285F4&size=200&bold=true`} style={{width:'100%'}}/>
+              </div>
+              <div>
+                <h1 style={{ fontSize: '3rem', margin: '0 0 8px 0' }}>Hasnain KK</h1>
+                <p className="text-accent" style={{ fontSize: '1rem', color: 'var(--google-blue)', margin: 0 }}>WTM Lead</p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    );
+
+    const CodeOfConductPage = () => (
+      <div className="layout-section" style={{ background: 'linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.95)), url("./src/WTM Events Pictures/DSC09710 - Copy.jpg") center/cover border-box', minHeight: '80vh' }}>
+        <div className="grid-container" style={{ maxWidth: '900px', margin: '0 auto' }}>
+          <h1 style={{ fontSize: '4rem', marginBottom: '16px', color: 'var(--deep-blue)', textAlign: 'center' }}>Code of Conduct</h1>
+          <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', textAlign: 'center', marginBottom: '48px' }}>Empowering a safe, diverse, and robust technical environment.</p>
+          
+          <div className="surface-card" style={{ padding: '48px', marginBottom: '32px', backgroundColor: 'var(--bg-primary)' }}>
+            <h3 style={{ fontSize: '2rem', marginBottom: '24px', color: 'var(--google-blue)' }}>Anti-Harassment Policy</h3>
+            <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', lineHeight: 1.8 }}>
+              Women Techmakers Hyderabad is aggressively committed to providing a fully harassment-free and deeply inclusive experience for everyone. We unconditionally welcome participants regardless of gender identity and expression, sexual orientation, disabilities, neurodiversity, physical appearance, body size, ethnicity, nationality, race, age, religion, or any other protected category. We do not tolerate harassment of event participants in absolutely any form.
+            </p>
+          </div>
+
+          <div className="surface-card" style={{ padding: '48px', marginBottom: '32px', backgroundColor: 'var(--bg-primary)' }}>
+            <h3 style={{ fontSize: '2rem', marginBottom: '24px', color: 'var(--vibrant-teal)' }}>Community Guidelines</h3>
+            <ul style={{ fontSize: '1.125rem', color: 'var(--text-secondary)', lineHeight: 1.8, paddingLeft: '24px' }}>
+              <li style={{ marginBottom: '16px' }}><strong>Be excellent to each other.</strong> Empathy is the core of our community ecosystem.</li>
+              <li style={{ marginBottom: '16px' }}><strong>Treat everyone with respect.</strong> Participate while actively acknowledging that everyone in the room deserves to be here just as much as you do.</li>
+              <li style={{ marginBottom: '16px' }}><strong>Communicate clearly and constructively.</strong> Share ideas relentlessly without resorting to personal attacks, competitive hostility, or demeaning remarks.</li>
+              <li><strong>Zero Tolerance for Disruption.</strong> Event participants decisively violating these rules will be formally sanctioned or completely expelled from the current event at the immediate discretion of the core organizers.</li>
+            </ul>
+          </div>
+
+          <div style={{ backgroundColor: '#FCE8E6', border: '1px solid #FAD2CF', padding: '32px', borderRadius: '16px', textAlign: 'center', boxShadow: '0 8px 24px rgba(217,48,37,0.1)' }}>
+            <span style={{ fontSize: '2rem', display: 'block', marginBottom: '16px' }}>ðŸ“¸</span>
+            <h4 style={{ fontSize: '1.5rem', color: '#D93025', marginBottom: '12px' }}>Photography Disclaimer</h4>
+            <p style={{ fontSize: '1.125rem', color: '#3C4043', lineHeight: 1.6, margin: 0 }}>
+              <strong>By attending this event, you understand and consent that you will be photographed and recorded.</strong> These materials will be utilized by Women Techmakers Hyderabad heavily for internal documentation, widespread marketing purposes, and global social media outreach.
+            </p>
+          </div>
+        </div>
+      </div>
+    );
+
+    const TeamProfilePage = ({ slug, setRoute, teamData = [] }) => {
+      const member = teamData.find(m => m.slug === slug);
+      if (!member) {
+        return (
+          <div className="layout-section" style={{ textAlign: 'center' }}>
+            <h2 style={{ fontSize: '2.5rem', marginBottom: '24px' }}>Profile Not Found</h2>
+            <span className="btn-pill" style={{ display: 'inline-block', borderColor: 'var(--google-blue)' }} onClick={() => setRoute('/team')}>Return to Directory</span>
+          </div>
+        );
+      }
+
+      const isFemale = member.gender === 'female';
+      const borderStyle = isFemale ? '4px solid #34A853' : '1px solid var(--surface-border)'; // Green for female photo
+
+      return (
+        <div className="team-profile-page">
+          <section className="layout-section" style={{ backgroundColor: 'var(--bg-primary)' }}>
+            <div className="grid-container" style={{ marginBottom: '24px' }}>
+               <span className="btn-pill" onClick={() => setRoute('/team')} style={{ display: 'inline-block', color: 'var(--text-secondary)', borderColor: 'var(--surface-border)', padding: '10px 24px', backgroundColor: 'var(--bg-primary)' }}>&larr; Back to Directory</span>
+            </div>
+            
+            <div className="grid-container flex-responsive" style={{ alignItems: 'flex-start', gap: '64px' }}>
+              <div style={{ flex: '1 1 350px', position: 'sticky', top: '100px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <div style={{ width: '100%', maxWidth: '350px', aspectRatio: '1/1', borderRadius: '32px', overflow: 'hidden', margin: '0 auto 32px auto', border: borderStyle, boxShadow: 'var(--surface-shadow-hover)', boxSizing: 'border-box' }}>
+                  <img src={member.photoUrl} alt={member.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                </div>
+                <h1 style={{ fontSize: '3rem', margin: '0 0 8px 0', color: isFemale ? 'var(--google-blue)' : 'var(--deep-blue)', textAlign: 'center', borderBottom: isFemale ? '3px solid var(--google-blue)' : 'none', paddingBottom: '8px' }}>{member.name}</h1>
+                <p className="text-accent" style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', marginBottom: '32px', padding: '8px 24px', backgroundColor: 'var(--surface-bg)', borderRadius: '100px' }}>{member.role}</p>
+                
+                <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', width: '100%', flexWrap: 'wrap' }}>
+                  {member.socials.map((social, idx) => (
+                    <a key={idx} href={social.url} target="_blank" rel="noreferrer" className="btn-pill" style={{ borderColor: 'var(--google-blue)', color: 'var(--google-blue)', padding: '12px 32px', fontSize: '1rem', flexGrow: 1, textAlign: 'center' }}>
+                      Connect on {social.platform}
+                    </a>
+                  ))}
+                </div>
+              </div>
+
+              <div style={{ flex: '2 1 500px' }}>
+                <div style={{ padding: '48px', backgroundColor: 'var(--bg-primary)', borderRadius: '32px', border: '1px solid var(--surface-border)', marginBottom: '40px', boxShadow: '0 12px 48px rgba(0,0,0,0.03)' }}>
+                  <h2 style={{ fontSize: '2.5rem', marginBottom: '32px', borderBottom: '2px solid var(--surface-border)', paddingBottom: '16px' }}>Professional Biography</h2>
+                  <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', lineHeight: 1.9, marginBottom: '0' }}>
+                    {member.bio}
+                  </p>
+                </div>
+
+                <div style={{ padding: '48px', background: 'linear-gradient(135deg, rgba(66, 133, 244, 0.05), rgba(0, 196, 163, 0.05))', borderRadius: '32px', border: '1px solid var(--surface-border)', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+                  <img src="./src/Logo/8.png" alt="WTM Sindhi Identity Logo" style={{ height: '80px', marginBottom: '32px', display: 'block' }} />
+                  <h3 style={{ fontSize: '2rem', marginBottom: '16px', color: 'var(--deep-blue)' }}>Empowering the Women of Sindh</h3>
+                  <p style={{ fontSize: '1.125rem', color: 'var(--text-secondary)', lineHeight: 1.8, maxWidth: '600px', margin: 0 }}>
+                    Our core mission extends beyond standard metropolitan ecosystems. We are aggressively dedicated to providing world-class technological resources, hardware mentorship, and massive leadership platforms specifically targeting the marginalized professional women operating natively across the interior Sindh region. Together, we rise.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      );
+    };
+
+    const EventProfilePage = ({ slug, setRoute, eventData = [] }) => {
+      const event = eventData.find(e => e.slug === slug);
+      if (!event) {
+        return (
+          <div className="layout-section" style={{ textAlign: 'center' }}>
+            <h2 style={{ fontSize: '2.5rem', marginBottom: '24px' }}>Event Not Found</h2>
+            <span className="btn-pill" style={{ display: 'inline-block', borderColor: 'var(--google-blue)' }} onClick={() => setRoute('/events')}>Return to Catalog</span>
+          </div>
+        );
+      }
+
+      return (
+        <div className="event-profile-page">
+          <section className="layout-section" style={{ minHeight: '80vh', background: `linear-gradient(to bottom, rgba(255,255,255,0.85), rgba(255,255,255,0.98)), url("${event.coverImage}") center/cover border-box` }}>
+            <div className="grid-container" style={{ marginBottom: '32px' }}>
+               <span className="btn-pill" onClick={() => setRoute('/events')} style={{ display: 'inline-block', color: 'var(--text-primary)', borderColor: 'var(--surface-border)', padding: '10px 24px' }}>&larr; Back to Catalog</span>
+            </div>
+            
+            <div className="grid-container" style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
+              <span className="text-accent" style={{ padding: '8px 16px', border: '1px solid var(--surface-border)', borderRadius: '12px', fontSize: '1.125rem', color: event.status === 'Upcoming' ? 'var(--google-blue)' : 'var(--text-secondary)', backgroundColor: 'var(--bg-primary)', display: 'inline-block', marginBottom: '32px' }}>
+                {event.status}
+              </span>
+              
+              <h1 style={{ fontSize: '4.5rem', marginBottom: '24px', color: 'var(--deep-blue)' }}>{event.title}</h1>
+              <p style={{ fontSize: '1.5rem', color: 'var(--text-secondary)', marginBottom: '48px', fontWeight: 'bold' }}>{event.date}</p>
+              
+              <div className="surface-card" style={{ padding: '64px', textAlign: 'left', borderRadius: '32px', marginBottom: '64px' }}>
+                <h3 style={{ fontSize: '2rem', marginBottom: '24px', borderBottom: '2px solid var(--surface-border)', paddingBottom: '16px' }}>About The Session</h3>
+                <p style={{ fontSize: '1.35rem', color: 'var(--text-secondary)', lineHeight: 1.8 }}>
+                  {event.description}
+                </p>
+              </div>
+
+              {event.status === 'Upcoming' && (
+                <a href={event.registration_link} target="_blank" rel="noreferrer" className="btn-pill primary" style={{ fontSize: '1.25rem', padding: '16px 48px' }}>
+                  Initialize Registration
+                </a>
+              )}
+            </div>
+          </section>
+        </div>
+      );
+    };
+    
+    const Footer = ({ setRoute, currentRoute }) => {
+      const showSindhSection = currentRoute === '/' || currentRoute === '/about' || currentRoute.startsWith('/team/');
+
+      return (
+        <footer style={{ backgroundColor: 'var(--footer-bg)', transition: 'background-color var(--transition-standard)' }}>
+          
+          {showSindhSection && (
+            <div style={{ padding: '80px 24px', borderTop: '1px solid var(--surface-border)', borderBottom: '1px solid var(--surface-border)', backgroundColor: 'var(--bg-primary)' }}>
+              <div className="grid-container flex-responsive" style={{ alignItems: 'center', gap: '64px' }}>
+                <div style={{ flex: '1.2' }}>
+                  <img src="./src/Logo/8.png" alt="WTM Sindhi Identity Logo" style={{ height: '80px', marginBottom: '32px', display: 'block' }} />
+                  <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 3.8rem)', color: 'var(--google-blue)', margin: '0 0 24px 0', fontWeight: 'bold', lineHeight: 1.1 }}>Empowering the Women of Sindh</h2>
+                  <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', lineHeight: 1.6, maxWidth: '600px' }}>
+                    Dedicated to scaling the potential of every developer and leader across interior Sindh. We provide the architecture for excellence.
+                  </p>
+                </div>
+                <div style={{ flex: '1', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                  <img src="./src/WTM Events Pictures/WTM Sindhi Mascote.png" alt="WTM Sindhi Mascot" style={{ maxHeight: '350px', width: 'auto', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.1))' }} />
+                  <div style={{ marginTop: '24px', padding: '12px 32px', backgroundColor: 'var(--surface-bg)', borderRadius: '100px', border: '1px solid var(--surface-border)', display: 'inline-block' }}>
+                      <span style={{ fontWeight: 'bold', color: 'var(--deep-blue)' }}>Women in Tech Sindh</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+        <div className="grid-container" style={{ padding: '64px 24px', display: 'flex', flexDirection: 'column', gap: '48px' }}>
+          
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '32px' }}>
+            <div>
+              <h4 className="text-accent" style={{ color: 'var(--google-blue)', marginBottom: '24px' }}>WTM Hyderabad</h4>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <span onClick={() => setRoute('/about')} className="footer-link">About the Chapter</span>
+                <span onClick={() => setRoute('/team')} className="footer-link">Core Team</span>
+                <span onClick={() => setRoute('/events')} className="footer-link">Previous Events</span>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="text-accent" style={{ color: 'var(--deep-blue)', marginBottom: '24px' }}>Support Us</h4>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <span onClick={() => { setRoute('/about'); setTimeout(() => document.getElementById('sponsor')?.scrollIntoView({behavior: 'smooth'}), 100); }} className="footer-link">Sponsor Us</span>
+                <span onClick={() => { setRoute('/about'); setTimeout(() => document.getElementById('mentor')?.scrollIntoView({behavior: 'smooth'}), 100); }} className="footer-link">Community Mentor or Speaker</span>
+                <span onClick={() => { setRoute('/about'); setTimeout(() => document.getElementById('join')?.scrollIntoView({behavior: 'smooth'}), 100); }} className="footer-link">Join the Team</span>
+              </div>
+            </div>
+            
+            <div>
+              <h4 className="text-accent" style={{ color: 'var(--deep-blue)', marginBottom: '24px' }}>Resources</h4>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <span onClick={() => setRoute('/code-of-conduct')} className="footer-link">Code of Conduct</span>
+                <a href="#" className="footer-link">Community Guidelines</a>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="text-accent" style={{ color: 'var(--vibrant-teal)', marginBottom: '24px' }}>Developer Options</h4>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <a href="https://console.cloud.google.com" target="_blank" className="footer-link">Google Cloud Console</a>
+                <a href="https://console.firebase.google.com" target="_blank" className="footer-link">Firebase Console</a>
+                <a href="https://play.google.com/console" target="_blank" className="footer-link">Google Play Console</a>
+                <a href="https://developers.google.com" target="_blank" className="footer-link">Google Developers</a>
+                <a href="https://grow.google/certificates" target="_blank" className="footer-link">Google Career Certificates</a>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="text-accent" style={{ color: 'var(--vibrant-teal)', marginBottom: '24px' }}>Connect</h4>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <a href="#" className="footer-link">Twitter / X</a>
+                <a href="#" className="footer-link">LinkedIn</a>
+                <a href="#" className="footer-link">Instagram</a>
+              </div>
+            </div>
+          </div>
+
+          <div style={{ borderTop: '1px solid var(--surface-border)', paddingTop: '32px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
+            <span className="text-accent" style={{ color: 'var(--text-secondary)', fontSize: '0.875rem' }}>Â© 2026 Women Techmakers Hyderabad</span>
+            <span className="text-accent" style={{ color: 'var(--text-primary)', fontSize: '0.875rem' }}>Built with <span style={{ color: 'var(--deep-blue)' }}>â¤ï¸</span> by Hasnain KK</span>
+          </div>
+        </div>
+      </footer>
+    );
+
+    const AdminPage = ({ teamData, setTeamData, eventData, setEventData, blogPosts, setBlogPosts }) => {
+      const [isLoggedIn, setIsLoggedIn] = useState(false);
+      const [password, setPassword] = useState('');
+      const [activeTab, setActiveTab] = useState('team');
+
+      const handleLogin = (e) => {
+        e.preventDefault();
+        if (password === 'admin123') setIsLoggedIn(true);
+        else alert('Invalid Credentials');
+      };
+
+      if (!isLoggedIn) {
+        return (
+          <div className="layout-section" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '60vh' }}>
+            <div className="surface-card" style={{ padding: '64px', maxWidth: '450px', width: '100%', textAlign: 'center' }}>
+              <h2 style={{ fontSize: '2.5rem', marginBottom: '32px' }}>Admin Login</h2>
+              <form onSubmit={handleLogin}>
+                <input 
+                  type="password" 
+                  placeholder="Master Password" 
+                  style={{ width: '100%', padding: '16px', borderRadius: '12px', border: '1px solid var(--surface-border)', marginBottom: '24px' }}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                <button type="submit" className="btn-pill primary" style={{ width: '100%' }}>Authenticate</button>
+              </form>
+            </div>
+          </div>
+        );
+      }
+
+      const ManagerSection = ({ title, items, onAdd, onEdit, onDelete, onToggleHide, renderForm }) => {
+        const [showAddForm, setShowAddForm] = useState(false);
+        const [editingItem, setEditingItem] = useState(null);
+
+        return (
+          <div className="surface-card" style={{ padding: '48px', marginBottom: '48px' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '40px' }}>
+              <h2 style={{ fontSize: '2.5rem', color: 'var(--deep-blue)' }}>{title}</h2>
+              <button className="btn-pill primary" onClick={() => setShowAddForm(true)}>+ Add New</button>
+            </div>
+
+            {(showAddForm || editingItem) && (
+              <div style={{ position: 'fixed', inset: 0, backgroundColor: 'rgba(0,0,0,0.5)', z_index: 3000, display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '24px' }}>
+                <div className="surface-card" style={{ maxWidth: '600px', width: '100%', padding: '48px', maxHeight: '90vh', overflowY: 'auto' }}>
+                  <h3>{editingItem ? 'Edit Item' : 'Add New Item'}</h3>
+                  {renderForm(editingItem || {}, (data) => {
+                    if (editingItem) onEdit(data);
+                    else onAdd(data);
+                    setShowAddForm(false);
+                    setEditingItem(null);
+                  }, () => { setShowAddForm(false); setEditingItem(null); })}
+                </div>
+              </div>
+            )}
+
+            <div style={{ overflowX: 'auto' }}>
+              <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
+                <thead>
+                  <tr style={{ borderBottom: '2px solid var(--surface-border)' }}>
+                    <th style={{ padding: '16px' }}>Status</th>
+                    <th style={{ padding: '16px' }}>Identity / Title</th>
+                    <th style={{ padding: '16px' }}>Controls</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {items.map(item => (
+                    <tr key={item.id} style={{ borderBottom: '1px solid var(--surface-border)' }}>
+                      <td style={{ padding: '16px' }}>
+                        <span style={{ padding: '4px 12px', borderRadius: '4px', fontSize: '0.75rem', backgroundColor: item.hidden ? '#FCE8E6' : '#E6F4EA', color: item.hidden ? '#D93025' : '#1E8E3E' }}>
+                          {item.hidden ? 'Hidden' : 'Live'}
+                        </span>
+                      </td>
+                      <td style={{ padding: '16px' }}>
+                        <strong>{item.name || item.title}</strong><br/>
+                        <small style={{ color: 'var(--text-secondary)' }}>{item.role || item.date}</small>
+                      </td>
+                      <td style={{ padding: '16px', display: 'flex', gap: '8px' }}>
+                        <button className="btn-pill" style={{ padding: '4px 12px', fontSize: '0.75rem' }} onClick={() => setEditingItem(item)}>Edit</button>
+                        <button className="btn-pill" style={{ padding: '4px 12px', fontSize: '0.75rem', borderColor: item.hidden ? '#1E8E3E' : '#D93025' }} onClick={() => onToggleHide(item.id)}>{item.hidden ? 'Show' : 'Hide'}</button>
+                        <button className="btn-pill" style={{ padding: '4px 12px', fontSize: '0.75rem', color: '#D93025', borderColor: '#D93025' }} onClick={() => onDelete(item.id)}>Delete</button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        );
+      };
+
+      const TeamForm = ({ initialData, onSave, onCancel }) => {
+        const [formData, setFormData] = useState({ id: Date.now(), slug: '', name: '', role: '', bio: '', gender: 'female', photoUrl: '', socials: [], hidden: false, ...initialData });
+        return (
+          <form onSubmit={(e) => { e.preventDefault(); onSave(formData); }}>
+             <input placeholder="Full Name" style={{ width: '100%', padding: '12px', marginBottom: '16px', borderRadius: '8px', border: '1px solid var(--surface-border)' }} value={formData.name} onChange={e => setFormData({...formData, name: e.target.value, slug: e.target.value.toLowerCase().replace(/ /g, '-')})} required />
+             <input placeholder="Role" style={{ width: '100%', padding: '12px', marginBottom: '16px', borderRadius: '8px', border: '1px solid var(--surface-border)' }} value={formData.role} onChange={e => setFormData({...formData, role: e.target.value})} required />
+             <select style={{ width: '100%', padding: '12px', marginBottom: '16px', borderRadius: '8px', border: '1px solid var(--surface-border)' }} value={formData.gender} onChange={e => setFormData({...formData, gender: e.target.value})}>
+               <option value="female">Female (Green Border)</option>
+               <option value="male">Male (Blue Border)</option>
+             </select>
+             <textarea placeholder="Bio" style={{ width: '100%', padding: '12px', marginBottom: '16px', borderRadius: '8px', border: '1px solid var(--surface-border)', minHeight: '100px' }} value={formData.bio} onChange={e => setFormData({...formData, bio: e.target.value})} required />
+             <input placeholder="Photo URL (./src/WTM Events Pictures/...)" style={{ width: '100%', padding: '12px', marginBottom: '16px', borderRadius: '8px', border: '1px solid var(--surface-border)' }} value={formData.photoUrl} onChange={e => setFormData({...formData, photoUrl: e.target.value})} required />
+             <div style={{ display: 'flex', gap: '12px' }}>
+               <button type="submit" className="btn-pill primary" style={{ flex: 1 }}>Save Identity</button>
+               <button type="button" className="btn-pill" style={{ flex: 1 }} onClick={onCancel}>Cancel</button>
+             </div>
+          </form>
+        );
+      };
+
+      const EventForm = ({ initialData, onSave, onCancel }) => {
+        const [formData, setFormData] = useState({ id: Date.now(), slug: '', title: '', date: '', status: 'Upcoming', description: '', registration_link: '', coverImage: '', hidden: false, ...initialData });
+        return (
+          <form onSubmit={(e) => { e.preventDefault(); onSave(formData); }}>
+             <input placeholder="Event Title" style={{ width: '100%', padding: '12px', marginBottom: '16px', borderRadius: '8px', border: '1px solid var(--surface-border)' }} value={formData.title} onChange={e => setFormData({...formData, title: e.target.value, slug: e.target.value.toLowerCase().replace(/ /g, '-')})} required />
+             <input placeholder="Date (e.g. March 2026)" style={{ width: '100%', padding: '12px', marginBottom: '16px', borderRadius: '8px', border: '1px solid var(--surface-border)' }} value={formData.date} onChange={e => setFormData({...formData, date: e.target.value})} required />
+             <select style={{ width: '100%', padding: '12px', marginBottom: '16px', borderRadius: '8px', border: '1px solid var(--surface-border)' }} value={formData.status} onChange={e => setFormData({...formData, status: e.target.value})}>
+               <option value="Upcoming">Upcoming</option>
+               <option value="Past">Past</option>
+             </select>
+             <textarea placeholder="Description" style={{ width: '100%', padding: '12px', marginBottom: '16px', borderRadius: '8px', border: '1px solid var(--surface-border)', minHeight: '100px' }} value={formData.description} onChange={e => setFormData({...formData, description: e.target.value})} required />
+             <input placeholder="Cover Image Path" style={{ width: '100%', padding: '12px', marginBottom: '16px', borderRadius: '8px', border: '1px solid var(--surface-border)' }} value={formData.coverImage} onChange={e => setFormData({...formData, coverImage: e.target.value})} required />
+             <input placeholder="Custom Reg Link" style={{ width: '100%', padding: '12px', marginBottom: '16px', borderRadius: '8px', border: '1px solid var(--surface-border)' }} value={formData.registration_link} onChange={e => setFormData({...formData, registration_link: e.target.value})} />
+             <div style={{ display: 'flex', gap: '12px' }}>
+               <button type="submit" className="btn-pill primary" style={{ flex: 1 }}>Save Event</button>
+               <button type="button" className="btn-pill" style={{ flex: 1 }} onClick={onCancel}>Cancel</button>
+             </div>
+          </form>
+        );
+      };
+
+      const BlogForm = ({ initialData, onSave, onCancel }) => {
+        const [formData, setFormData] = useState({ id: Date.now(), type: 'Blog', title: '', author: 'Admin', snippet: '', hidden: false, ...initialData });
+        return (
+          <form onSubmit={(e) => { e.preventDefault(); onSave(formData); }}>
+             <input placeholder="Blog Title" style={{ width: '100%', padding: '12px', marginBottom: '16px', borderRadius: '8px', border: '1px solid var(--surface-border)' }} value={formData.title} onChange={e => setFormData({...formData, title: e.target.value})} required />
+             <input placeholder="Author Name" style={{ width: '100%', padding: '12px', marginBottom: '16px', borderRadius: '8px', border: '1px solid var(--surface-border)' }} value={formData.author} onChange={e => setFormData({...formData, author: e.target.value})} required />
+             <select style={{ width: '100%', padding: '12px', marginBottom: '16px', borderRadius: '8px', border: '1px solid var(--surface-border)' }} value={formData.type} onChange={e => setFormData({...formData, type: e.target.value})}>
+               <option value="Blog">Blog</option>
+               <option value="News">News</option>
+               <option value="Release">Release</option>
+             </select>
+             <textarea placeholder="Excerpt Snippet" style={{ width: '100%', padding: '12px', marginBottom: '16px', borderRadius: '8px', border: '1px solid var(--surface-border)', minHeight: '100px' }} value={formData.snippet} onChange={e => setFormData({...formData, snippet: e.target.value})} required />
+             <div style={{ display: 'flex', gap: '12px' }}>
+               <button type="submit" className="btn-pill primary" style={{ flex: 1 }}>Publish Post</button>
+               <button type="button" className="btn-pill" style={{ flex: 1 }} onClick={onCancel}>Cancel</button>
+             </div>
+          </form>
+        );
+      };
+
+      return (
+        <div className="layout-section">
+          <div className="grid-container">
+            <h1 style={{ fontSize: '4rem', marginBottom: '48px' }}>Admin Dashboard</h1>
+            <div style={{ display: 'flex', gap: '12px', marginBottom: '48px', overflowX: 'auto', paddingBottom: '12px' }}>
+              <button className={`btn-pill ${activeTab === 'team' ? 'primary' : ''}`} onClick={() => setActiveTab('team')}>Manage Team</button>
+              <button className={`btn-pill ${activeTab === 'events' ? 'primary' : ''}`} onClick={() => setActiveTab('events')}>Manage Events</button>
+              <button className={`btn-pill ${activeTab === 'blogs' ? 'primary' : ''}`} onClick={() => setActiveTab('blogs')}>Manage Press</button>
+            </div>
+
+            {activeTab === 'team' && (
+              <ManagerSection 
+                title="Team Directory" 
+                items={teamData} 
+                onAdd={(data) => setTeamData([...teamData, data])}
+                onEdit={(data) => setTeamData(teamData.map(t => t.id === data.id ? data : t))}
+                onDelete={(id) => setTeamData(teamData.filter(t => t.id !== id))}
+                onToggleHide={(id) => setTeamData(teamData.map(t => t.id === id ? {...t, hidden: !t.hidden} : t))}
+                renderForm={(init, onS, onC) => <TeamForm initialData={init} onSave={onS} onCancel={onC} />}
+              />
+            )}
+
+            {activeTab === 'events' && (
+              <ManagerSection 
+                title="Event Catalog" 
+                items={eventData} 
+                onAdd={(data) => setEventData([...eventData, data])}
+                onEdit={(data) => setEventData(eventData.map(e => e.id === data.id ? data : e))}
+                onDelete={(id) => setEventData(eventData.filter(e => e.id !== id))}
+                onToggleHide={(id) => setEventData(eventData.map(e => e.id === id ? {...e, hidden: !e.hidden} : e))}
+                renderForm={(init, onS, onC) => <EventForm initialData={init} onSave={onS} onCancel={onC} />}
+              />
+            )}
+
+            {activeTab === 'blogs' && (
+              <ManagerSection 
+                title="Press Releases" 
+                items={blogPosts} 
+                onAdd={(data) => setBlogPosts([...blogPosts, data])}
+                onEdit={(data) => setBlogPosts(blogPosts.map(p => p.id === data.id ? data : p))}
+                onDelete={(id) => setBlogPosts(blogPosts.filter(p => p.id !== id))}
+                onToggleHide={(id) => setBlogPosts(blogPosts.map(p => p.id === id ? {...p, hidden: !p.hidden} : p))}
+                renderForm={(init, onS, onC) => <BlogForm initialData={init} onSave={onS} onCancel={onC} />}
+              />
+            )}
+          </div>
+        </div>
+      );
+    }
+
+    const App = () => {
+      const getHashRoute = () => {
+        const hash = window.location.hash.replace('#', '');
+        return hash || '/';
+      };
+
+      const [route, setRouteState] = useState(getHashRoute());
+      
+      const loadData = (key, defaults) => {
+        const saved = localStorage.getItem(key);
+        return saved ? JSON.parse(saved) : defaults;
+      };
+
+      const [teamData, setTeamData] = useState(loadData('wtm_team', sharedTeamData));
+      const [eventData, setEventData] = useState(loadData('wtm_events', sharedEventData));
+      const [blogPosts, setBlogPosts] = useState(loadData('wtm_blogs', [
+        { id: 1, type: 'Release', title: 'WTM Hyderabad Announces IWD 2026 Theme', author: 'Hasnain KK', snippet: 'International Women\'s Day returns to Hyderabad as the flagship technical event of the year, focusing on new architectural paradigms and diversity in engineering.', hidden: false },
+        { id: 2, type: 'News', title: 'Concentrating Developer Efforts in Sindh', author: 'WTM Core', snippet: 'Mirroring global benchmarks, we are officially expanding our local networking initiatives to create stronger pipelines for junior developers.', hidden: false },
+      ]));
+
+      useEffect(() => {
+        localStorage.setItem('wtm_team', JSON.stringify(teamData));
+      }, [teamData]);
+      
+      useEffect(() => {
+        localStorage.setItem('wtm_events', JSON.stringify(eventData));
+      }, [eventData]);
+
+      useEffect(() => {
+        localStorage.setItem('wtm_blogs', JSON.stringify(blogPosts));
+      }, [blogPosts]);
+
+      useEffect(() => {
+        const handleHashChange = () => {
+          setRouteState(getHashRoute());
+        };
+        window.addEventListener('hashchange', handleHashChange);
+        return () => window.removeEventListener('hashchange', handleHashChange);
+      }, []);
+
+      const setRoute = (newRoute) => {
+        if (newRoute === route) return;
+        window.location.hash = newRoute;
+        setRouteState(newRoute);
+        window.scrollTo(0, 0);
+      };
+      
+      const renderRoute = () => {
+        if (route === '/') return <HomePage setRoute={setRoute} teamData={teamData} />;
+        if (route === '/about') return <AboutPage />;
+        if (route === '/team') return <TeamPage setRoute={setRoute} teamData={teamData} />;
+        if (route === '/events') return <EventsPage setRoute={setRoute} eventData={eventData} />;
+        if (route === '/press') return <PressPage posts={blogPosts} />;
+        if (route === '/register') return <RegistrationFormPage />;
+        if (route === '/code-of-conduct') return <CodeOfConductPage />;
+        if (route === '/admin') return <AdminPage teamData={teamData} setTeamData={setTeamData} eventData={eventData} setEventData={setEventData} blogPosts={blogPosts} setBlogPosts={setBlogPosts} />;
+        
+        if (route.startsWith('/team/')) {
+          const slug = route.split('/')[2];
+          return <TeamProfilePage slug={slug} setRoute={setRoute} teamData={teamData} />;
+        }
+        if (route.startsWith('/events/')) {
+          const slug = route.split('/')[2];
+          return <EventProfilePage slug={slug} setRoute={setRoute} eventData={eventData} />;
+        }
+        return <HomePage setRoute={setRoute} teamData={teamData} />;
+      };
+
+      return (
+        <div>
+          <Header setRoute={setRoute} currentRoute={route} />
+          <main>
+            {renderRoute()}
+          </main>
+          <Footer setRoute={setRoute} currentRoute={route} />
+        </div>
+      );
+    };

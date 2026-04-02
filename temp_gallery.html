@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<body style="font-family: sans-serif;">
+  <h2>Image Gallery</h2>
+  <div style="display: flex; flex-wrap: wrap;">
+    <script>
+      const images = ["476459415_592979563698095_8254213751046146431_n - Copy.jpg", "476906645_592979540364764_6094577014997772876_n.jpg", "476923172_592979683698083_5592383236157438793_n.jpg", "477327603_592980400364678_3971829522026014964_n.jpg", "477787146_592979610364757_3839173034906236475_n - Copy.jpg", "477789671_592979650364753_40318178328146087_n.jpg", "478132654_596286623367389_7431807413535639842_n.jpg", "478403869_596286476700737_8847670728925164592_n.jpg", "480567138_600547222941329_1479957266069263379_n.jpg", "480666990_600547282941323_3708877212823527868_n.jpg", "481252646_600547472941304_7061635916299030223_n.jpg", "DSC00156.jpg", "DSC00684.jpg", "DSC00696.jpg", "DSC01149.jpg", "DSC01169.jpg", "DSC09380.jpg", "DSC09401.jpg", "DSC09677.jpg", "DSC09710 - Copy.jpg", "DSC09711.jpg", "RAH00558.jpg", "RAH00576.jpg", "RAH00585.jpg"];
+      images.forEach(img => {
+        document.write(`<div style="width: 250px; margin: 10px; border: 1px solid black; padding: 5px;"><p style="font-size: 10px; word-wrap: break-word;">${img}</p><img src="./src/WTM Events Pictures/${img}" style="width: 100%; height: 150px; object-fit: cover;" /></div>`);
+      });
+    </script>
+  </div>
+</body>
+</html>

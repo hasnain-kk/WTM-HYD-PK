@@ -1,0 +1,1554 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>WTM Hyderabad | Official Platform</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Product+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* =========================================
+       SOLE THEME: GRIDDED WHITE MODE
+    ========================================= */
+    :root {
+      /* Logo 1 Core Colors */
+      --google-blue: #4285F4;
+      --vibrant-teal: #00C4A3;
+      --light-cyan: #80EEFF;
+      --darker-teal: #00A191;
+      --deep-blue: #1967D2;
+
+      --font-header: 'Product Sans', 'Google Sans', sans-serif;
+      --font-body: 'Product Sans', 'Google Sans', sans-serif;
+
+      --max-width: 1200px;
+      --transition-standard: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+      --border-radius-pill: 100px;
+      --border-radius-card: 24px;
+
+      --bg-primary: #FFFFFF;
+      --bg-secondary: #F8F9FA;
+      --text-primary: #202124;
+      --text-secondary: #5F6368;
+
+      --surface-bg: rgba(0, 0, 0, 0.02);
+      --surface-border: rgba(0, 0, 0, 0.08);
+      --surface-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
+      --surface-border-hover: rgba(0, 0, 0, 0.15);
+      --surface-shadow-hover: 0 12px 48px rgba(0, 0, 0, 0.08);
+
+      --header-bg: rgba(255, 255, 255, 0.85);
+      --header-border: rgba(0, 0, 0, 0.08);
+
+      --btn-bg: rgba(0, 0, 0, 0.03);
+      --btn-border: rgba(0, 0, 0, 0.15);
+      --btn-bg-hover: rgba(0, 0, 0, 0.08);
+      --btn-border-hover: #202124;
+
+      --input-bg: rgba(0, 0, 0, 0.02);
+      --footer-bg: #F8F9FA;
+
+      --grid-pattern: linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-primary);
+      background-image: var(--grid-pattern);
+      background-size: 40px 40px;
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: var(--font-header);
+      font-weight: 700;
+      margin-top: 0;
+    }
+
+    .text-accent {
+      font-family: var(--font-header);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--google-blue);
+      font-size: 0.875rem;
+      font-weight: bold;
+    }
+
+    a {
+      color: var(--google-blue);
+      text-decoration: none;
+      transition: filter var(--transition-standard);
+      cursor: pointer;
+    }
+
+    a:hover {
+      filter: brightness(1.2);
+    }
+
+    .btn-pill {
+      background: var(--btn-bg);
+      border: 2px solid var(--btn-border);
+      color: var(--text-primary);
+      border-radius: var(--border-radius-pill);
+      padding: 12px 32px;
+      font-family: var(--font-header);
+      font-weight: bold;
+      transition: all var(--transition-standard);
+      text-decoration: none;
+      display: inline-block;
+      cursor: pointer;
+      backdrop-filter: blur(4px);
+    }
+
+    .btn-pill:hover {
+      background: var(--btn-bg-hover);
+      border-color: var(--btn-border-hover);
+      box-shadow: 0 0 16px rgba(0, 0, 0, 0.05);
+      transform: translateY(-2px);
+    }
+
+    .btn-pill.primary {
+      background: linear-gradient(135deg, var(--deep-blue) 0%, var(--google-blue) 50%, var(--vibrant-teal) 100%);
+      background-size: 200% 200%;
+      border: none;
+      color: #FFFFFF;
+      box-shadow: 0 4px 16px rgba(0, 196, 163, 0.3);
+      animation: gradientShift 8s ease infinite;
+    }
+
+    @keyframes gradientShift {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .btn-pill.primary:hover {
+      box-shadow: 0 8px 32px rgba(0, 196, 163, 0.5);
+      transform: translateY(-2px);
+      color: #FFFFFF;
+    }
+
+    .layout-section {
+      padding: 120px 24px;
+    }
+
+    .grid-container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .header-container {
+      background-color: var(--header-bg);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--header-border);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 16px 0;
+    }
+
+    .surface-card {
+      background-color: var(--surface-bg);
+      backdrop-filter: blur(24px);
+      border: 1px solid var(--surface-border);
+      border-radius: var(--border-radius-card);
+      box-shadow: var(--surface-shadow);
+      transition: all var(--transition-standard);
+    }
+
+    .surface-card:hover {
+      border-color: var(--surface-border-hover);
+      box-shadow: var(--surface-shadow-hover);
+      transform: translateY(-4px);
+    }
+
+    .hero-entrance {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: heroEntrance var(--transition-standard) forwards;
+    }
+
+    .hero-entrance:nth-child(1) {
+      animation-delay: 100ms;
+    }
+
+    .hero-entrance:nth-child(2) {
+      animation-delay: 200ms;
+    }
+
+    .hero-entrance:nth-child(3) {
+      animation-delay: 300ms;
+    }
+
+    @keyframes heroEntrance {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pixelFloat {
+
+      0%,
+      100% {
+        transform: translateY(0px) rotate(0deg);
+      }
+
+      50% {
+        transform: translateY(-20px) rotate(45deg);
+      }
+    }
+
+    @keyframes pixelPulse {
+
+      0%,
+      100% {
+        opacity: 0.3;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.8;
+        transform: scale(1.1);
+      }
+    }
+
+    @keyframes glitchMove {
+      0% {
+        clip-path: inset(0 0 0 0);
+      }
+
+      5% {
+        clip-path: inset(10% 0 85% 0);
+      }
+
+      10% {
+        clip-path: inset(80% 0 5% 0);
+      }
+
+      15% {
+        clip-path: inset(0 0 0 0);
+      }
+    }
+
+    @keyframes tickerScroll {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    @keyframes tickerScrollReverse {
+      0% {
+        transform: translateX(-50%);
+      }
+
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+    .ticker-animate {
+      animation: tickerScroll 20s linear infinite;
+    }
+
+    .ticker-animate-reverse {
+      animation: tickerScrollReverse 20s linear infinite;
+    }
+
+    /* Global Image Borders for IWD Page - REMOVED AS PER USER REQUEST */
+    .iwd-page .flip-card img {
+      border: none !important;
+    }
+
+    /* =========================================
+       V22 RESPONSIVE OVERHAUL (MOBILE FIRST)
+    ========================================= */
+    .flex-responsive {
+      display: flex;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 991px) {
+      .layout-section {
+        padding: 80px 20px;
+      }
+
+      .grid-container {
+        padding: 0 20px;
+      }
+
+      h1 {
+        fontSize: 'clamp(2.5rem, 5vw, 4rem)' !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .flex-responsive {
+        flex-direction: column;
+        gap: 32px;
+      }
+
+      .layout-section {
+        padding: 60px 16px;
+      }
+
+      h1 {
+        font-size: 3rem !important;
+      }
+
+      h2 {
+        font-size: 2.25rem !important;
+      }
+
+      h3 {
+        font-size: 1.75rem !important;
+      }
+
+      .nav-link {
+        font-size: 0.875rem;
+        margin-bottom: 8px;
+      }
+
+      .header-container .grid-container {
+        justify-content: center !important;
+      }
+
+      nav {
+        gap: 16px !important;
+        margin-top: 16px;
+      }
+
+      /* IWD26 Page Specific Responsive */
+      .iwd-page h2 {
+        font-size: 3.5rem !important;
+        line-height: 1.2 !important;
+      }
+
+      .iwd-page .grid-container {
+        padding: 0 16px !important;
+      }
+
+      .iwd-page .ticker-animate,
+      .iwd-page .ticker-animate-reverse {
+        font-size: 0.875rem !important;
+        letter-spacing: 2px !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .iwd-page h2 {
+        font-size: 2.5rem !important;
+      }
+
+      .btn-pill {
+        padding: 10px 24px;
+        font-size: 1rem;
+        width: 100%;
+        text-align: center;
+      }
+
+      .flex-responsive img {
+        max-width: 100% !important;
+        margin: 0 auto;
+      }
+    }
+
+    /* Flip Card Interaction */
+    .flip-card {
+      background-color: transparent;
+      perspective: 1000px;
+      width: 100%;
+      height: 500px;
+      cursor: pointer;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      transform-style: preserve-3d;
+    }
+
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front,
+    .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      overflow: hidden;
+      border-radius: 32px;
+    }
+
+    .flip-card-front img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .flip-card-back {
+      background-color: #0033BD;
+      color: white;
+      transform: rotateY(180deg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      border: 4px solid #00E5FF;
+      box-shadow: inset 0 0 40px rgba(0, 229, 255, 0.2);
+      box-sizing: border-box;
+    }
+
+    .flip-card-back h3 {
+      font-size: 2.2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin: 0;
+      font-weight: bold;
+      line-height: 1.2;
+    }
+
+    input {
+      background: var(--input-bg);
+      color: var(--text-primary);
+      border: 1px solid var(--surface-border);
+      border-radius: 8px;
+      transition: all var(--transition-standard);
+    }
+
+    input:focus {
+      outline: none;
+      border-color: var(--google-blue);
+      box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.2);
+    }
+
+    .nav-link {
+      font-family: var(--font-header);
+      font-weight: bold;
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      color: var(--text-primary);
+      transition: filter 0.3s;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .footer-link {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.3s;
+      font-weight: bold;
+      cursor: pointer;
+      font-family: var(--font-header);
+    }
+
+    /* RWD Engine: Mobile Overrides & Side Frame Logic */
+    .flex-responsive {
+      display: flex;
+      align-items: center;
+      gap: 48px;
+    }
+
+    .flex-responsive.reverse {
+      flex-direction: row-reverse;
+    }
+
+    .flex-responsive>div {
+      flex: 1;
+    }
+
+    .side-frame-img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: var(--border-radius-card);
+      box-shadow: var(--surface-shadow-hover);
+      border: 4px solid var(--surface-bg);
+    }
+
+    @media (max-width: 900px) {
+
+      .flex-responsive,
+      .flex-responsive.reverse {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .flex-responsive>div {
+        width: 100%;
+      }
+
+      .side-frame-img {
+        height: 300px;
+      }
+
+      .layout-section {
+        padding: 64px 16px;
+      }
+
+      .header-container .grid-container {
+        flex-direction: column;
+        gap: 16px;
+        justify-content: center;
+        align-items: center;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px !important;
+      }
+
+      h1 {
+        font-size: 2.5rem !important;
+      }
+
+      h2 {
+        font-size: 2.25rem !important;
+      }
+    }
+  </style>
+
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script id="luma-checkout" src="https://embed.lu.ma/checkout-button.js"></script>
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const { useState, useEffect } = React;
+
+    const sharedTeamData = [
+      {
+        id: 1,
+        slug: 'robina-mirbahar',
+        name: 'Robina Mirbahar',
+        role: 'Ambassador',
+        gender: 'female',
+        bio: 'Robina serves as a crucial bridge between local talent and global technical ecosystems. Her drive to empower marginalized professionals natively within Sindh has scaled the WTM operations profoundly. She actively curates safe spaces for learning and leads mentorship pipelines directly prioritizing young girls.',
+        photoUrl: './src/WTM Events Pictures/Robina Picture/Robina Mirbahar.jpg',
+        socials: [
+          { platform: 'LinkedIn', url: 'https://www.linkedin.com/in/robina-mirbahar-7538a7151/' },
+          { platform: 'Twitter', url: '#' }
+        ]
+      },
+      {
+        id: 2,
+        slug: 'hasnain-kk',
+        name: 'Hasnain KK',
+        role: 'Organizer',
+        gender: 'male',
+        bio: 'Hasnain is a technical architect overseeing the expansion of Women Techmakers Hyderabad. His focus is on establishing robust technical pipelines and promoting inclusive leadership across Sindh. He is deeply committed to empowering juniors and mapping community growth with real-world developer tools.',
+        photoUrl: 'https://ui-avatars.com/api/?name=Hasnain+KK&background=EAEAEA&color=4285F4&size=400&bold=true',
+        socials: [
+          { platform: 'LinkedIn', url: '#' },
+          { platform: 'GitHub', url: '#' }
+        ]
+      },
+      {
+        id: 3,
+        slug: 'tunjina',
+        name: 'Tunjina',
+        role: 'Organizer',
+        gender: 'female',
+        bio: 'Tunjina serves as a lead organizer for Women Techmakers Hyderabad, focusing on community outreach and educational curriculum design. She is passionate about closing the gender gap in technology through accessible mentorship and technical skill-sharing.',
+        photoUrl: 'https://ui-avatars.com/api/?name=Tunjina&background=EAEAEA&color=00C4A3&size=400&bold=true',
+        socials: [
+          { platform: 'LinkedIn', url: '#' }
+        ]
+      },
+      {
+        id: 4,
+        slug: 'hurain',
+        name: 'Hurain',
+        role: 'Organizer',
+        gender: 'female',
+        bio: 'Hurain is a core organizer at WTM Hyderabad, facilitating large-scale technical gatherings and local meetups. She works on optimizing the attendee experience and ensuring every event fosters a culture of inclusivity and professional growth.',
+        photoUrl: 'https://ui-avatars.com/api/?name=Hurain&background=EAEAEA&color=1967D2&size=400&bold=true',
+        socials: [
+          { platform: 'LinkedIn', url: '#' }
+        ]
+      }
+    ];
+
+    const sharedEventData = [
+      {
+        slug: 'IWD26Event',
+        id: 1,
+        title: 'Break The Pattern: IWD 2026 Baithak',
+        date: '13 April 2026',
+        status: 'Upcoming',
+        description: 'Step into the ecosystem. Our annual flagship gathering focused on technical leadership, career scaling, and inclusive mentorship for women of all professions.',
+        registration_link: '#/iwd26',
+        coverImage: './src/WTM Events Pictures/IWD26/Event lookup.jpg'
+      },
+      {
+        slug: 'impact-future-2024',
+        id: 2,
+        title: 'Impact the Future 2024',
+        date: 'April 2024',
+        status: 'Past',
+        description: 'Our monumental conference bringing together hundreds of developers and leaders across Sindh. Focused on cloud infrastructure and community building.',
+        registration_link: null,
+        coverImage: './src/WTM Events Pictures/RAH00576.jpg'
+      },
+      {
+        slug: 'accelerate-action-2025',
+        id: 3,
+        title: 'Accelerate Action 2025',
+        date: 'March 2025',
+        status: 'Past',
+        description: 'An aggressive tech leap highlighting actionable skills in AI, data analytics, and full-stack development, hosted entirely by female leaders.',
+        registration_link: null,
+        coverImage: './src/WTM Events Pictures/478403869_596286476700737_8847670728925164592_n.jpg'
+      }
+    ];
+
+    const Header = ({ setRoute, currentRoute }) => (
+      <header className="header-container">
+        <div className="grid-container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%', flexWrap: 'wrap' }}>
+          <div style={{ cursor: 'pointer', marginBottom: '8px' }} onClick={() => setRoute('/')}>
+            <img
+              src="./src/Logo/2.png"
+              alt="WTM Hyderabad"
+              style={{ height: '40px', display: 'block' }}
+            />
+          </div>
+          <nav style={{ display: 'flex', gap: '32px', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center' }}>
+            {currentRoute !== '/' && <span onClick={() => setRoute('/')} className="nav-link" style={{ fontWeight: 'bold', color: 'var(--google-blue)' }}>Home</span>}
+            <span onClick={() => setRoute('/about')} className="nav-link">About</span>
+            <span onClick={() => setRoute('/team')} className="nav-link">Team</span>
+            <span onClick={() => setRoute('/events')} className="nav-link">Events</span>
+            <span onClick={() => setRoute('/iwd26')} className="nav-link" style={{ fontWeight: 'bold', color: '#FFFFFF', background: '#0033BD', padding: '6px 16px', borderRadius: '100px' }}>IWD 26</span>
+          </nav>
+        </div>
+      </header>
+    );
+
+    const HomePage = ({ setRoute }) => (
+      <div>
+        <section className="layout-section" style={{ minHeight: '80vh', display: 'flex', alignItems: 'center', background: 'linear-gradient(rgba(255,255,255,0.65), rgba(255,255,255,0.8)), url("./src/WTM Events Pictures/RAH00576.jpg") center/cover no-repeat' }}>
+          <div className="grid-container" style={{ textAlign: 'center', width: '100%', position: 'relative', zIndex: 1 }}>
+            <div style={{ maxWidth: '900px', margin: '0 auto', color: 'var(--text-primary)' }}>
+
+              <h1 className="hero-entrance" style={{ fontSize: 'clamp(3rem, 6vw, 5rem)', lineHeight: 1.1, marginBottom: '24px' }}>
+                <span style={{ color: 'var(--deep-blue)', display: 'block' }}>Women Techmakers</span>
+                <span style={{ color: 'var(--vibrant-teal)', display: 'block' }}>Hyderabad Chapter</span>
+              </h1>
+
+              <p className="hero-entrance" style={{ fontSize: '1.5rem', marginBottom: '48px', color: 'var(--text-secondary)', maxWidth: '700px', margin: '0 auto 48px auto' }}>
+                An inclusive ecosystem building community, visibility, and resources to accelerate equity and empower women across all professions.
+              </p>
+
+              <div className="hero-entrance" style={{ display: 'flex', gap: '24px', justifyContent: 'center' }}>
+                <span className="btn-pill primary" style={{ fontSize: '1.125rem' }} onClick={() => setRoute('/events')}>Explore Events</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="layout-section">
+          <div className="grid-container">
+            <div style={{ textAlign: 'center', marginBottom: '80px' }}>
+              <h2 style={{ fontSize: '2rem', margin: 0, color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '2px' }}>THE MISSION</h2>
+            </div>
+            <div className="surface-card" style={{ padding: '48px', borderLeft: '4px solid var(--vibrant-teal)', background: 'linear-gradient(135deg, rgba(25, 103, 210, 0.85), rgba(0, 196, 163, 0.85)), url("./src/WTM Events Pictures/DSC00684.jpg") center/cover' }}>
+              <div className="flex-responsive" style={{ alignItems: 'center' }}>
+                <div>
+                  <h3 style={{ fontSize: '3rem', margin: 0, marginBottom: '24px', color: '#FFFFFF' }}>Empowering Professionals, Focusing on Tech</h3>
+                  <p style={{ fontSize: '1.25rem', color: '#FFFFFF', lineHeight: 1.8, textAlign: 'left' }}>
+                    Women Techmakers Hyderabad Pakistan is dedicated to empowering women of every profession and at any age. While we gather and support women from all general fields, our core focus and passion remain rooted in technology.
+                  </p>
+                </div>
+                <div>
+                  <img src="./src/WTM Events Pictures/DSC09677.jpg" alt="WTM Audience" className="side-frame-img" style={{ borderColor: '#FFFFFF' }} />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="layout-section" style={{ backgroundColor: 'var(--bg-secondary)', borderTop: '1px solid var(--surface-border)' }}>
+          <div className="grid-container" style={{ display: 'flex', gap: '64px', alignItems: 'center', flexWrap: 'wrap' }}>
+            <div style={{ flex: '1 1 300px', textAlign: 'center' }}>
+              <h2 style={{ fontSize: '3rem', marginBottom: '24px', color: 'var(--text-primary)' }}>What we do?</h2>
+              <p style={{ fontSize: '1.125rem', color: 'var(--text-secondary)', lineHeight: 1.8, marginBottom: '24px' }}>
+                Women Techmakers Hyderabad organizes high-impact events for professionals and enthusiasts who are interested in continuous knowledge transfer and professional networking.
+              </p>
+              <span className="btn-pill" style={{ borderColor: 'var(--vibrant-teal)', display: 'inline-block', color: 'var(--vibrant-teal)' }} onClick={() => setRoute('/events')}>Learn More</span>
+            </div>
+
+            <div style={{ flex: '2 1 500px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '40px', textAlign: 'center' }}>
+              <div>
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--text-secondary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '16px' }}><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                <h3 style={{ fontSize: '1.25rem', marginBottom: '12px' }}>Tech Conferences</h3>
+                <p style={{ fontSize: '1rem', color: 'var(--text-secondary)' }}>Get updated with the latest industry news and ecosystem announcements.</p>
+              </div>
+              <div>
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--text-secondary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '16px' }}><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                <h3 style={{ fontSize: '1.25rem', marginBottom: '12px' }}>Workshops</h3>
+                <p style={{ fontSize: '1rem', color: 'var(--text-secondary)' }}>Get hands-on experience and guidance from leading technical community members.</p>
+              </div>
+              <div>
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--text-secondary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '16px' }}><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                <h3 style={{ fontSize: '1.25rem', marginBottom: '12px' }}>Meetups</h3>
+                <p style={{ fontSize: '1rem', color: 'var(--text-secondary)' }}>Share knowledge, expand your network, and connect with engineers across Sindh.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="layout-section">
+          <div className="grid-container">
+            <div style={{ textAlign: 'center', marginBottom: '80px' }}>
+              <h2 style={{ fontSize: '2rem', margin: 0, color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '2px' }}>MEET THE AMBASSADOR</h2>
+            </div>
+            <div className="flex-responsive" style={{ alignItems: 'center' }}>
+              <div>
+                <img src="./src/WTM Events Pictures/Robina Picture/Robina Mirbahar.jpg" alt="Robina Mirbahar - WTM Ambassador" className="side-frame-img" style={{ borderColor: 'var(--google-blue)' }} />
+              </div>
+              <div>
+                <h3 style={{ fontSize: '3rem', margin: 0, marginBottom: '24px', color: 'var(--deep-blue)' }}>Robina Mirbahar</h3>
+                <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', lineHeight: 1.8, textAlign: 'left' }}>
+                  As the official ambassador of Women Techmakers Hyderabad, Robina continuously pioneers initiatives that elevate women of all professions and ages, with a passionate core focus on engineers and technologists across the region. Under her leadership, the community has seen unparalleled technical scaling and inclusive empowerment initiatives.
+                </p>
+                <div style={{ marginTop: '32px' }}>
+                  <span className="btn-pill" style={{ borderColor: 'var(--vibrant-teal)', display: 'inline-block' }} onClick={() => setRoute('/team/robina-mirbahar')}>View Robina's Profile</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section style={{ padding: '64px 0', textAlign: 'center', backgroundColor: '#FFFFFF' }}>
+          <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)', color: 'var(--deep-blue)', fontStyle: 'italic', margin: 0 }}>
+            Together we Rise. <span style={{ color: 'var(--vibrant-teal)' }}>Together We Lead.</span>
+          </h2>
+        </section>
+
+        {/* Home Page Metrics (Impact in Numbers - V23) */}
+        <section className="layout-section" style={{ backgroundColor: 'var(--bg-secondary)', borderTop: '1px solid var(--surface-border)', borderBottom: '1px solid var(--surface-border)' }}>
+          <div className="grid-container">
+            <h2 style={{ fontSize: '3rem', textAlign: 'center', marginBottom: '80px', color: 'var(--deep-blue)' }}>Impact in Numbers</h2>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '48px' }}>
+              <div className="surface-card" style={{ padding: '64px 32px', textAlign: 'center' }}>
+                <h3 style={{ fontSize: '4.5rem', margin: 0, color: 'var(--deep-blue)', animation: 'pulse 2s infinite' }}>1000+</h3>
+                <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '1px' }}>Participants Engaged</p>
+              </div>
+              <div className="surface-card" style={{ padding: '64px 32px', textAlign: 'center' }}>
+                <h3 style={{ fontSize: '4.5rem', margin: 0, color: 'var(--vibrant-teal)' }}>6+</h3>
+                <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '1px' }}>High-Impact Events</p>
+              </div>
+              <div className="surface-card" style={{ padding: '64px 32px', textAlign: 'center' }}>
+                <h3 style={{ fontSize: '4.5rem', margin: 0, color: 'var(--deep-blue)' }}>4+</h3>
+                <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '1px' }}>Years of Empowerment</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="layout-section" style={{ position: 'relative' }}>
+          <div className="grid-container" style={{ position: 'relative', zIndex: 1 }}>
+            <h2 style={{ fontSize: '3rem', marginBottom: '40px', textAlign: 'center' }}>Flagship Event</h2>
+            <div className="surface-card" style={{ padding: '64px', position: 'relative', overflow: 'hidden', maxWidth: '800px', margin: '0 auto', textAlign: 'center', background: 'linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.85)), url("./src/WTM Events Pictures/477327603_592980400364678_3971829522026014964_n.jpg") center/cover' }}>
+              <span style={{ display: 'inline-block', backgroundColor: '#00C4A3', color: '#FFFFFF', padding: '10px 24px', borderRadius: '100px', fontFamily: 'var(--font-header)', fontSize: '1rem', fontWeight: 'bold', marginBottom: '32px', textTransform: 'uppercase', boxShadow: '0 4px 12px rgba(0, 196, 163, 0.3)' }}>• Live Now</span>
+              <h3 style={{ fontSize: '3.5rem', marginBottom: '24px', color: 'var(--deep-blue)' }}>Break The Pattern</h3>
+              <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', marginBottom: '40px', lineHeight: 1.6 }}>
+                Step into the high-frequency ecosystem of Women Techmakers Hyderabad. Register for our 2026 flagship annual milestone focused on technical leadership and professional scaling.
+              </p>
+              <span className="btn-pill primary" style={{ display: 'inline-block' }} onClick={() => setRoute('/iwd26')}>Join the Flagship</span>
+            </div>
+          </div>
+        </section>
+      </div>
+    );
+
+    const AboutPage = () => (
+      <div>
+        <section className="layout-section" style={{ background: 'linear-gradient(rgba(0, 196, 163, 0.85), rgba(66, 133, 244, 0.85)), url("./src/WTM Events Pictures/DSC09380.jpeg") center/cover border-box' }}>
+          <div className="grid-container">
+            <div style={{ textAlign: 'center', marginBottom: '64px' }}>
+              <h2 style={{ fontSize: '3.5rem', margin: 0, color: '#FFFFFF' }}>About Our Chapter</h2>
+            </div>
+            <div className="flex-responsive" style={{ alignItems: 'center' }}>
+              <div className="surface-card" style={{ padding: '48px', maxWidth: '900px', margin: '0 auto', background: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(16px)' }}>
+                <p style={{ fontSize: '1.25rem', color: '#FFFFFF', lineHeight: 1.8, textAlign: 'left' }}>
+                  Women Techmakers Hyderabad Pakistan is a highly active and inclusive community initiative by Women Techmakers. Built to concentrate the mentorship and empowerment efforts of professionals across Sindh, our goal is to help women from all professional fields, with a core focus on technology, to learn, scale, and become highly productive.
+                  <br /><br />
+                  We operate large-scale workshops, host our massive flagship International Women's Day events, and foster a culture of continuous knowledge transfer for women of every age and background.
+                </p>
+              </div>
+              <div>
+                <img src="./src/WTM Events Pictures/RAH00558.jpeg" alt="WTM Community" className="side-frame-img" style={{ borderColor: '#FFFFFF' }} />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="layout-section" style={{ background: 'linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.9)), url("./src/WTM Events Pictures/478403869_596286476700737_8847670728925164592_n.jpg") center/cover border-box', transition: 'background-color var(--transition-standard)' }}>
+          <div className="grid-container" style={{ textAlign: 'center' }}>
+            <h2 style={{ fontSize: '3rem', marginBottom: '24px', textAlign: 'center' }}>Our Partners and Collaborators</h2>
+            <p style={{ textAlign: 'center', color: 'var(--text-secondary)', fontSize: '1.25rem', marginBottom: '64px' }}>Collaborating to empower the next generation of technical leaders.</p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '32px' }}>
+              {[
+                { name: 'WTM', logo: 'WTM.png' },
+                { name: 'NIC Hyderabad', logo: 'Nic Hyderabad.png' },
+                { name: 'SheCloud', logo: 'She Cloud.jpg' },
+                { name: 'Vibe Coders Pakistan', logo: 'Vibe Coders Pakistan.png' }
+              ].map((partner, i) => (
+                <div key={i} className="surface-card" style={{ padding: '40px 32px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#FFFFFF' }}>
+                   <img src={`./src/WTM Events Pictures/Partners/${partner.logo}`} alt={partner.name} style={{ maxHeight: '60px', maxWidth: '100%', objectFit: 'contain' }} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="layout-section" style={{ backgroundColor: 'var(--bg-secondary)', borderTop: '1px solid var(--surface-border)' }}>
+          <div className="grid-container">
+            <h2 style={{ fontSize: '3rem', textAlign: 'center', marginBottom: '64px' }}>Get Involved</h2>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '32px' }}>
+              <div id="sponsor" className="surface-card" style={{ padding: '48px', textAlign: 'center', display: 'flex', flexDirection: 'column' }}>
+                <h3 style={{ fontSize: '2rem', marginBottom: '16px', color: 'var(--google-blue)' }}>Sponsor Us</h3>
+                <p style={{ fontSize: '1.125rem', color: 'var(--text-secondary)', marginBottom: '32px', flexGrow: 1 }}>Empower the ecosystem by partnering with our annual flagship initiatives.</p>
+                <a href="mailto:women.techmakers.hyd.pk@gmail.com?subject=Sponsor Inquiry" className="btn-pill" style={{ borderColor: 'var(--google-blue)' }}>Email Partnership Team</a>
+              </div>
+              <div id="mentor" className="surface-card" style={{ padding: '48px', textAlign: 'center', display: 'flex', flexDirection: 'column' }}>
+                <h3 style={{ fontSize: '2rem', marginBottom: '16px', color: 'var(--vibrant-teal)' }}>Mentor or Speaker</h3>
+                <p style={{ fontSize: '1.125rem', color: 'var(--text-secondary)', marginBottom: '32px', flexGrow: 1 }}>Share your journey, teach a workshop, and inspire the next generation.</p>
+                <a href="mailto:women.techmakers.hyd.pk@gmail.com?subject=Speaker/Mentor Inquiry" className="btn-pill" style={{ borderColor: 'var(--vibrant-teal)' }}>Submit Interest</a>
+              </div>
+              <div id="join" className="surface-card" style={{ padding: '48px', textAlign: 'center', display: 'flex', flexDirection: 'column' }}>
+                <h3 style={{ fontSize: '2rem', marginBottom: '16px', color: 'var(--deep-blue)' }}>Join the Team</h3>
+                <p style={{ fontSize: '1.125rem', color: 'var(--text-secondary)', marginBottom: '32px', flexGrow: 1 }}>We are actively looking for passionate community organizers to scale our mission.</p>
+                <a href="mailto:women.techmakers.hyd.pk@gmail.com?subject=Team Application" className="btn-pill" style={{ borderColor: 'var(--deep-blue)' }}>Apply for Core</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    );
+
+    const TeamPage = ({ setRoute, teamData = [] }) => {
+      const visibleTeam = teamData.filter(m => !m.hidden);
+      return (
+        <div className="layout-section">
+          <section className="grid-container">
+            <h1 style={{ fontSize: '4rem', marginBottom: '64px', textAlign: 'center', color: 'var(--deep-blue)' }}>Meet Our Team</h1>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))', gap: '32px', justifyContent: 'center' }}>
+              {visibleTeam.map((member) => (
+                <div key={member.id} className="surface-card" style={{ padding: '40px', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+                  <div style={{ width: '180px', height: '180px', borderRadius: '50%', overflow: 'hidden', marginBottom: '32px', border: `4px solid ${member.gender === 'male' ? '#4285F4' : '#34A853'}`, boxSizing: 'border-box' }}>
+                    <img src={member.photoUrl} alt={member.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  </div>
+                  <h3 style={{ fontSize: '1.75rem', marginBottom: '8px' }}>{member.name}</h3>
+                  <p className="text-accent" style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', marginBottom: '32px' }}>{member.role}</p>
+                  <span className="btn-pill" style={{ marginTop: 'auto' }} onClick={() => setRoute(`/team/${member.slug}`)}>Review Identity</span>
+                </div>
+              ))}
+            </div>
+          </section>
+        </div>
+      );
+    };
+
+    const EventsPage = ({ setRoute, eventData = [] }) => {
+      const [activeTab, setActiveTab] = useState('upcoming');
+      const events = eventData.filter(e => !e.hidden && (activeTab === 'upcoming' ? e.status === 'Upcoming' : e.status === 'Past'));
+      return (
+        <div className="layout-section" style={{ background: 'linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.95)), url("./src/WTM Events Pictures/DSC01149.jpeg") center/cover border-box' }}>
+          <div className="grid-container">
+            <h1 style={{ fontSize: '4rem', marginBottom: '48px', textAlign: 'center', paddingBottom: '12px', color: 'var(--deep-blue)' }}>Session Catalog</h1>
+            <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '64px', backgroundColor: 'var(--surface-bg)', padding: '6px', borderRadius: '100px', maxWidth: '500px', margin: '0 auto 64px auto', border: '1px solid var(--surface-border)' }}>
+              <button className={`btn-pill ${activeTab === 'upcoming' ? 'primary' : ''}`} style={{ flex: 1, border: 'none', background: activeTab === 'upcoming' ? 'var(--google-blue)' : 'transparent', color: activeTab === 'upcoming' ? '#FFF' : 'var(--text-secondary)' }} onClick={() => setActiveTab('upcoming')}>Scheduled</button>
+              <button className={`btn-pill ${activeTab === 'archive' ? 'primary' : ''}`} style={{ flex: 1, border: 'none', background: activeTab === 'archive' ? 'var(--google-blue)' : 'transparent', color: activeTab === 'archive' ? '#FFF' : 'var(--text-secondary)' }} onClick={() => setActiveTab('archive')}>Archived</button>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(360px, 1fr))', gap: '40px', justifyContent: 'center' }}>
+              {events.map((e, i) => (
+                <div key={i} className="surface-card" style={{ padding: '40px', display: 'flex', flexDirection: 'column' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '32px' }}>
+                    <span className="text-accent" style={{ padding: '6px 12px', border: '1px solid var(--surface-border)', borderRadius: '6px', color: activeTab === 'upcoming' ? 'var(--vibrant-teal)' : 'var(--text-secondary)' }}>{e.status}</span>
+                    <span className="text-accent" style={{ color: 'var(--text-secondary)' }}>{e.date}</span>
+                  </div>
+                  <h3 style={{ fontSize: '2.25rem', marginBottom: '24px' }}>{e.title}</h3>
+                  <p style={{ color: 'var(--text-secondary)', lineHeight: 1.8, fontSize: '1.125rem', marginBottom: '40px', flexGrow: 1 }}>{e.description}</p>
+                  <button onClick={() => {
+                    if (e.slug === 'IWD26Event') {
+                      setRoute('/iwd26');
+                    } else {
+                      setRoute(`/events/${e.slug}`);
+                    }
+                  }} className={`btn-pill ${activeTab === 'upcoming' ? 'primary' : ''}`} style={{ width: '100%' }}>{activeTab === 'upcoming' ? 'Initialize Registration' : 'View Details'}</button>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      );
+    };
+
+
+
+    const RegistrationFormPage = () => {
+      const [role, setRole] = useState('');
+      const [email, setEmail] = useState('');
+      const [submitted, setSubmitted] = useState(false);
+      const [error, setError] = useState('');
+
+      const handleRegister = (e) => {
+        e.preventDefault();
+        const roleLower = role.toLowerCase();
+        if (!roleLower.includes('developer') && !roleLower.includes('engineer') && !roleLower.includes('professional') && roleLower !== 'tech') {
+          setError("Notice: Looking for 'Tech Professional' aligned roles at this time.");
+          return;
+        }
+        setError('');
+        setSubmitted(true);
+      };
+
+      if (submitted) {
+        return (
+          <div className="layout-section">
+            <div className="grid-container">
+              <div className="surface-card" style={{ textAlign: 'center', padding: '64px', maxWidth: '600px', margin: '0 auto', border: '1px solid var(--vibrant-teal)' }}>
+                <p className="text-accent" style={{ color: 'var(--vibrant-teal)', marginBottom: '16px' }}>Status OK</p>
+                <h2 style={{ fontSize: '2.5rem', marginBottom: '24px' }}>Registration Received</h2>
+                <p style={{ fontSize: '1.125rem', color: 'var(--text-secondary)', lineHeight: 1.8 }}>
+                  We've successfully received your request for the Baithak. We're reviewing invitations now to keep the circle intimate. We'll deploy an email to you soon.
+                </p>
+              </div>
+            </div>
+          </div>
+        );
+      }
+
+      return (
+        <div className="layout-section" style={{ background: 'linear-gradient(rgba(25, 103, 210, 0.85), rgba(0, 196, 163, 0.9)), url("./src/WTM Events Pictures/RAH00585.jpg") center/cover no-repeat' }}>
+          <div className="grid-container">
+            <form className="surface-card" onSubmit={handleRegister} style={{ padding: '64px', maxWidth: '600px', margin: '0 auto' }}>
+              <p className="text-accent" style={{ color: 'var(--deep-blue)', marginBottom: '16px' }}>SECURE ACCESS</p>
+              <h2 style={{ fontSize: '2.5rem', marginBottom: '32px' }}>Request Baithak Invitation</h2>
+              {error && <p className="text-accent" style={{ color: 'var(--google-blue)', marginBottom: '24px' }}>{error}</p>}
+
+              <div style={{ marginBottom: '24px' }}>
+                <label htmlFor="email" className="text-accent" style={{ display: 'block', marginBottom: '12px' }}>Email Address</label>
+                <input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} required style={{ width: '100%', padding: '16px', boxSizing: 'border-box' }} />
+              </div>
+              <div style={{ marginBottom: '40px' }}>
+                <label htmlFor="role" className="text-accent" style={{ display: 'block', marginBottom: '12px' }}>Current System Role</label>
+                <input type="text" id="role" placeholder="e.g. Lead Engineer, Tech Professional" value={role} onChange={(e) => setRole(e.target.value)} required style={{ width: '100%', padding: '16px', boxSizing: 'border-box' }} />
+              </div>
+              <button type="submit" className="btn-pill primary" style={{ width: '100%' }}>Execute Request</button>
+            </form>
+          </div>
+        </div>
+      );
+    };
+
+    const CodeOfConductPage = () => (
+      <div className="layout-section" style={{ background: 'linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.95)), url("./src/WTM Events Pictures/DSC09710 - Copy.jpg") center/cover border-box', minHeight: '80vh' }}>
+        <div className="grid-container" style={{ maxWidth: '900px', margin: '0 auto' }}>
+          <h1 style={{ fontSize: '4rem', marginBottom: '16px', color: 'var(--deep-blue)', textAlign: 'center' }}>Code of Conduct</h1>
+          <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', textAlign: 'center', marginBottom: '48px' }}>Empowering a safe, diverse, and robust technical environment.</p>
+
+          <div className="surface-card" style={{ padding: '48px', marginBottom: '32px', backgroundColor: 'var(--bg-primary)' }}>
+            <h3 style={{ fontSize: '2rem', marginBottom: '24px', color: 'var(--google-blue)' }}>Anti-Harassment Policy</h3>
+            <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', lineHeight: 1.8 }}>
+              Women Techmakers Hyderabad is aggressively committed to providing a fully harassment-free and deeply inclusive experience for everyone. We unconditionally welcome participants regardless of gender identity and expression, sexual orientation, disabilities, neurodiversity, physical appearance, body size, ethnicity, nationality, race, age, religion, or any other protected category. We do not tolerate harassment of event participants in absolutely any form.
+            </p>
+          </div>
+
+          <div id="community-guidelines" className="surface-card" style={{ padding: '48px', marginBottom: '32px', backgroundColor: 'var(--bg-primary)' }}>
+            <h3 style={{ fontSize: '2rem', marginBottom: '24px', color: 'var(--vibrant-teal)' }}>Community Guidelines</h3>
+            <ul style={{ fontSize: '1.125rem', color: 'var(--text-secondary)', lineHeight: 1.8, paddingLeft: '24px' }}>
+              <li style={{ marginBottom: '16px' }}><strong>Be excellent to each other.</strong> Empathy is the core of our community ecosystem.</li>
+              <li style={{ marginBottom: '16px' }}><strong>Treat everyone with respect.</strong> Participate while actively acknowledging that everyone in the room deserves to be here just as much as you do.</li>
+              <li style={{ marginBottom: '16px' }}><strong>Communicate clearly and constructively.</strong> Share ideas relentlessly without resorting to personal attacks, competitive hostility, or demeaning remarks.</li>
+              <li><strong>Zero Tolerance for Disruption.</strong> Event participants decisively violating these rules will be formally sanctioned or completely expelled from the current event at the immediate discretion of the core organizers.</li>
+            </ul>
+          </div>
+
+          <div style={{ backgroundColor: '#FCE8E6', border: '1px solid #FAD2CF', padding: '32px', borderRadius: '16px', textAlign: 'center', boxShadow: '0 8px 24px rgba(217,48,37,0.1)' }}>
+            <span style={{ fontSize: '2rem', display: 'block', marginBottom: '16px' }}>📸</span>
+            <h4 style={{ fontSize: '1.5rem', color: '#D93025', marginBottom: '12px' }}>Photography Disclaimer</h4>
+            <p style={{ fontSize: '1.125rem', color: '#3C4043', lineHeight: 1.6, margin: 0 }}>
+              <strong>By attending this event, you understand and consent that you will be photographed and recorded.</strong> These materials will be utilized by Women Techmakers Hyderabad heavily for internal documentation, widespread marketing purposes, and global social media outreach.
+            </p>
+          </div>
+        </div>
+      </div>
+    );
+
+    const IWD2026Page = ({ setRoute }) => {
+      const bgBlue = '#0033BD';
+      const textWhite = '#FFFFFF';
+      const accentTeal = '#00E5FF';
+
+      const flipItems = [
+        { img: './src/WTM Events Pictures/RAH00558.jpeg', text: 'Break the Pattern' },
+        { img: './src/WTM Events Pictures/476613968_592980670364651_2431061071089222586_n.jpg', text: 'Redefine Possible' },
+        { img: './src/WTM Events Pictures/478132654_596286623367389_7431807413535639842_n.jpg', text: 'Together We Lead' },
+        { img: './src/WTM Events Pictures/480666990_600547282941323_3708877212823527868_n.jpg', text: 'Together We Rise' },
+        { img: './src/WTM Events Pictures/DSC00696.jpg', text: 'Empowering Women' },
+        { img: './src/WTM Events Pictures/DSC01149.jpeg', text: 'Tech Leadership' }
+      ];
+
+      return (
+        <div className="iwd-page" style={{ color: textWhite, minHeight: '100vh', position: 'relative', overflow: 'hidden' }}>
+          {/* Animated Background Pixels (Denser Texture) */}
+          <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, pointerEvents: 'none' }}>
+            {[...Array(150)].map((_, i) => (
+              <div key={i} style={{
+                position: 'absolute',
+                width: Math.random() * 15 + 5 + 'px',
+                height: Math.random() * 15 + 5 + 'px',
+                backgroundColor: i % 2 === 0 ? accentTeal : '#FFFFFF',
+                top: `${Math.random() * 100}%`,
+                left: `${Math.random() * 100}%`,
+                opacity: 0.1,
+                animation: `pixelFloat ${Math.random() * 12 + 10}s infinite ease-in-out, pixelPulse ${Math.random() * 4 + 2}s infinite alternate`,
+                animationDelay: `${Math.random() * 5}s`,
+                borderRadius: '2px'
+              }}></div>
+            ))}
+          </div>
+
+          {/* Hero Section (Textured White Background) */}
+          <section className="layout-section" style={{
+            backgroundColor: '#FFFFFF',
+            minHeight: '85vh',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            position: 'relative',
+            zIndex: 1,
+            paddingBottom: '80px',
+            background: 'linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url("./src/WTM Events Pictures/480567138_600547222941329_1479957266069263379_n.jpg") center/cover'
+          }}>
+            <div className="grid-container" style={{ textAlign: 'center' }}>
+              <div style={{ display: 'inline-block' }}>
+                <img
+                  src="./src/WTM Events Pictures/IWD26/IWD26 Logo.png"
+                  alt="IWD 2026 Logo"
+                  style={{
+                    maxWidth: '850px',
+                    width: '100%',
+                    borderRadius: '24px'
+                  }}
+                />
+              </div>
+            </div>
+          </section>
+
+          {/* IWD Strip After Hero (Synchronized) */}
+          <div style={{ backgroundColor: '#1CE9B6', color: '#FFFFFF', padding: '12px 0', overflow: 'hidden', whiteSpace: 'nowrap' }}>
+            <div className="ticker-animate" style={{ display: 'inline-block', fontSize: '1.1rem', fontWeight: 'bold', letterSpacing: '4px', textTransform: 'uppercase' }}>
+              {[...Array(10)].map((_, i) => (
+                <span key={i}>International Women's Day 2026    -    </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Hyderabad in Urdu (Solid Black Header - Reduced Space) */}
+          <section style={{ backgroundColor: '#FFFFFF', padding: '40px 0 20px 0', textAlign: 'center', overflow: 'hidden' }}>
+            <h2 style={{
+              fontSize: '12rem',
+              margin: 0,
+              color: '#000000',
+              fontFamily: '"Noto Sans Arabic", "Simplified Arabic", serif',
+              transform: 'scaleX(1.8)',
+              display: 'inline-block',
+              whiteSpace: 'nowrap',
+              opacity: 1,
+              fontWeight: 'bold'
+            }}>
+              حیدرآباد
+            </h2>
+          </section>
+
+          {/* Break The Pattern Strip After Hyderabad Header (Synchronized) */}
+          <div style={{ backgroundColor: '#1CE9B6', color: '#FFFFFF', padding: '12px 0', overflow: 'hidden', whiteSpace: 'nowrap' }}>
+            <div className="ticker-animate-reverse" style={{ display: 'inline-block', fontSize: '1.1rem', fontWeight: 'bold', letterSpacing: '4px', textTransform: 'uppercase' }}>
+              {[...Array(10)].map((_, i) => (
+                <span key={i}>Break The Pattern    -    </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Rest of the Web (Blue Background) */}
+          <div style={{ backgroundColor: bgBlue }}>
+
+            {/* About Event Section (Seamless) */}
+            <section className="layout-section">
+              <div className="grid-container">
+                <div style={{ textAlign: 'center', marginBottom: '100px' }}>
+                  <h2 style={{ fontSize: '4.5rem', fontWeight: 'bold', marginBottom: '24px' }}>About Event</h2>
+                  <div style={{ height: '4px', width: '120px', background: accentTeal, margin: '0 auto' }}></div>
+                </div>
+
+                <div className="flex-responsive" style={{ alignItems: 'center', gap: '80px' }}>
+                  <div style={{ flex: 1, textAlign: 'center' }}>
+                    <img src="./src/WTM Events Pictures/IWD26/Baithak.png" alt="Event Logo" style={{ maxWidth: '100%', marginBottom: '40px' }} />
+                    <p style={{ fontSize: '1.75rem', lineHeight: 1.6, opacity: 0.9 }}>
+                      This Year We are Organizing a flagship gathering where technical leadership meets local heritage.
+                    </p>
+                  </div>
+                  <div style={{ flex: 1, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px' }}>
+                    {[
+                      { title: 'Panels', desc: 'Expert technical discussions' },
+                      { title: 'Workshops', desc: 'Hands-on learning sessions' },
+                      { title: 'Activity', desc: 'Interactive community building' },
+                      { title: 'Lunch', desc: 'Networking over meals' }
+                    ].map((item, i) => (
+                      <div key={i} style={{ padding: '32px', borderRadius: '24px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
+                        <h4 style={{ fontSize: '1.75rem', color: accentTeal, marginBottom: '12px' }}>{item.title}</h4>
+                        <p style={{ margin: 0, opacity: 0.7 }}>{item.desc}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* Event Details Section (Unified Blue with Cinematic Background) */}
+            <section className="layout-section" style={{
+              position: 'relative',
+              background: 'url("./src/WTM Events Pictures/DSC09710 - Copy.jpg") center/cover fixed',
+            }}>
+              <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, background: `${bgBlue}E6`, backdropFilter: 'blur(10px)', zIndex: 1 }}></div>
+              <div className="grid-container" style={{ textAlign: 'center', position: 'relative', zIndex: 2 }}>
+                <h2 style={{ fontSize: '3.5rem', marginBottom: '80px', letterSpacing: '2px' }}>EVENT DETAILS</h2>
+
+                <div className="flex-responsive" style={{ gap: '48px', justifyContent: 'center' }}>
+                  {/* Glass Card 1 */}
+                  <div style={{ flex: 1, padding: '64px 48px', background: 'rgba(255,255,255,0.05)', backdropFilter: 'blur(10px)', borderRadius: '48px', border: '1px solid rgba(255,255,255,0.1)', textAlign: 'center', boxShadow: '0 24px 64px rgba(0,0,0,0.2)' }}>
+                    <div style={{ color: accentTeal, fontSize: '1rem', fontWeight: 'bold', marginBottom: '24px', letterSpacing: '3px' }}>TIME & PLACE</div>
+                    <p style={{ fontSize: '3.5rem', margin: '0 0 12px 0', fontWeight: 'bold', lineHeight: 1.1 }}>13 APRIL <br /><span style={{ fontSize: '2.5rem', opacity: 0.6 }}>2026</span></p>
+                    <p style={{ fontSize: '1.5rem', color: accentTeal, fontWeight: 'bold', marginTop: '32px' }}>NIC HYDERABAD</p>
+                  </div>
+
+                  {/* Glass Card 2 */}
+                  <div style={{ flex: 1, padding: '64px 48px', background: 'rgba(255,255,255,0.05)', backdropFilter: 'blur(10px)', borderRadius: '48px', border: '1px solid rgba(255,255,255,0.1)', textAlign: 'center', boxShadow: '0 24px 64px rgba(0,0,0,0.2)', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                    <div style={{ color: accentTeal, fontSize: '1rem', fontWeight: 'bold', marginBottom: '32px', letterSpacing: '3px' }}>ELIGIBILITY</div>
+                    <p style={{ fontSize: '1.75rem', lineHeight: 1.5, margin: 0, opacity: 0.9 }}>
+                      Open to <strong>everyone</strong> regardless of Gender, Profession, or Age.
+                    </p>
+                    <p style={{ fontSize: '0.875rem', marginTop: '32px', padding: '12px 24px', background: 'rgba(0, 229, 255, 0.1)', borderRadius: '100px', display: 'inline-block', color: accentTeal, fontWeight: 'bold' }}>• INVITE ONLY ACCESS</p>
+                  </div>
+                </div>
+
+                <div style={{ marginTop: '100px' }}>
+                  <a
+                    href="https://luma.com/event/evt-WbCg1FNBS1W7OdG"
+                    className="luma-checkout--button btn-pill"
+                    data-luma-action="checkout"
+                    data-luma-event-id="evt-WbCg1FNBS1W7OdG"
+                    style={{ backgroundColor: accentTeal, border: 'none', color: bgBlue, padding: '24px 100px', fontSize: '2rem', fontWeight: 'bold', cursor: 'pointer', display: 'inline-block', borderRadius: '100px', textDecoration: 'none', boxShadow: `0 20px 80px rgba(0,229,255,0.4)` }}
+                  >
+                    Register Now
+                  </a>
+                </div>
+              </div>
+            </section>
+
+            {/* Our Speaker Section (Unified Blue) */}
+            <section className="layout-section">
+              <div className="grid-container" style={{ textAlign: 'center' }}>
+                <h2 style={{ fontSize: '3.5rem', marginBottom: '40px' }}>Our Speakers</h2>
+                <div style={{ padding: '64px', borderRadius: '48px', background: 'rgba(255,255,255,0.05)', border: '1px dashed rgba(255,255,255,0.2)' }}>
+                  <p style={{ fontSize: '2rem', opacity: 0.5, fontStyle: 'italic', margin: 0 }}>Note: Coming Soon</p>
+                </div>
+              </div>
+            </section>
+
+            {/* Meet the Team Section (Coming Soon) */}
+            <section className="layout-section">
+              <div className="grid-container" style={{ textAlign: 'center' }}>
+                <h2 style={{ fontSize: '3.5rem', marginBottom: '40px' }}>Meet the Team of this Event</h2>
+                <div style={{ padding: '64px', borderRadius: '48px', background: 'rgba(255,255,255,0.05)', border: '1px dashed rgba(255,255,255,0.2)' }}>
+                  <p style={{ fontSize: '2rem', opacity: 0.5, fontStyle: 'italic', margin: 0 }}>Note: Coming Soon</p>
+                </div>
+              </div>
+            </section>
+
+            {/* Previous Event Highlights (Unified Blue) */}
+            <section className="layout-section">
+              <div className="grid-container">
+                <h2 style={{ fontSize: '3.5rem', marginBottom: '80px', textAlign: 'center' }}>Previous Event Highlights</h2>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '48px' }}>
+                  {flipItems.map((item, i) => (
+                    <div className="flip-card" key={i}>
+                      <div className="flip-card-inner">
+                        <div className="flip-card-front">
+                          <img src={item.img} alt={`Highlight ${i}`} />
+                        </div>
+                        <div className="flip-card-back">
+                          <h3>{item.text}</h3>
+                          <div style={{ marginTop: '24px', width: '60px', height: '4px', background: accentTeal }}></div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* Partner Ticker (3 Rows, Alternating Directions - Professional Image Marquee - V17 Style Interactive) */}
+            <section className="layout-section" style={{ backgroundColor: '#FFFFFF', color: bgBlue, padding: '120px 0' }}>
+              <div className="grid-container">
+                <h3 style={{ textAlign: 'center', fontSize: '3rem', marginBottom: '100px', color: '#000000', fontWeight: 'bold' }}>Our Partner for this Event</h3>
+
+                {/* Row 1: Left */}
+                <div style={{ overflow: 'hidden', whiteSpace: 'nowrap', position: 'relative', marginBottom: '80px' }}>
+                  <div className="ticker-animate" style={{ display: 'flex', gap: '80px', width: 'fit-content', alignItems: 'center' }}>
+                    {[
+                      'Nic Hyderabad.png', 'WTM.png', 'Google For Developers.png', 'Google Developer Expert.png',
+                      'Nic Hyderabad.png', 'WTM.png', 'Google For Developers.png', 'Google Developer Expert.png'
+                    ].map((logo, i) => (
+                      <img key={i} src={`./src/WTM Events Pictures/Partners/${logo}`} alt="Partner" style={{ height: '60px', width: 'auto', opacity: 1, transition: '0.3s' }} />
+                    ))}
+                  </div>
+                </div>
+
+                {/* Row 2: Right */}
+                <div style={{ overflow: 'hidden', whiteSpace: 'nowrap', position: 'relative', marginBottom: '80px' }}>
+                  <div className="ticker-animate-reverse" style={{ display: 'flex', gap: '80px', width: 'fit-content', alignItems: 'center' }}>
+                    {[
+                      'Vibe Coders Pakistan.png', 'She Cloud.jpg', 'Technovation.png', 'WTM.png',
+                      'Vibe Coders Pakistan.png', 'She Cloud.jpg', 'Technovation.png', 'WTM.png'
+                    ].map((logo, i) => (
+                      <img key={i} src={`./src/WTM Events Pictures/Partners/${logo}`} alt="Partner" style={{ height: '60px', width: 'auto', opacity: 1, transition: '0.3s' }} />
+                    ))}
+                  </div>
+                </div>
+
+                {/* Row 3: Left */}
+                <div style={{ overflow: 'hidden', whiteSpace: 'nowrap', position: 'relative' }}>
+                  <div className="ticker-animate" style={{ display: 'flex', gap: '80px', width: 'fit-content', alignItems: 'center' }}>
+                    {[
+                      'Google For Developers.png', 'Google Developer Expert.png', 'Nic Hyderabad.png', 'She Cloud.jpg',
+                      'Google For Developers.png', 'Google Developer Expert.png', 'Nic Hyderabad.png', 'She Cloud.jpg'
+                    ].map((logo, i) => (
+                      <img key={i} src={`./src/WTM Events Pictures/Partners/${logo}`} alt="Partner" style={{ height: '60px', width: 'auto', opacity: 1, transition: '0.3s' }} />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* Empowering Women of Sindh Section (Relocated with Logo 8 - Seamless) */}
+            <section style={{ backgroundColor: '#FFFFFF', padding: '120px 0' }}>
+              <div className="grid-container flex-responsive" style={{ alignItems: 'center', gap: '80px' }}>
+                <div style={{ flex: 1.2, textAlign: 'left' }}>
+                  <div style={{ marginBottom: '32px' }}>
+                    <img src="./src/Logo/8.png" alt="WTM Logo 8" style={{ height: '80px' }} />
+                  </div>
+                  <h2 style={{ fontSize: '4.5rem', color: '#1a73e8', margin: '0 0 32px 0', lineHeight: 1.1, fontWeight: '500' }}>
+                    Empowering the <br /> Women of Sindh
+                  </h2>
+                  <p style={{ fontSize: '1.25rem', color: '#5f6368', lineHeight: 1.6, marginBottom: '0px', maxWidth: '550px' }}>
+                    Dedicated to scaling the potential of every developer and leader across interior Sindh. We provide the architecture for excellence in technology.
+                  </p>
+                </div>
+                <div style={{ flex: 1 }}>
+                  <img src="./src/WTM Events Pictures/WTM Sindhi Mascote.png" alt="WTM Mascots in Ajrak" style={{ width: '100%', maxWidth: '700px' }} />
+                </div>
+              </div>
+            </section>
+
+            {/* TV News Style Moving Text (Above Footer - Row 1 Left to Right - Direction Flip Removed) */}
+
+            {/* TV News Style Moving Text (Above Footer - Synchronized Row) */}
+            <div style={{ backgroundColor: '#1CE9B6', color: '#FFFFFF', padding: '12px 0', overflow: 'hidden', whiteSpace: 'nowrap' }}>
+              <div className="ticker-animate-reverse" style={{ display: 'inline-block', fontSize: '1.1rem', fontWeight: 'bold', letterSpacing: '4px', textTransform: 'uppercase' }}>
+                {[...Array(10)].map((_, i) => (
+                  <span key={i}>International Women's Day 2026    -    </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    };
+
+    const TeamProfilePage = ({ slug, setRoute, teamData = [] }) => {
+      const member = teamData.find(m => m.slug === slug);
+      if (!member) {
+        return (
+          <div className="layout-section" style={{ textAlign: 'center' }}>
+            <h2 style={{ fontSize: '2.5rem', marginBottom: '24px' }}>Profile Not Found</h2>
+            <span className="btn-pill" style={{ display: 'inline-block', borderColor: 'var(--google-blue)' }} onClick={() => setRoute('/team')}>Return to Directory</span>
+          </div>
+        );
+      }
+
+      const isFemale = member.gender === 'female';
+      const borderStyle = isFemale ? '4px solid #34A853' : '4px solid #4285F4';
+
+      return (
+        <div className="team-profile-page">
+          <section className="layout-section" style={{ backgroundColor: 'var(--bg-primary)' }}>
+            <div className="grid-container" style={{ marginBottom: '24px' }}>
+              <span className="btn-pill" onClick={() => setRoute('/team')} style={{ display: 'inline-block', color: 'var(--text-secondary)', borderColor: 'var(--surface-border)', padding: '10px 24px', backgroundColor: 'var(--bg-primary)' }}>&larr; Back to Directory</span>
+            </div>
+
+            <div className="grid-container flex-responsive" style={{ alignItems: 'flex-start', gap: '64px' }}>
+              <div style={{ flex: '1 1 350px', position: 'sticky', top: '100px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <div style={{ width: '100%', maxWidth: '350px', aspectRatio: '1/1', borderRadius: '32px', overflow: 'hidden', margin: '0 auto 32px auto', border: borderStyle, boxShadow: 'var(--surface-shadow-hover)', boxSizing: 'border-box' }}>
+                  <img src={member.photoUrl} alt={member.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                </div>
+                <h1 style={{ fontSize: '3rem', margin: '0 0 8px 0', color: isFemale ? '#34A853' : '#4285F4', textAlign: 'center' }}>{member.name}</h1>
+                <p className="text-accent" style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', marginBottom: '32px', padding: '8px 24px', backgroundColor: 'var(--surface-bg)', borderRadius: '100px' }}>{member.role}</p>
+
+                <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', width: '100%', flexWrap: 'wrap' }}>
+                  {member.socials && member.socials.map((social, idx) => (
+                    <a key={idx} href={social.url} target="_blank" rel="noreferrer" className="btn-pill" style={{ borderColor: 'var(--google-blue)', color: 'var(--google-blue)', padding: '12px 32px', fontSize: '1rem', flexGrow: 1, textAlign: 'center' }}>
+                      Connect on {social.platform}
+                    </a>
+                  ))}
+                </div>
+              </div>
+
+              <div style={{ flex: '2 1 500px' }}>
+                <div style={{ padding: '48px', backgroundColor: 'var(--bg-primary)', borderRadius: '32px', border: '1px solid var(--surface-border)', marginBottom: '40px', boxShadow: '0 12px 48px rgba(0,0,0,0.03)' }}>
+                  <h2 style={{ fontSize: '2.5rem', marginBottom: '32px', borderBottom: '2px solid var(--surface-border)', paddingBottom: '16px' }}>Professional Biography</h2>
+                  <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', lineHeight: 1.9, marginBottom: '0' }}>
+                    {member.bio}
+                  </p>
+                </div>
+
+
+              </div>
+            </div>
+          </section>
+        </div>
+      );
+    };
+
+    const EventProfilePage = ({ slug, setRoute, eventData = [] }) => {
+      const event = eventData.find(e => e.slug === slug);
+      if (!event) {
+        return (
+          <div className="layout-section" style={{ textAlign: 'center' }}>
+            <h2 style={{ fontSize: '2.5rem', marginBottom: '24px' }}>Event Not Found</h2>
+            <span className="btn-pill" style={{ display: 'inline-block', borderColor: 'var(--google-blue)' }} onClick={() => setRoute('/events')}>Return to Catalog</span>
+          </div>
+        );
+      }
+
+      return (
+        <div className="event-profile-page">
+          <section className="layout-section" style={{ minHeight: '80vh', background: `linear-gradient(to bottom, rgba(255,255,255,0.85), rgba(255,255,255,0.98)), url("${event.coverImage}") center/cover border-box` }}>
+            <div className="grid-container" style={{ marginBottom: '32px' }}>
+              <span className="btn-pill" onClick={() => setRoute('/events')} style={{ display: 'inline-block', color: 'var(--text-primary)', borderColor: 'var(--surface-border)', padding: '10px 24px' }}>&larr; Back to Catalog</span>
+            </div>
+
+            <div className="grid-container" style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
+              <span className="text-accent" style={{ padding: '8px 16px', border: '1px solid var(--surface-border)', borderRadius: '12px', fontSize: '1.125rem', color: event.status === 'Upcoming' ? 'var(--google-blue)' : 'var(--text-secondary)', backgroundColor: 'var(--bg-primary)', display: 'inline-block', marginBottom: '32px' }}>
+                {event.status}
+              </span>
+
+              <h1 style={{ fontSize: '4.5rem', marginBottom: '24px', color: 'var(--deep-blue)' }}>{event.title}</h1>
+              <p style={{ fontSize: '1.5rem', color: 'var(--text-secondary)', marginBottom: '48px', fontWeight: 'bold' }}>{event.date}</p>
+
+              <div className="surface-card" style={{ padding: '64px', textAlign: 'left', borderRadius: '32px', marginBottom: '64px' }}>
+                <h3 style={{ fontSize: '2rem', marginBottom: '24px', borderBottom: '2px solid var(--surface-border)', paddingBottom: '16px' }}>About The Session</h3>
+                <p style={{ fontSize: '1.35rem', color: 'var(--text-secondary)', lineHeight: 1.8 }}>
+                  {event.description}
+                </p>
+              </div>
+
+              {event.status === 'Upcoming' && (
+                <a href={event.registration_link} target="_blank" rel="noreferrer" className="btn-pill primary" style={{ fontSize: '1.25rem', padding: '16px 48px' }}>
+                  Initialize Registration
+                </a>
+              )}
+            </div>
+          </section>
+        </div>
+      );
+    };
+
+    const Footer = ({ setRoute, currentRoute }) => {
+      const showSindhSection = currentRoute === '/' || currentRoute === '/about' || currentRoute.startsWith('/team/');
+
+      return (
+        <footer style={{ backgroundColor: 'var(--footer-bg)', transition: 'background-color var(--transition-standard)' }}>
+
+          {showSindhSection && (
+            <div style={{ padding: '80px 24px', borderTop: '1px solid var(--surface-border)', borderBottom: '1px solid var(--surface-border)', backgroundColor: 'var(--bg-primary)' }}>
+              <div className="grid-container flex-responsive" style={{ alignItems: 'center', gap: '64px' }}>
+                <div style={{ flex: '1.2' }}>
+                  <img src="./src/Logo/8.png" alt="WTM Sindhi Identity Logo" style={{ height: '80px', marginBottom: '32px', display: 'block' }} />
+                  <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 3.8rem)', color: 'var(--google-blue)', margin: '0 0 24px 0', fontWeight: 'bold', lineHeight: 1.1 }}>Empowering the Women of Sindh</h2>
+                  <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', lineHeight: 1.6, maxWidth: '600px' }}>
+                    Dedicated to scaling the potential of every developer and leader across interior Sindh. We provide the architecture for excellence.
+                  </p>
+                </div>
+                <div style={{ flex: '1', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                  <img src="./src/WTM Events Pictures/WTM Sindhi Mascote.png" alt="WTM Sindhi Mascot" style={{ maxHeight: '350px', width: 'auto', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.1))' }} />
+
+                </div>
+              </div>
+            </div>
+          )}
+
+          <div className="grid-container" style={{ padding: '64px 24px', display: 'flex', flexDirection: 'column', gap: '48px' }}>
+
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '32px' }}>
+              <div>
+                <h4 className="text-accent" style={{ color: 'var(--google-blue)', marginBottom: '24px' }}>WTM Hyderabad</h4>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                  <span onClick={() => setRoute('/about')} className="footer-link">About the Chapter</span>
+                  <span onClick={() => setRoute('/team')} className="footer-link">Core Team</span>
+                  <span onClick={() => setRoute('/events')} className="footer-link">Previous Events</span>
+                </div>
+              </div>
+
+              <div>
+                <h4 className="text-accent" style={{ color: 'var(--deep-blue)', marginBottom: '24px' }}>Support Us</h4>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                  <span onClick={() => { setRoute('/about'); setTimeout(() => document.getElementById('sponsor')?.scrollIntoView({ behavior: 'smooth' }), 100); }} className="footer-link">Sponsor Us</span>
+                  <span onClick={() => { setRoute('/about'); setTimeout(() => document.getElementById('mentor')?.scrollIntoView({ behavior: 'smooth' }), 100); }} className="footer-link">Community Mentor or Speaker</span>
+                  <span onClick={() => { setRoute('/about'); setTimeout(() => document.getElementById('join')?.scrollIntoView({ behavior: 'smooth' }), 100); }} className="footer-link">Join the Team</span>
+                </div>
+              </div>
+
+              <div>
+                <h4 className="text-accent" style={{ color: 'var(--deep-blue)', marginBottom: '24px' }}>Resources</h4>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                  <span onClick={() => setRoute('/code-of-conduct')} className="footer-link">Code of Conduct</span>
+                  <span onClick={() => { setRoute('/code-of-conduct'); setTimeout(() => document.getElementById('community-guidelines')?.scrollIntoView({ behavior: 'smooth' }), 200); }} className="footer-link">Community Guidelines</span>
+                </div>
+              </div>
+
+              <div>
+                <h4 className="text-accent" style={{ color: 'var(--vibrant-teal)', marginBottom: '24px' }}>Developer Options</h4>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                  <a href="https://console.cloud.google.com" target="_blank" className="footer-link">Google Cloud Console</a>
+                  <a href="https://console.firebase.google.com" target="_blank" className="footer-link">Firebase Console</a>
+                  <a href="https://play.google.com/console" target="_blank" className="footer-link">Google Play Console</a>
+                  <a href="https://developers.google.com" target="_blank" className="footer-link">Google Developers</a>
+                  <a href="https://grow.google/certificates" target="_blank" className="footer-link">Google Career Certificates</a>
+                </div>
+              </div>
+
+              <div>
+                <h4 className="text-accent" style={{ color: 'var(--vibrant-teal)', marginBottom: '24px' }}>Connect</h4>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                  <a href="https://web.facebook.com/womentechmakershyderabadpakistan" target="_blank" rel="noreferrer" className="footer-link">Facebook</a>
+                  <a href="https://www.linkedin.com/company/women-techmaker-hyderabad-pakistan" target="_blank" rel="noreferrer" className="footer-link">LinkedIn</a>
+                  <a href="https://www.instagram.com/wtm.hydpk/" target="_blank" rel="noreferrer" className="footer-link">Instagram</a>
+                </div>
+              </div>
+            </div>
+
+            <div style={{ borderTop: '1px solid var(--surface-border)', paddingTop: '32px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
+              <span className="text-accent" style={{ color: 'var(--text-secondary)', fontSize: '0.875rem' }}>© 2026 Women Techmakers Hyderabad</span>
+              <span className="text-accent" style={{ color: 'var(--text-primary)', fontSize: '0.875rem' }}>Built with <span style={{ color: 'var(--deep-blue)' }}>❤️</span> by Hasnain KK</span>
+            </div>
+          </div>
+        </footer>
+      );
+    };
+
+    const App = () => {
+      const getHashRoute = () => {
+        const hash = window.location.hash.replace('#', '');
+        return hash || '/';
+      };
+
+      const [route, setRouteState] = useState(getHashRoute());
+
+      const [teamData] = useState(sharedTeamData);
+      const [eventData] = useState(sharedEventData);
+
+      useEffect(() => {
+        const handleHashChange = () => {
+          setRouteState(getHashRoute());
+        };
+        window.addEventListener('hashchange', handleHashChange);
+        return () => window.removeEventListener('hashchange', handleHashChange);
+      }, []);
+
+      const setRoute = (newRoute) => {
+        if (newRoute === route) return;
+        window.location.hash = newRoute;
+        setRouteState(newRoute);
+        window.scrollTo(0, 0);
+      };
+
+      const renderRoute = () => {
+        if (route === '/') return <HomePage setRoute={setRoute} teamData={teamData} />;
+        if (route === '/about') return <AboutPage />;
+        if (route === '/team') return <TeamPage setRoute={setRoute} teamData={teamData} />;
+        if (route === '/events') return <EventsPage setRoute={setRoute} eventData={eventData} />;
+        if (route === '/register') return <RegistrationFormPage />;
+        if (route === '/code-of-conduct') return <CodeOfConductPage />;
+        if (route === '/iwd26' || route === '/events/iwd26') return <IWD2026Page setRoute={setRoute} />;
+
+        if (route.startsWith('/team/')) {
+          const slug = route.split('/')[2];
+          return <TeamProfilePage slug={slug} setRoute={setRoute} teamData={teamData} />;
+        }
+        if (route.startsWith('/events/')) {
+          const slug = route.split('/')[2];
+          return <EventProfilePage slug={slug} setRoute={setRoute} eventData={eventData} />;
+        }
+        return <HomePage setRoute={setRoute} teamData={teamData} />;
+      };
+
+      return (
+        <div>
+          <Header setRoute={setRoute} currentRoute={route} />
+          <main>
+            {renderRoute()}
+          </main>
+          <Footer setRoute={setRoute} currentRoute={route} />
+        </div>
+      );
+    };
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+  </script>
+</body>
+
+</html>
