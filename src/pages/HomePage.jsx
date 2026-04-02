@@ -10,7 +10,7 @@ import eventBg from '../WTM Events Pictures/477327603_592980400364678_3971829522
 const HomePage = () => {
   return (
     <div>
-      <section className="layout-section" style={{ minHeight: '80vh', display: 'flex', alignItems: 'center', background: `linear-gradient(rgba(255,255,255,0.65), rgba(255,255,255,0.8)), url("${heroBg}") center/cover no-repeat` }}>
+      <section className="layout-section" style={{ minHeight: 'clamp(60vh, 70vw, 85vh)', display: 'flex', alignItems: 'center', background: `linear-gradient(rgba(255,255,255,0.65), rgba(255,255,255,0.8)), url("${heroBg}") center/cover no-repeat` }}>
         <div className="grid-container" style={{ textAlign: 'center', width: '100%', position: 'relative', zIndex: 1 }}>
           <div style={{ maxWidth: '900px', margin: '0 auto', color: 'var(--text-primary)' }}>
 

@@ -5,19 +5,19 @@ const CodeOfConductPage = () => {
   return (
     <div className="layout-section" style={{ background: `linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.95)), url("${bgImage}") center/cover border-box`, minHeight: '80vh' }}>
       <div className="grid-container" style={{ maxWidth: '900px', margin: '0 auto' }}>
-        <h1 style={{ fontSize: '4rem', marginBottom: '16px', color: 'var(--deep-blue)', textAlign: 'center' }}>Code of Conduct</h1>
-        <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', textAlign: 'center', marginBottom: '48px' }}>Empowering a safe, diverse, and robust technical environment.</p>
+        <h1 style={{ fontSize: 'clamp(2.2rem, 8vw, 4rem)', marginBottom: '16px', color: 'var(--deep-blue)', textAlign: 'center' }}>Code of Conduct</h1>
+        <p style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)', color: 'var(--text-secondary)', textAlign: 'center', marginBottom: 'clamp(24px, 5vw, 48px)' }}>Empowering a safe, diverse, and robust technical environment.</p>
 
-        <div className="surface-card" style={{ padding: '48px', marginBottom: '32px', backgroundColor: 'var(--bg-primary)' }}>
-          <h3 style={{ fontSize: '2rem', marginBottom: '24px', color: 'var(--google-blue)' }}>Anti-Harassment Policy</h3>
-          <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', lineHeight: 1.8 }}>
+        <div className="surface-card" style={{ padding: 'clamp(24px, 5vw, 48px)', marginBottom: '32px', backgroundColor: 'var(--bg-primary)', maxWidth: '100%' }}>
+          <h3 style={{ fontSize: 'clamp(1.5rem, 4vw, 2rem)', marginBottom: '24px', color: 'var(--google-blue)' }}>Anti-Harassment Policy</h3>
+          <p style={{ fontSize: 'clamp(1rem, 2.5vw, 1.125rem)', color: 'var(--text-secondary)', lineHeight: 1.8 }}>
             Women Techmakers Hyderabad is aggressively committed to providing a fully harassment-free and deeply inclusive experience for everyone. We unconditionally welcome participants regardless of gender identity and expression, sexual orientation, disabilities, neurodiversity, physical appearance, body size, ethnicity, nationality, race, age, religion, or any other protected category. We do not tolerate harassment of event participants in absolutely any form.
           </p>
         </div>
 
-        <div id="community-guidelines" className="surface-card" style={{ padding: '48px', marginBottom: '32px', backgroundColor: 'var(--bg-primary)' }}>
-          <h3 style={{ fontSize: '2rem', marginBottom: '24px', color: 'var(--vibrant-teal)' }}>Community Guidelines</h3>
-          <ul style={{ fontSize: '1.125rem', color: 'var(--text-secondary)', lineHeight: 1.8, paddingLeft: '24px' }}>
+        <div id="community-guidelines" className="surface-card" style={{ padding: 'clamp(24px, 5vw, 48px)', marginBottom: '32px', backgroundColor: 'var(--bg-primary)', maxWidth: '100%' }}>
+          <h3 style={{ fontSize: 'clamp(1.5rem, 4vw, 2rem)', marginBottom: '24px', color: 'var(--vibrant-teal)' }}>Community Guidelines</h3>
+          <ul style={{ fontSize: 'clamp(0.95rem, 2.5vw, 1.125rem)', color: 'var(--text-secondary)', lineHeight: 1.8, paddingLeft: '24px' }}>
             <li style={{ marginBottom: '16px' }}><strong>Be excellent to each other.</strong> Empathy is the core of our community ecosystem.</li>
             <li style={{ marginBottom: '16px' }}><strong>Treat everyone with respect.</strong> Participate while actively acknowledging that everyone in the room deserves to be here just as much as you do.</li>
             <li style={{ marginBottom: '16px' }}><strong>Communicate clearly and constructively.</strong> Share ideas relentlessly without resorting to personal attacks, competitive hostility, or demeaning remarks.</li>

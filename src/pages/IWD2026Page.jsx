@@ -59,7 +59,7 @@ const IWD2026Page = () => {
 
       <section className="layout-section" style={{
         backgroundColor: '#FFFFFF',
-        minHeight: '85vh',
+        minHeight: 'clamp(60vh, 70vw, 85vh)',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -200,9 +200,9 @@ const IWD2026Page = () => {
 
         <section className="layout-section">
           <div className="grid-container" style={{ textAlign: 'center' }}>
-            <h2 style={{ fontSize: '3.5rem', marginBottom: '40px' }}>Meet the Team of this Event</h2>
-            <div style={{ padding: '64px', borderRadius: '48px', background: 'rgba(255,255,255,0.05)', border: '1px dashed rgba(255,255,255,0.2)' }}>
-              <p style={{ fontSize: '2rem', opacity: 0.5, fontStyle: 'italic', margin: 0 }}>Note: Coming Soon</p>
+            <h2 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', marginBottom: '40px' }}>Meet the Team of this Event</h2>
+            <div style={{ padding: 'clamp(32px, 8vw, 64px)', borderRadius: '48px', background: 'rgba(255,255,255,0.05)', border: '1px dashed rgba(255,255,255,0.2)' }}>
+              <p style={{ fontSize: '1.5rem', opacity: 0.5, fontStyle: 'italic', margin: 0 }}>Note: Coming Soon</p>
             </div>
           </div>
         </section>
@@ -210,7 +210,7 @@ const IWD2026Page = () => {
         <section className="layout-section">
           <div className="grid-container">
             <h2 style={{ fontSize: '3.5rem', marginBottom: '80px', textAlign: 'center' }}>Previous Event Highlights</h2>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '48px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(clamp(250px, 100%, 350px), 1fr))', gap: 'clamp(24px, 5vw, 48px)' }}>
               {flipItems.map((item, i) => (
                 <div className="flip-card" key={i}>
                   <div className="flip-card-inner">
@@ -238,7 +238,7 @@ const IWD2026Page = () => {
                   logoNic, logoWTM, logoGGD, logoGDE,
                   logoNic, logoWTM, logoGGD, logoGDE
                 ].map((logo, i) => (
-                  <img key={i} src={logo} alt="Partner" style={{ height: '60px', width: 'auto', opacity: 1, transition: '0.3s' }} />
+                  <img key={i} src={logo} alt="Partner" style={{ height: 'clamp(30px, 5vw, 60px)', width: 'auto', opacity: 1, transition: '0.3s' }} />
                 ))}
               </div>
             </div>
@@ -249,7 +249,7 @@ const IWD2026Page = () => {
                   logoVibe, logoSheCloud, logoTech, logoWTM,
                   logoVibe, logoSheCloud, logoTech, logoWTM
                 ].map((logo, i) => (
-                  <img key={i} src={logo} alt="Partner" style={{ height: '60px', width: 'auto', opacity: 1, transition: '0.3s' }} />
+                  <img key={i} src={logo} alt="Partner" style={{ height: 'clamp(30px, 5vw, 60px)', width: 'auto', opacity: 1, transition: '0.3s' }} />
                 ))}
               </div>
             </div>
@@ -260,7 +260,7 @@ const IWD2026Page = () => {
                   logoGGD, logoGDE, logoNic, logoSheCloud,
                   logoGGD, logoGDE, logoNic, logoSheCloud
                 ].map((logo, i) => (
-                  <img key={i} src={logo} alt="Partner" style={{ height: '60px', width: 'auto', opacity: 1, transition: '0.3s' }} />
+                  <img key={i} src={logo} alt="Partner" style={{ height: 'clamp(30px, 5vw, 60px)', width: 'auto', opacity: 1, transition: '0.3s' }} />
                 ))}
               </div>
             </div>

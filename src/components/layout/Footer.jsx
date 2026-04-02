@@ -12,17 +12,17 @@ const Footer = () => {
   return (
     <footer style={{ backgroundColor: 'var(--footer-bg)', transition: 'background-color var(--transition-standard)' }}>
       {showSindhSection && (
-        <div style={{ padding: '80px 24px', borderTop: '1px solid var(--surface-border)', borderBottom: '1px solid var(--surface-border)', backgroundColor: 'var(--bg-primary)' }}>
-          <div className="grid-container flex-responsive" style={{ alignItems: 'center', gap: '64px' }}>
+        <div style={{ padding: 'clamp(40px, 8vw, 80px) 24px', borderTop: '1px solid var(--surface-border)', borderBottom: '1px solid var(--surface-border)', backgroundColor: 'var(--bg-primary)' }}>
+          <div className="grid-container flex-responsive" style={{ alignItems: 'center', gap: 'clamp(32px, 8vw, 64px)' }}>
             <div style={{ flex: '1.2' }}>
-              <img src={logo8} alt="WTM Sindhi Identity Logo" style={{ height: '80px', marginBottom: '32px', display: 'block' }} />
-              <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 3.8rem)', color: 'var(--google-blue)', margin: '0 0 24px 0', fontWeight: 'bold', lineHeight: 1.1 }}>Empowering the Women of Sindh</h2>
-              <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', lineHeight: 1.6, maxWidth: '600px' }}>
+              <img src={logo8} alt="WTM Sindhi Identity Logo" style={{ height: 'clamp(40px, 6vw, 80px)', marginBottom: '24px', display: 'block' }} />
+              <h2 style={{ fontSize: 'clamp(1.8rem, 5vw, 3.5rem)', color: 'var(--google-blue)', margin: '0 0 24px 0', fontWeight: 'bold', lineHeight: 1.1 }}>Empowering the Women of Sindh</h2>
+              <p style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)', color: 'var(--text-secondary)', lineHeight: 1.6, maxWidth: '600px' }}>
                 Dedicated to scaling the potential of every developer and leader across interior Sindh. We provide the architecture for excellence.
               </p>
             </div>
             <div style={{ flex: '1', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <img src={mascot} alt="WTM Sindhi Mascot" style={{ maxHeight: '350px', width: 'auto', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.1))' }} />
+              <img src={mascot} alt="WTM Sindhi Mascot" style={{ maxHeight: 'clamp(200px, 40vh, 350px)', width: 'auto', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.1))' }} />
             </div>
           </div>
         </div>
