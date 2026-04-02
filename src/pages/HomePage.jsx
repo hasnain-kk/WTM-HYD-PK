@@ -1,10 +1,15 @@
 import React from 'react';
+import heroBg from '../WTM Events Pictures/RAH00585.jpg';
+import missionBg from '../WTM Events Pictures/DSC00684.jpg';
+import audienceImg from '../WTM Events Pictures/DSC09677.jpg';
+import ambassadorImg from '../WTM Events Pictures/Robina Picture/Robina Mirbahar.jpg';
+import eventBg from '../WTM Events Pictures/477327603_592980400364678_3971829522026014964_n.jpg';
 
 const HomePage = () => {
   return (
     <div className="home-page">
       {/* Hero Section */}
-      <section className="layout-section" style={{ minHeight: '80vh', display: 'flex', alignItems: 'center', background: 'linear-gradient(rgba(255,255,255,0.65), rgba(255,255,255,0.8)), url("/WTM Events Pictures/RAH00585.jpg") center/cover no-repeat' }}>
+      <section className="layout-section" style={{ minHeight: '80vh', display: 'flex', alignItems: 'center', background: `linear-gradient(rgba(255,255,255,0.65), rgba(255,255,255,0.8)), url("${heroBg}") center/cover no-repeat` }}>
         <div className="grid-container" style={{ textAlign: 'center', width: '100%', position: 'relative', zIndex: 1 }}>
           <div style={{ maxWidth: '900px', margin: '0 auto', color: 'var(--text-primary)' }}>
 
@@ -29,7 +34,7 @@ const HomePage = () => {
           <div style={{ textAlign: 'center', marginBottom: '80px' }}>
             <h2 style={{ fontSize: '2rem', margin: 0, color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '2px' }}>THE MISSION</h2>
           </div>
-          <div className="surface-card" style={{ padding: '48px', borderLeft: '4px solid var(--vibrant-teal)', background: 'linear-gradient(135deg, rgba(25, 103, 210, 0.85), rgba(0, 196, 163, 0.85)), url("/WTM Events Pictures/DSC00684.jpg") center/cover' }}>
+          <div className="surface-card" style={{ padding: '48px', borderLeft: '4px solid var(--vibrant-teal)', background: `linear-gradient(135deg, rgba(25, 103, 210, 0.85), rgba(0, 196, 163, 0.85)), url("${missionBg}") center/cover` }}>
             <div className="flex-responsive" style={{ alignItems: 'center' }}>
               <div>
                 <h3 style={{ fontSize: '3rem', margin: 0, marginBottom: '24px', color: '#FFFFFF' }}>Empowering Professionals, Focusing on Tech</h3>
@@ -38,7 +43,7 @@ const HomePage = () => {
                 </p>
               </div>
               <div>
-                <img src="/WTM Events Pictures/DSC09677.jpg" alt="WTM Audience" className="side-frame-img" style={{ borderColor: '#FFFFFF' }} />
+                <img src={audienceImg} alt="WTM Audience" className="side-frame-img" style={{ borderColor: '#FFFFFF' }} />
               </div>
             </div>
           </div>
@@ -84,7 +89,7 @@ const HomePage = () => {
           </div>
           <div className="flex-responsive" style={{ alignItems: 'center' }}>
             <div>
-              <img src="/WTM Events Pictures/Robina Picture/Robina Mirbahar.jpg" alt="Robina Mirbahar - WTM Ambassador" className="side-frame-img" style={{ borderColor: 'var(--google-blue)' }} />
+              <img src={ambassadorImg} alt="Robina Mirbahar - WTM Ambassador" className="side-frame-img" style={{ borderColor: 'var(--google-blue)' }} />
             </div>
             <div>
               <h3 style={{ fontSize: '3rem', margin: 0, marginBottom: '24px', color: 'var(--deep-blue)' }}>Robina Mirbahar</h3>
@@ -110,7 +115,7 @@ const HomePage = () => {
       <section className="layout-section" style={{ position: 'relative' }}>
         <div className="grid-container" style={{ position: 'relative', zIndex: 1 }}>
           <h2 style={{ fontSize: '3rem', marginBottom: '40px', textAlign: 'center' }}>Flagship Event</h2>
-          <div className="surface-card" style={{ padding: '64px', position: 'relative', overflow: 'hidden', maxWidth: '800px', margin: '0 auto', textAlign: 'center', background: 'linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.85)), url("/WTM Events Pictures/477327603_592980400364678_3971829522026014964_n.jpg") center/cover' }}>
+          <div className="surface-card" style={{ padding: '64px', position: 'relative', overflow: 'hidden', maxWidth: '800px', margin: '0 auto', textAlign: 'center', background: `linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.85)), url("${eventBg}") center/cover` }}>
             <span style={{ display: 'inline-block', backgroundColor: 'rgba(0, 196, 163, 0.1)', color: 'var(--vibrant-teal)', border: '1px solid var(--vibrant-teal)', padding: '6px 16px', borderRadius: '100px', fontFamily: 'var(--font-header)', fontSize: '0.875rem', fontWeight: 'bold', marginBottom: '24px', textTransform: 'uppercase' }}>• Live Now</span>
             <h3 style={{ fontSize: '2.5rem', marginBottom: '16px' }}>IWD 2026 Baithak</h3>
             <p className="text-accent" style={{ color: 'var(--google-blue)', fontSize: '1rem', marginBottom: '24px' }}>International Women's Day | Invite Only</p>

@@ -1,9 +1,12 @@
 import React from 'react';
+import aboutBg from '../WTM Events Pictures/DSC09380.jpeg';
+import communityImg from '../WTM Events Pictures/RAH00558.jpeg';
+import partnersBg from '../WTM Events Pictures/478403869_596286476700737_8847670728925164592_n.jpg';
 
 const AboutPage = () => {
   return (
     <div className="about-page">
-      <section className="layout-section" style={{ background: 'linear-gradient(rgba(0, 196, 163, 0.85), rgba(66, 133, 244, 0.85)), url("/WTM Events Pictures/DSC09380.jpeg") center/cover border-box' }}>
+      <section className="layout-section" style={{ background: `linear-gradient(rgba(0, 196, 163, 0.85), rgba(66, 133, 244, 0.85)), url("${aboutBg}") center/cover border-box` }}>
         <div className="grid-container">
           <div style={{ textAlign: 'center', marginBottom: '64px' }}>
             <h2 style={{ fontSize: '3.5rem', margin: 0, color: '#FFFFFF' }}>About Our Chapter</h2>
@@ -17,13 +20,13 @@ const AboutPage = () => {
               </p>
             </div>
             <div>
-              <img src="/WTM Events Pictures/RAH00558.jpeg" alt="WTM Community" className="side-frame-img" style={{borderColor: '#FFFFFF'}} />
+              <img src={communityImg} alt="WTM Community" className="side-frame-img" style={{borderColor: '#FFFFFF'}} />
             </div>
           </div>
         </div>
       </section>
 
-      <section className="layout-section" style={{ background: 'linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.9)), url("/WTM Events Pictures/478403869_596286476700737_8847670728925164592_n.jpg") center/cover border-box', transition: 'background-color var(--transition-standard)' }}>
+      <section className="layout-section" style={{ background: `linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.9)), url("${partnersBg}") center/cover border-box`, transition: 'background-color var(--transition-standard)' }}>
         <div className="grid-container" style={{ textAlign: 'center' }}>
           <h2 style={{ fontSize: '3rem', marginBottom: '24px' }}>Our Partners and Collaborators</h2>
           <p style={{ textAlign: 'center', color: 'var(--text-secondary)', fontSize: '1.25rem', marginBottom: '64px' }}>Collaborating to empower the next generation of technical leaders.</p>
