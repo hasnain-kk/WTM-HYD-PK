@@ -29,17 +29,17 @@ const Footer = () => {
       )}
 
       <div className="grid-container" style={{ padding: '64px 24px', display: 'flex', flexDirection: 'column', gap: '48px' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '32px' }}>
-          <div>
+        <div className="footer-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '40px' }}>
+          <div className="footer-column" style={{ textAlign: 'inherit' }}>
             <h4 className="text-accent" style={{ color: 'var(--google-blue)', marginBottom: '24px' }}>WTM Hyderabad</h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               <Link to="/about" className="footer-link">About the Chapter</Link>
               <Link to="/team" className="footer-link">Core Team</Link>
-              <Link to="/events" className="footer-link">Previous Events</Link>
+              <Link to="/events" className="footer-link">Our Event</Link>
             </div>
           </div>
 
-          <div>
+          <div className="footer-column" style={{ textAlign: 'inherit' }}>
             <h4 className="text-accent" style={{ color: 'var(--deep-blue)', marginBottom: '24px' }}>Support Us</h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               <Link to="/about#sponsor" className="footer-link">Sponsor Us</Link>
@@ -48,7 +48,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div>
+          <div className="footer-column" style={{ textAlign: 'inherit' }}>
             <h4 className="text-accent" style={{ color: 'var(--deep-blue)', marginBottom: '24px' }}>Resources</h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               <Link to="/code-of-conduct" className="footer-link">Code of Conduct</Link>
@@ -56,18 +56,16 @@ const Footer = () => {
             </div>
           </div>
 
-          <div>
+          <div className="footer-column" style={{ textAlign: 'inherit' }}>
             <h4 className="text-accent" style={{ color: 'var(--vibrant-teal)', marginBottom: '24px' }}>Developer Options</h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               <a href="https://console.cloud.google.com" target="_blank" rel="noreferrer" className="footer-link">Google Cloud Console</a>
               <a href="https://console.firebase.google.com" target="_blank" rel="noreferrer" className="footer-link">Firebase Console</a>
-              <a href="https://play.google.com/console" target="_blank" rel="noreferrer" className="footer-link">Google Play Console</a>
               <a href="https://developers.google.com" target="_blank" rel="noreferrer" className="footer-link">Google Developers</a>
-              <a href="https://grow.google/certificates" target="_blank" rel="noreferrer" className="footer-link">Google Career Certificates</a>
             </div>
           </div>
 
-          <div>
+          <div className="footer-column" style={{ textAlign: 'inherit' }}>
             <h4 className="text-accent" style={{ color: 'var(--vibrant-teal)', marginBottom: '24px' }}>Connect</h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               <a href="https://web.facebook.com/womentechmakershyderabadpakistan" target="_blank" rel="noreferrer" className="footer-link">Facebook</a>
@@ -77,9 +75,9 @@ const Footer = () => {
           </div>
         </div>
 
-        <div style={{ borderTop: '1px solid var(--surface-border)', paddingTop: '32px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
-          <span className="text-accent" style={{ color: 'var(--text-secondary)', fontSize: '0.875rem' }}>© 2026 Women Techmakers Hyderabad</span>
-          <span className="text-accent" style={{ color: 'var(--text-primary)', fontSize: '0.875rem' }}>Built with <span style={{ color: 'var(--deep-blue)' }}>❤️</span> by Hasnain KK</span>
+        <div className="footer-bottom" style={{ borderTop: '1px solid var(--surface-border)', paddingTop: '32px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
+          <span className="text-overline" style={{ color: 'var(--text-secondary)', fontSize: '0.875rem' }}>© 2026 Women Techmakers Hyderabad</span>
+          <span className="text-overline" style={{ color: 'var(--text-primary)', fontSize: '0.875rem' }}>Built by Hasnain KK</span>
         </div>
       </div>
     </footer>

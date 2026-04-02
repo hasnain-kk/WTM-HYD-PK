@@ -111,7 +111,7 @@ const IWD2026Page = () => {
         </div>
       </div>
 
-      <section style={{ backgroundColor: '#FFFFFF', padding: '40px 0 20px 0', textAlign: 'center', overflow: 'hidden' }}>
+      <section style={{ backgroundColor: '#FFFFFF', padding: 'clamp(20px, 5vw, 40px) 0 20px 0', textAlign: 'center', overflow: 'hidden' }}>
         <h2 className="urdu-text-header" style={{
           fontSize: 'clamp(4rem, 15vw, 10rem)',
           margin: 0,
@@ -119,11 +119,11 @@ const IWD2026Page = () => {
           fontFamily: '"Noto Sans Arabic", "Simplified Arabic", serif',
           transform: 'scaleX(1.5)',
           transformOrigin: 'center',
-          display: 'inline-block',
-          whiteSpace: 'nowrap',
+          display: 'block',
+          width: '100%',
+          textAlign: 'center',
           opacity: 1,
           fontWeight: 'bold',
-          maxWidth: '90vw'
         }}>
           حیدرآباد
         </h2>
@@ -141,25 +141,25 @@ const IWD2026Page = () => {
 
         <section className="layout-section">
           <div className="grid-container">
-            <div style={{ textAlign: 'center', marginBottom: '100px' }}>
-              <h2 style={{ fontSize: '4.5rem', fontWeight: 'bold', marginBottom: '24px', color: '#FFFFFF' }}>About Event</h2>
+            <div style={{ textAlign: 'center', marginBottom: 'clamp(40px, 8vw, 100px)' }}>
+              <h2 style={{ fontSize: 'clamp(2.5rem, 8vw, 4.5rem)', fontWeight: 'bold', marginBottom: '24px', color: '#FFFFFF' }}>About Event</h2>
               <div style={{ height: '4px', width: '120px', background: accentTeal, margin: '0 auto' }}></div>
             </div>
 
-            <div className="flex-responsive" style={{ alignItems: 'center', gap: '80px' }}>
+            <div className="flex-responsive" style={{ alignItems: 'center', gap: 'clamp(32px, 8vw, 80px)' }}>
               <div style={{ flex: 1, textAlign: 'center' }}>
                 <img src={baithakLogo} alt="Event Logo" style={{ maxWidth: '100%', marginBottom: '40px' }} />
-                <p style={{ fontSize: '1.75rem', lineHeight: 1.6, opacity: 1, color: '#FFFFFF' }}>
+                <p style={{ fontSize: 'clamp(1.2rem, 4vw, 1.75rem)', lineHeight: 1.6, opacity: 1, color: '#FFFFFF' }}>
                   This Year We are Organizing a flagship gathering where technical leadership meets local heritage.
                 </p>
               </div>
-              <div style={{ flex: 1, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(clamp(150px, 40%, 1fr), 1fr))', gap: 'clamp(16px, 3vw, 32px)' }}>
+              <div style={{ flex: 1, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(clamp(150px, 40%, 250px), 1fr))', gap: 'clamp(16px, 3vw, 32px)' }}>
                 {[
-                  { title: 'Panels', description: 'Expert technical discussions' },
-                  { title: 'Workshops', description: 'Hands-on learning sessions' },
-                  { title: 'Activity', description: 'Interactive community building' },
-                  { title: 'Lunch', description: 'Networking over meals' }
-                ].map((e, i) => (
+                  { title: 'Panels', desc: 'Expert technical discussions' },
+                  { title: 'Workshops', desc: 'Hands-on learning sessions' },
+                  { title: 'Activity', desc: 'Interactive community building' },
+                  { title: 'Lunch', desc: 'Networking over meals' }
+                ].map((item, i) => (
                   <div key={i} style={{ padding: 'clamp(16px, 4vw, 32px)', borderRadius: '24px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
                     <h4 style={{ fontSize: 'clamp(1.2rem, 4vw, 1.75rem)', color: accentTeal, marginBottom: '12px' }}>{item.title}</h4>
                     <p style={{ margin: 0, opacity: 1, fontSize: 'clamp(0.875rem, 2vw, 1rem)', color: '#FFFFFF' }}>{item.desc}</p>
@@ -176,12 +176,12 @@ const IWD2026Page = () => {
         }}>
           <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, background: `${bgBlue}E6`, backdropFilter: 'blur(10px)', zIndex: 1 }}></div>
           <div className="grid-container" style={{ textAlign: 'center', position: 'relative', zIndex: 2 }}>
-            <h2 style={{ fontSize: '3.5rem', marginBottom: '80px', letterSpacing: '2px', color: '#FFFFFF' }}>EVENT DETAILS</h2>
+            <h2 style={{ fontSize: 'clamp(2.5rem, 8vw, 3.5rem)', marginBottom: 'clamp(40px, 8vw, 80px)', letterSpacing: '2px', color: '#FFFFFF' }}>EVENT DETAILS</h2>
 
             <div className="flex-responsive" style={{ gap: 'clamp(24px, 5vw, 48px)', justifyContent: 'center' }}>
               <div style={{ flex: 1, padding: 'clamp(32px, 8vw, 64px) clamp(24px, 5vw, 48px)', background: 'rgba(255,255,255,0.05)', backdropFilter: 'blur(10px)', borderRadius: '48px', border: '1px solid rgba(255,255,255,0.1)', textAlign: 'center', boxShadow: '0 24px 64px rgba(0,0,0,0.2)' }}>
                 <div style={{ color: accentTeal, fontSize: '0.875rem', fontWeight: 'bold', marginBottom: '24px', letterSpacing: '3px' }}>TIME & PLACE</div>
-                <p style={{ fontSize: 'clamp(2.5rem, 8vw, 3.5rem)', margin: '0 0 12px 0', fontWeight: 'bold', lineHeight: 1.1 }}>13 APRIL <br /><span style={{ fontSize: '0.7em', opacity: 0.6 }}>2026</span></p>
+                <p style={{ fontSize: 'clamp(2.2rem, 8vw, 3.5rem)', margin: '0 0 12px 0', fontWeight: 'bold', lineHeight: 1.1 }}>13 APRIL <br /><span style={{ fontSize: '0.7em', opacity: 0.6 }}>2026</span></p>
                 <p style={{ fontSize: 'clamp(1.2rem, 3vw, 1.5rem)', color: accentTeal, fontWeight: 'bold', marginTop: '32px' }}>NIC HYDERABAD</p>
               </div>
 
@@ -210,44 +210,23 @@ const IWD2026Page = () => {
 
         <section className="layout-section">
           <div className="grid-container" style={{ textAlign: 'center' }}>
-            <h2 style={{ fontSize: '3.5rem', marginBottom: '40px' }}>Our Speakers</h2>
-            <div style={{ padding: '64px', borderRadius: '48px', background: 'rgba(255,255,255,0.05)', border: '1px dashed rgba(255,255,255,0.2)' }}>
-              <p style={{ fontSize: '2rem', opacity: 0.5, fontStyle: 'italic', margin: 0 }}>Note: Coming Soon</p>
+            <h2 style={{ fontSize: 'clamp(2.5rem, 8vw, 3.5rem)', marginBottom: '40px' }}>Our Speakers</h2>
+            <div style={{ padding: 'clamp(32px, 8vw, 64px)', borderRadius: '48px', background: 'rgba(255,255,255,0.05)', border: '1px dashed rgba(255,255,255,0.2)' }}>
+              <p style={{ fontSize: 'clamp(1.5rem, 5vw, 2rem)', opacity: 0.5, fontStyle: 'italic', margin: 0 }}>Note: Coming Soon</p>
             </div>
           </div>
         </section>
 
         <section className="layout-section" style={{ backgroundColor: bgBlue, color: textWhite }}>
           <div className="grid-container" style={{ textAlign: 'center' }}>
-            <h2 style={{ fontSize: 'clamp(2.2rem, 6vw, 4rem)', marginBottom: '64px' }}>Meet the Organizers</h2>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '48px', justifyContent: 'center' }}>
+            <h2 style={{ fontSize: 'clamp(2.2rem, 6vw, 4rem)', marginBottom: 'clamp(32px, 8vw, 64px)' }}>Meet the Organizers</h2>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(clamp(200px, 45%, 280px), 1fr))', gap: 'clamp(24px, 5vw, 48px)', justifyContent: 'center' }}>
               {eventTeam.map((member, i) => (
                 <div key={i} className="surface-card" style={{ padding: '24px', display: 'flex', flexDirection: 'column', alignItems: 'center', background: 'rgba(255,255,255,0.05)', backdropFilter: 'blur(10px)', border: '1px solid rgba(255,255,255,0.1)' }}>
-                  <div style={{ width: '150px', height: '150px', borderRadius: '50%', overflow: 'hidden', marginBottom: '20px', border: `3px solid ${accentTeal}` }}>
+                  <div style={{ width: 'clamp(120px, 20vw, 150px)', height: 'clamp(120px, 20vw, 150px)', borderRadius: '50%', overflow: 'hidden', marginBottom: '20px', border: `3px solid ${accentTeal}` }}>
                     <img src={member.img} alt={member.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   </div>
-                  <h3 style={{ fontSize: '1.25rem', color: '#FFFFFF', margin: 0, fontWeight: 'bold' }}>{member.name}</h3>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="layout-section">
-          <div className="grid-container">
-            <h2 style={{ fontSize: '3.5rem', marginBottom: '80px', textAlign: 'center' }}>Previous Event Highlights</h2>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(clamp(250px, 100%, 350px), 1fr))', gap: 'clamp(24px, 5vw, 48px)' }}>
-              {flipItems.map((item, i) => (
-                <div className="flip-card" key={i}>
-                  <div className="flip-card-inner">
-                    <div className="flip-card-front">
-                      <img src={item.img} alt={`Highlight ${i}`} />
-                    </div>
-                    <div className="flip-card-back">
-                      <h3>{item.text}</h3>
-                      <div style={{ marginTop: '24px', width: '60px', height: '4px', background: accentTeal }}></div>
-                    </div>
-                  </div>
+                  <h3 style={{ fontSize: 'clamp(1rem, 3vw, 1.25rem)', color: '#FFFFFF', margin: 0, fontWeight: 'bold' }}>{member.name}</h3>
                 </div>
               ))}
             </div>

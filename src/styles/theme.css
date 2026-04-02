@@ -144,7 +144,7 @@ a:hover {
 }
 
 .layout-section {
-  padding: 120px 24px;
+  padding: clamp(64px, 12vw, 120px) 24px;
 }
 
 .grid-container {
@@ -268,14 +268,29 @@ a:hover {
 
 @media (max-width: 480px) {
   .iwd-page h2 { font-size: clamp(1.8rem, 12vw, 2.5rem) !important; }
-  .btn-pill { padding: 10px 20px; font-size: 0.95rem; width: 100%; text-align: center; }
+  .btn-pill { padding: 12px 24px; font-size: 1rem; width: 100%; text-align: center; }
   .flex-responsive img { max-width: 100% !important; margin: 0 auto; height: auto !important; }
   .side-frame-img { height: 250px !important; }
   
   /* Force Urdu text scaling */
   .urdu-text-header {
-    font-size: clamp(4rem, 20vw, 8rem) !important;
+    font-size: clamp(3.5rem, 15vw, 6rem) !important;
     transform: scaleX(1.4) !important;
+    white-space: normal !important;
+    line-height: 1.2 !important;
+  }
+
+  /* Center Footer on Mobile */
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    text-align: center !important;
+  }
+  .footer-column {
+    text-align: center !important;
+  }
+  .footer-bottom {
+    flex-direction: column !important;
+    text-align: center !important;
   }
 }
 
@@ -403,7 +418,7 @@ input:focus {
   }
   .flex-responsive>div { width: 100%; }
   .side-frame-img { height: 300px; }
-  .layout-section { padding: 64px 16px; }
+  .layout-section { padding: clamp(48px, 10vw, 80px) 24px; }
   .header-container .grid-container {
     flex-direction: column;
     gap: 16px;
@@ -411,8 +426,13 @@ input:focus {
     align-items: center;
   }
   nav { flex-wrap: wrap; justify-content: center; gap: 16px !important; }
-  h1 { font-size: 2.5rem !important; }
-  h2 { font-size: 2.25rem !important; }
+  h1 { font-size: clamp(2rem, 8vw, 3rem) !important; }
+  h2 { font-size: clamp(1.75rem, 6vw, 2.5rem) !important; }
+  
+  /* Google Next 1-Column standard */
+  .footer-grid, .grid-container > div[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+  }
 }
 
 #root {
