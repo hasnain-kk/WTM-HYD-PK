@@ -11,6 +11,7 @@ import TeamProfilePage from './pages/TeamProfilePage';
 import EventsPage from './pages/EventsPage';
 import EventProfilePage from './pages/EventProfilePage';
 import IWD2026Page from './pages/IWD2026Page';
+import CodeOfConductPage from './pages/CodeOfConductPage';
 
 import './styles/theme.css';
 
@@ -28,6 +29,7 @@ const App = () => {
             <Route path="/events" element={<EventsPage />} />
             <Route path="/events/:slug" element={<EventProfilePage />} />
             <Route path="/iwd26" element={<IWD2026Page />} />
+            <Route path="/code-of-conduct" element={<CodeOfConductPage />} />
           </Routes>
         </main>
         <Footer />

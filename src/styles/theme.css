@@ -225,27 +225,35 @@ a:hover {
 @media (max-width: 991px) {
   .layout-section { padding: 80px 20px; }
   .grid-container { padding: 0 20px; }
-  h1 { fontSize: 'clamp(2.5rem, 5vw, 4rem)' !important; }
+  h1 { font-size: clamp(2.5rem, 8vw, 4rem) !important; }
 }
 
 @media (max-width: 768px) {
   .flex-responsive { flex-direction: column; gap: 32px; }
   .layout-section { padding: 60px 16px; }
-  h1 { font-size: 3rem !important; }
-  h2 { font-size: 2.25rem !important; }
-  h3 { font-size: 1.75rem !important; }
-  .nav-link { font-size: 0.875rem; margin-bottom: 8px; }
+  h1 { font-size: clamp(2.2rem, 10vw, 3rem) !important; }
+  h2 { font-size: clamp(1.8rem, 8vw, 2.5rem) !important; }
+  h3 { font-size: clamp(1.5rem, 6vw, 2rem) !important; }
+  .nav-link { font-size: 0.8rem; margin-bottom: 4px; }
   .header-container .grid-container { justify-content: center !important; }
-  nav { gap: 16px !important; margin-top: 16px; }
-  .iwd-page h2 { font-size: 3.5rem !important; line-height: 1.2 !important; }
+  nav { gap: 12px !important; margin-top: 12px; }
+  
+  .iwd-page h2 { font-size: clamp(2rem, 10vw, 3.5rem) !important; line-height: 1.2 !important; }
   .iwd-page .grid-container { padding: 0 16px !important; }
-  .iwd-page .ticker-animate, .iwd-page .ticker-animate-reverse { font-size: 0.875rem !important; letter-spacing: 2px !important; }
+  .iwd-page .ticker-animate, .iwd-page .ticker-animate-reverse { font-size: 0.8rem !important; letter-spacing: 1px !important; }
 }
 
 @media (max-width: 480px) {
-  .iwd-page h2 { font-size: 2.5rem !important; }
-  .btn-pill { padding: 10px 24px; font-size: 1rem; width: 100%; text-align: center; }
-  .flex-responsive img { max-width: 100% !important; margin: 0 auto; }
+  .iwd-page h2 { font-size: clamp(1.8rem, 12vw, 2.5rem) !important; }
+  .btn-pill { padding: 10px 20px; font-size: 0.95rem; width: 100%; text-align: center; }
+  .flex-responsive img { max-width: 100% !important; margin: 0 auto; height: auto !important; }
+  .side-frame-img { height: 250px !important; }
+  
+  /* Force Urdu text scaling */
+  .urdu-text-header {
+    font-size: clamp(4rem, 20vw, 8rem) !important;
+    transform: scaleX(1.4) !important;
+  }
 }
 
 .flip-card {

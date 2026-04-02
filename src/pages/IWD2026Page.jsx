@@ -93,8 +93,8 @@ const IWD2026Page = () => {
       </div>
 
       <section style={{ backgroundColor: '#FFFFFF', padding: '40px 0 20px 0', textAlign: 'center', overflow: 'hidden' }}>
-        <h2 style={{
-          fontSize: '12rem',
+        <h2 className="urdu-text-header" style={{
+          fontSize: 'clamp(6rem, 15vw, 12rem)',
           margin: 0,
           color: '#000000',
           fontFamily: '"Noto Sans Arabic", "Simplified Arabic", serif',
@@ -132,16 +132,16 @@ const IWD2026Page = () => {
                   This Year We are Organizing a flagship gathering where technical leadership meets local heritage.
                 </p>
               </div>
-              <div style={{ flex: 1, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px' }}>
+              <div style={{ flex: 1, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(clamp(150px, 40%, 1fr), 1fr))', gap: 'clamp(16px, 3vw, 32px)' }}>
                 {[
                   { title: 'Panels', desc: 'Expert technical discussions' },
                   { title: 'Workshops', desc: 'Hands-on learning sessions' },
                   { title: 'Activity', desc: 'Interactive community building' },
                   { title: 'Lunch', desc: 'Networking over meals' }
                 ].map((item, i) => (
-                  <div key={i} style={{ padding: '32px', borderRadius: '24px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
-                    <h4 style={{ fontSize: '1.75rem', color: accentTeal, marginBottom: '12px' }}>{item.title}</h4>
-                    <p style={{ margin: 0, opacity: 0.7 }}>{item.desc}</p>
+                  <div key={i} style={{ padding: 'clamp(16px, 4vw, 32px)', borderRadius: '24px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
+                    <h4 style={{ fontSize: 'clamp(1.2rem, 4vw, 1.75rem)', color: accentTeal, marginBottom: '12px' }}>{item.title}</h4>
+                    <p style={{ margin: 0, opacity: 0.7, fontSize: 'clamp(0.875rem, 2vw, 1rem)' }}>{item.desc}</p>
                   </div>
                 ))}
               </div>
@@ -157,29 +157,29 @@ const IWD2026Page = () => {
           <div className="grid-container" style={{ textAlign: 'center', position: 'relative', zIndex: 2 }}>
             <h2 style={{ fontSize: '3.5rem', marginBottom: '80px', letterSpacing: '2px' }}>EVENT DETAILS</h2>
 
-            <div className="flex-responsive" style={{ gap: '48px', justifyContent: 'center' }}>
-              <div style={{ flex: 1, padding: '64px 48px', background: 'rgba(255,255,255,0.05)', backdropFilter: 'blur(10px)', borderRadius: '48px', border: '1px solid rgba(255,255,255,0.1)', textAlign: 'center', boxShadow: '0 24px 64px rgba(0,0,0,0.2)' }}>
-                <div style={{ color: accentTeal, fontSize: '1rem', fontWeight: 'bold', marginBottom: '24px', letterSpacing: '3px' }}>TIME & PLACE</div>
-                <p style={{ fontSize: '3.5rem', margin: '0 0 12px 0', fontWeight: 'bold', lineHeight: 1.1 }}>13 APRIL <br /><span style={{ fontSize: '2.5rem', opacity: 0.6 }}>2026</span></p>
-                <p style={{ fontSize: '1.5rem', color: accentTeal, fontWeight: 'bold', marginTop: '32px' }}>NIC HYDERABAD</p>
+            <div className="flex-responsive" style={{ gap: 'clamp(24px, 5vw, 48px)', justifyContent: 'center' }}>
+              <div style={{ flex: 1, padding: 'clamp(32px, 8vw, 64px) clamp(24px, 5vw, 48px)', background: 'rgba(255,255,255,0.05)', backdropFilter: 'blur(10px)', borderRadius: '48px', border: '1px solid rgba(255,255,255,0.1)', textAlign: 'center', boxShadow: '0 24px 64px rgba(0,0,0,0.2)' }}>
+                <div style={{ color: accentTeal, fontSize: '0.875rem', fontWeight: 'bold', marginBottom: '24px', letterSpacing: '3px' }}>TIME & PLACE</div>
+                <p style={{ fontSize: 'clamp(2.5rem, 8vw, 3.5rem)', margin: '0 0 12px 0', fontWeight: 'bold', lineHeight: 1.1 }}>13 APRIL <br /><span style={{ fontSize: '0.7em', opacity: 0.6 }}>2026</span></p>
+                <p style={{ fontSize: 'clamp(1.2rem, 3vw, 1.5rem)', color: accentTeal, fontWeight: 'bold', marginTop: '32px' }}>NIC HYDERABAD</p>
               </div>
 
-              <div style={{ flex: 1, padding: '64px 48px', background: 'rgba(255,255,255,0.05)', backdropFilter: 'blur(10px)', borderRadius: '48px', border: '1px solid rgba(255,255,255,0.1)', textAlign: 'center', boxShadow: '0 24px 64px rgba(0,0,0,0.2)', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                <div style={{ color: accentTeal, fontSize: '1rem', fontWeight: 'bold', marginBottom: '32px', letterSpacing: '3px' }}>ELIGIBILITY</div>
-                <p style={{ fontSize: '1.75rem', lineHeight: 1.5, margin: 0, opacity: 0.9 }}>
+              <div style={{ flex: 1, padding: 'clamp(32px, 8vw, 64px) clamp(24px, 5vw, 48px)', background: 'rgba(255,255,255,0.05)', backdropFilter: 'blur(10px)', borderRadius: '48px', border: '1px solid rgba(255,255,255,0.1)', textAlign: 'center', boxShadow: '0 24px 64px rgba(0,0,0,0.2)', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                <div style={{ color: accentTeal, fontSize: '0.875rem', fontWeight: 'bold', marginBottom: '32px', letterSpacing: '3px' }}>ELIGIBILITY</div>
+                <p style={{ fontSize: 'clamp(1.3rem, 4vw, 1.75rem)', lineHeight: 1.5, margin: 0, opacity: 0.9 }}>
                   Open to <strong>everyone</strong> regardless of Gender, Profession, or Age.
                 </p>
                 <p style={{ fontSize: '0.875rem', marginTop: '32px', padding: '12px 24px', background: 'rgba(0, 229, 255, 0.1)', borderRadius: '100px', display: 'inline-block', color: accentTeal, fontWeight: 'bold' }}>• INVITE ONLY ACCESS</p>
               </div>
             </div>
 
-            <div style={{ marginTop: '100px' }}>
+            <div style={{ marginTop: 'clamp(40px, 10vw, 100px)' }}>
               <a
                 href="https://luma.com/event/evt-WbCg1FNBS1W7OdG"
                 className="luma-checkout--button btn-pill"
                 data-luma-action="checkout"
                 data-luma-event-id="evt-WbCg1FNBS1W7OdG"
-                style={{ backgroundColor: accentTeal, border: 'none', color: bgBlue, padding: '24px 100px', fontSize: '2rem', fontWeight: 'bold', cursor: 'pointer', display: 'inline-block', borderRadius: '100px', textDecoration: 'none', boxShadow: `0 20px 80px rgba(0,229,255,0.4)` }}
+                style={{ backgroundColor: accentTeal, border: 'none', color: bgBlue, padding: 'clamp(16px, 4vw, 24px) clamp(32px, 10vw, 100px)', fontSize: 'clamp(1.2rem, 5vw, 2rem)', fontWeight: 'bold', cursor: 'pointer', display: 'inline-block', borderRadius: '100px', textDecoration: 'none', boxShadow: `0 20px 80px rgba(0,229,255,0.4)` }}
               >
                 Register Now
               </a>

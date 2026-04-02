@@ -25,13 +25,13 @@ const TeamProfilePage = () => {
           <Link to="/team" className="btn-pill" style={{ display: 'inline-block', color: 'var(--text-secondary)', borderColor: 'var(--surface-border)', padding: '10px 24px', backgroundColor: 'var(--bg-primary)' }}>&larr; Back to Directory</Link>
         </div>
 
-        <div className="grid-container flex-responsive" style={{ alignItems: 'flex-start', gap: '64px' }}>
-          <div style={{ flex: '1 1 350px', position: 'sticky', top: '100px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <div className="grid-container flex-responsive" style={{ alignItems: 'flex-start', gap: 'clamp(32px, 8vw, 64px)' }}>
+          <div style={{ flex: '1 1 350px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <div style={{ width: '100%', maxWidth: '350px', aspectRatio: '1/1', borderRadius: '32px', overflow: 'hidden', margin: '0 auto 32px auto', border: borderStyle, boxShadow: 'var(--surface-shadow-hover)', boxSizing: 'border-box' }}>
               <img src={member.photoUrl} alt={member.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
-            <h1 style={{ fontSize: '3rem', margin: '0 0 8px 0', color: isFemale ? '#34A853' : '#4285F4', textAlign: 'center' }}>{member.name}</h1>
-            <p className="text-accent" style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', marginBottom: '32px', padding: '8px 24px', backgroundColor: 'var(--surface-bg)', borderRadius: '100px' }}>{member.role}</p>
+            <h1 style={{ fontSize: 'clamp(2.5rem, 6vw, 3rem)', margin: '0 0 8px 0', color: isFemale ? '#34A853' : '#4285F4', textAlign: 'center' }}>{member.name}</h1>
+            <p className="text-accent" style={{ fontSize: 'clamp(1rem, 2vw, 1.25rem)', color: 'var(--text-secondary)', marginBottom: '32px', padding: '8px 24px', backgroundColor: 'var(--surface-bg)', borderRadius: '100px' }}>{member.role}</p>
 
             <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', width: '100%', flexWrap: 'wrap' }}>
               {member.socials && member.socials.map((social, idx) => (
@@ -42,10 +42,10 @@ const TeamProfilePage = () => {
             </div>
           </div>
 
-          <div style={{ flex: '2 1 500px' }}>
-            <div style={{ padding: '48px', backgroundColor: 'var(--bg-primary)', borderRadius: '32px', border: '1px solid var(--surface-border)', marginBottom: '40px', boxShadow: '0 12px 48px rgba(0,0,0,0.03)' }}>
-              <h2 style={{ fontSize: '2.5rem', marginBottom: '32px', borderBottom: '2px solid var(--surface-border)', paddingBottom: '16px' }}>Professional Biography</h2>
-              <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', lineHeight: 1.9, marginBottom: '0' }}>
+          <div style={{ flex: '2 1 500px', width: '100%' }}>
+            <div style={{ padding: 'clamp(24px, 5vw, 48px)', backgroundColor: 'var(--bg-primary)', borderRadius: '32px', border: '1px solid var(--surface-border)', marginBottom: '40px', boxShadow: '0 12px 48px rgba(0,0,0,0.03)' }}>
+              <h2 style={{ fontSize: 'clamp(1.8rem, 5vw, 2.5rem)', marginBottom: '32px', borderBottom: '2px solid var(--surface-border)', paddingBottom: '16px' }}>Professional Biography</h2>
+              <p style={{ fontSize: 'clamp(1.1rem, 2.5vw, 1.25rem)', color: 'var(--text-secondary)', lineHeight: 1.9, marginBottom: '0' }}>
                 {member.bio}
               </p>
             </div>

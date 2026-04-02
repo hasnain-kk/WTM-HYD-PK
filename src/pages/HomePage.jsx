@@ -32,19 +32,19 @@ const HomePage = () => {
 
       <section className="layout-section">
         <div className="grid-container">
-          <div style={{ textAlign: 'center', marginBottom: '80px' }}>
-            <h2 style={{ fontSize: '2rem', margin: 0, color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '2px' }}>THE MISSION</h2>
+          <div style={{ textAlign: 'center', marginBottom: 'clamp(40px, 8vw, 80px)' }}>
+            <h2 style={{ fontSize: 'clamp(1.5rem, 4vw, 2rem)', margin: 0, color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '2px' }}>THE MISSION</h2>
           </div>
-          <div className="surface-card" style={{ padding: '48px', borderLeft: '4px solid var(--vibrant-teal)', background: `linear-gradient(135deg, rgba(25, 103, 210, 0.85), rgba(0, 196, 163, 0.85)), url("${missionBg}") center/cover` }}>
+          <div className="surface-card" style={{ padding: 'clamp(24px, 5vw, 48px)', borderLeft: '4px solid var(--vibrant-teal)', background: `linear-gradient(135deg, rgba(25, 103, 210, 0.85), rgba(0, 196, 163, 0.85)), url("${missionBg}") center/cover` }}>
             <div className="flex-responsive" style={{ alignItems: 'center' }}>
               <div>
-                <h3 style={{ fontSize: '3rem', margin: 0, marginBottom: '24px', color: '#FFFFFF' }}>Empowering Professionals, Focusing on Tech</h3>
-                <p style={{ fontSize: '1.25rem', color: '#FFFFFF', lineHeight: 1.8, textAlign: 'left' }}>
+                <h3 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', margin: 0, marginBottom: '24px', color: '#FFFFFF' }}>Empowering Professionals, Focusing on Tech</h3>
+                <p style={{ fontSize: 'clamp(1.1rem, 2.5vw, 1.25rem)', color: '#FFFFFF', lineHeight: 1.8, textAlign: 'left' }}>
                   Women Techmakers Hyderabad Pakistan is dedicated to empowering women of every profession and at any age. While we gather and support women from all general fields, our core focus and passion remain rooted in technology.
                 </p>
               </div>
               <div>
-                <img src={audienceImg} alt="WTM Audience" className="side-frame-img" style={{ borderColor: '#FFFFFF' }} />
+                <img src={audienceImg} alt="WTM Audience" className="side-frame-img" style={{ borderColor: '#FFFFFF', height: 'clamp(250px, 40vw, 400px)' }} />
               </div>
             </div>
           </div>
