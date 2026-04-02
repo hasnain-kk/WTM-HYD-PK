@@ -20,7 +20,7 @@ import logoVibe from '../WTM Events Pictures/Partners/Vibe Coders Pakistan.png';
 import logoSheCloud from '../WTM Events Pictures/Partners/She Cloud.jpg';
 import logoTech from '../WTM Events Pictures/Partners/Technovation.png';
 
-import logo8 from '../../Logo/8.png';
+import logo8 from '../Logo/8.png';
 import mascots from '../WTM Events Pictures/WTM Sindhi Mascote.png';
 
 
