@@ -25,8 +25,8 @@ const EventsPage = () => {
                 <span className="text-accent" style={{ padding: '6px 12px', border: '1px solid var(--surface-border)', borderRadius: '6px', color: activeTab === 'upcoming' ? 'var(--vibrant-teal)' : 'var(--text-secondary)' }}>{e.status}</span>
                 <span className="text-accent" style={{ color: 'var(--text-secondary)' }}>{e.date}</span>
               </div>
-              <h3 style={{ fontSize: 'clamp(1.5rem, 5vw, 2.25rem)', marginBottom: '24px', lineHeight: 1.2 }}>{e.title}</h3>
-              <p style={{ color: 'var(--text-secondary)', lineHeight: 1.8, fontSize: 'clamp(1rem, 2.5vw, 1.125rem)', marginBottom: '40px', flexGrow: 1 }}>{e.description}</p>
+              <h3 style={{ fontSize: 'clamp(1.3rem, 5vw, 2.25rem)', marginBottom: '16px', lineHeight: 1.2, color: 'var(--text-primary)' }}>{e.title}</h3>
+              <p style={{ color: 'var(--text-primary)', lineHeight: 1.7, fontSize: 'clamp(0.95rem, 2.5vw, 1.1rem)', marginBottom: '32px', flexGrow: 1, opacity: 0.9 }}>{e.description}</p>
               <button onClick={() => {
                 if (e.slug === 'IWD26Event') {
                   navigate('/iwd26');

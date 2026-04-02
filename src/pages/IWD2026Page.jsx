@@ -142,27 +142,27 @@ const IWD2026Page = () => {
         <section className="layout-section">
           <div className="grid-container">
             <div style={{ textAlign: 'center', marginBottom: '100px' }}>
-              <h2 style={{ fontSize: '4.5rem', fontWeight: 'bold', marginBottom: '24px' }}>About Event</h2>
+              <h2 style={{ fontSize: '4.5rem', fontWeight: 'bold', marginBottom: '24px', color: '#FFFFFF' }}>About Event</h2>
               <div style={{ height: '4px', width: '120px', background: accentTeal, margin: '0 auto' }}></div>
             </div>
 
             <div className="flex-responsive" style={{ alignItems: 'center', gap: '80px' }}>
               <div style={{ flex: 1, textAlign: 'center' }}>
                 <img src={baithakLogo} alt="Event Logo" style={{ maxWidth: '100%', marginBottom: '40px' }} />
-                <p style={{ fontSize: '1.75rem', lineHeight: 1.6, opacity: 0.9 }}>
+                <p style={{ fontSize: '1.75rem', lineHeight: 1.6, opacity: 1, color: '#FFFFFF' }}>
                   This Year We are Organizing a flagship gathering where technical leadership meets local heritage.
                 </p>
               </div>
               <div style={{ flex: 1, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(clamp(150px, 40%, 1fr), 1fr))', gap: 'clamp(16px, 3vw, 32px)' }}>
                 {[
-                  { title: 'Panels', desc: 'Expert technical discussions' },
-                  { title: 'Workshops', desc: 'Hands-on learning sessions' },
-                  { title: 'Activity', desc: 'Interactive community building' },
-                  { title: 'Lunch', desc: 'Networking over meals' }
-                ].map((item, i) => (
+                  { title: 'Panels', description: 'Expert technical discussions' },
+                  { title: 'Workshops', description: 'Hands-on learning sessions' },
+                  { title: 'Activity', description: 'Interactive community building' },
+                  { title: 'Lunch', description: 'Networking over meals' }
+                ].map((e, i) => (
                   <div key={i} style={{ padding: 'clamp(16px, 4vw, 32px)', borderRadius: '24px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
                     <h4 style={{ fontSize: 'clamp(1.2rem, 4vw, 1.75rem)', color: accentTeal, marginBottom: '12px' }}>{item.title}</h4>
-                    <p style={{ margin: 0, opacity: 0.7, fontSize: 'clamp(0.875rem, 2vw, 1rem)' }}>{item.desc}</p>
+                    <p style={{ margin: 0, opacity: 1, fontSize: 'clamp(0.875rem, 2vw, 1rem)', color: '#FFFFFF' }}>{item.desc}</p>
                   </div>
                 ))}
               </div>
@@ -176,7 +176,7 @@ const IWD2026Page = () => {
         }}>
           <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, background: `${bgBlue}E6`, backdropFilter: 'blur(10px)', zIndex: 1 }}></div>
           <div className="grid-container" style={{ textAlign: 'center', position: 'relative', zIndex: 2 }}>
-            <h2 style={{ fontSize: '3.5rem', marginBottom: '80px', letterSpacing: '2px' }}>EVENT DETAILS</h2>
+            <h2 style={{ fontSize: '3.5rem', marginBottom: '80px', letterSpacing: '2px', color: '#FFFFFF' }}>EVENT DETAILS</h2>
 
             <div className="flex-responsive" style={{ gap: 'clamp(24px, 5vw, 48px)', justifyContent: 'center' }}>
               <div style={{ flex: 1, padding: 'clamp(32px, 8vw, 64px) clamp(24px, 5vw, 48px)', background: 'rgba(255,255,255,0.05)', backdropFilter: 'blur(10px)', borderRadius: '48px', border: '1px solid rgba(255,255,255,0.1)', textAlign: 'center', boxShadow: '0 24px 64px rgba(0,0,0,0.2)' }}>

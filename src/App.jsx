@@ -20,7 +20,7 @@ const App = () => {
   return (
     <Router>
       <ScrollHandler />
-      <div className="app-container" style={{ paddingTop: 'clamp(56px, 8vh, 80px)' }}>
+      <div className="app-container" style={{ paddingTop: 'clamp(80px, 10vh, 120px)' }}>
         <Header />
         <main>
           <Routes>
