@@ -23,6 +23,15 @@ import logoTech from '../WTM Events Pictures/Partners/Technovation.png';
 import logo8 from '../Logo/8.png';
 import mascots from '../WTM Events Pictures/WTM Sindhi Mascote.png';
 
+// IWD 2026 Team Imports
+import teamAzhar from '../WTM Events Pictures/IWD 26 Team/Azhar Ali.jpeg';
+import teamFaaiz from '../WTM Events Pictures/IWD 26 Team/Faaiz Ali.jpeg';
+import teamHasnain from '../WTM Events Pictures/IWD 26 Team/Hasnain KK.jpeg';
+import teamHurain from '../WTM Events Pictures/IWD 26 Team/Hurain.jpeg';
+import teamRobina from '../WTM Events Pictures/IWD 26 Team/Robina Mirbahar.jpeg';
+import teamSandia from '../WTM Events Pictures/IWD 26 Team/Sandia.jpeg';
+import teamTunhina from '../WTM Events Pictures/IWD 26 Team/Tunhina.jpeg';
+
 
 const IWD2026Page = () => {
   const bgBlue = '#0033BD';
@@ -36,6 +45,16 @@ const IWD2026Page = () => {
     { img: flipImg4, text: 'Together We Rise' },
     { img: flipImg5, text: 'Empowering Women' },
     { img: flipImg6, text: 'Tech Leadership' }
+  ];
+
+  const eventTeam = [
+    { name: 'Robina Mirbahar', img: teamRobina },
+    { name: 'Hasnain KK', img: teamHasnain },
+    { name: 'Tunhina', img: teamTunhina },
+    { name: 'Hurain', img: teamHurain },
+    { name: 'Azhar Ali', img: teamAzhar },
+    { name: 'Faaiz Ali', img: teamFaaiz },
+    { name: 'Sandia', img: teamSandia }
   ];
 
   return (
@@ -198,11 +217,18 @@ const IWD2026Page = () => {
           </div>
         </section>
 
-        <section className="layout-section">
+        <section className="layout-section" style={{ backgroundColor: bgBlue, color: textWhite }}>
           <div className="grid-container" style={{ textAlign: 'center' }}>
-            <h2 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', marginBottom: '40px' }}>Meet the Team of this Event</h2>
-            <div style={{ padding: 'clamp(32px, 8vw, 64px)', borderRadius: '48px', background: 'rgba(255,255,255,0.05)', border: '1px dashed rgba(255,255,255,0.2)' }}>
-              <p style={{ fontSize: '1.5rem', opacity: 0.5, fontStyle: 'italic', margin: 0 }}>Note: Coming Soon</p>
+            <h2 style={{ fontSize: 'clamp(2.2rem, 6vw, 4rem)', marginBottom: '64px' }}>Meet the Organizers</h2>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '48px', justifyContent: 'center' }}>
+              {eventTeam.map((member, i) => (
+                <div key={i} className="surface-card" style={{ padding: '24px', display: 'flex', flexDirection: 'column', alignItems: 'center', background: 'rgba(255,255,255,0.05)', backdropFilter: 'blur(10px)', border: '1px solid rgba(255,255,255,0.1)' }}>
+                  <div style={{ width: '150px', height: '150px', borderRadius: '50%', overflow: 'hidden', marginBottom: '20px', border: `3px solid ${accentTeal}` }}>
+                    <img src={member.img} alt={member.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  </div>
+                  <h3 style={{ fontSize: '1.25rem', color: '#FFFFFF', margin: 0, fontWeight: 'bold' }}>{member.name}</h3>
+                </div>
+              ))}
             </div>
           </div>
         </section>
