@@ -1,5 +1,7 @@
 import React from 'react';
-import heroBg from '../WTM Events Pictures/RAH00585.jpg';
+import { Link } from 'react-router-dom';
+
+import heroBg from '../WTM Events Pictures/RAH00576.jpg';
 import missionBg from '../WTM Events Pictures/DSC00684.jpg';
 import audienceImg from '../WTM Events Pictures/DSC09677.jpg';
 import ambassadorImg from '../WTM Events Pictures/Robina Picture/Robina Mirbahar.jpg';
@@ -7,8 +9,7 @@ import eventBg from '../WTM Events Pictures/477327603_592980400364678_3971829522
 
 const HomePage = () => {
   return (
-    <div className="home-page">
-      {/* Hero Section */}
+    <div>
       <section className="layout-section" style={{ minHeight: '80vh', display: 'flex', alignItems: 'center', background: `linear-gradient(rgba(255,255,255,0.65), rgba(255,255,255,0.8)), url("${heroBg}") center/cover no-repeat` }}>
         <div className="grid-container" style={{ textAlign: 'center', width: '100%', position: 'relative', zIndex: 1 }}>
           <div style={{ maxWidth: '900px', margin: '0 auto', color: 'var(--text-primary)' }}>
@@ -21,14 +22,14 @@ const HomePage = () => {
             <p className="hero-entrance" style={{ fontSize: '1.5rem', marginBottom: '48px', color: 'var(--text-secondary)', maxWidth: '700px', margin: '0 auto 48px auto' }}>
               An inclusive ecosystem building community, visibility, and resources to accelerate equity and empower women across all professions.
             </p>
+
             <div className="hero-entrance" style={{ display: 'flex', gap: '24px', justifyContent: 'center' }}>
-              <a href="/events" className="btn-pill primary" style={{ fontSize: '1.125rem' }}>Explore Events</a>
+              <Link to="/events" className="btn-pill primary" style={{ fontSize: '1.125rem' }}>Explore Events</Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Mission Section */}
       <section className="layout-section">
         <div className="grid-container">
           <div style={{ textAlign: 'center', marginBottom: '80px' }}>
@@ -50,7 +51,6 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* What We Do Section (GDG Layout) */}
       <section className="layout-section" style={{ backgroundColor: 'var(--bg-secondary)', borderTop: '1px solid var(--surface-border)' }}>
         <div className="grid-container" style={{ display: 'flex', gap: '64px', alignItems: 'center', flexWrap: 'wrap' }}>
           <div style={{ flex: '1 1 300px', textAlign: 'center' }}>
@@ -58,7 +58,7 @@ const HomePage = () => {
             <p style={{ fontSize: '1.125rem', color: 'var(--text-secondary)', lineHeight: 1.8, marginBottom: '24px' }}>
               Women Techmakers Hyderabad organizes high-impact events for professionals and enthusiasts who are interested in continuous knowledge transfer and professional networking.
             </p>
-            <a href="/events" className="btn-pill" style={{ borderColor: 'var(--vibrant-teal)', display: 'inline-block', color: 'var(--vibrant-teal)' }}>Learn More</a>
+            <Link to="/events" className="btn-pill" style={{ borderColor: 'var(--vibrant-teal)', display: 'inline-block', color: 'var(--vibrant-teal)' }}>Learn More</Link>
           </div>
 
           <div style={{ flex: '2 1 500px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '40px', textAlign: 'center' }}>
@@ -81,7 +81,6 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Ambassador Section */}
       <section className="layout-section">
         <div className="grid-container">
           <div style={{ textAlign: 'center', marginBottom: '80px' }}>
@@ -97,32 +96,50 @@ const HomePage = () => {
                 As the official ambassador of Women Techmakers Hyderabad, Robina continuously pioneers initiatives that elevate women of all professions and ages, with a passionate core focus on engineers and technologists across the region. Under her leadership, the community has seen unparalleled technical scaling and inclusive empowerment initiatives.
               </p>
               <div style={{ marginTop: '32px' }}>
-                <a href="/team" className="btn-pill" style={{ borderColor: 'var(--vibrant-teal)', display: 'inline-block' }}>View Leadership Directory</a>
+                <Link to="/team/robina-mirbahar" className="btn-pill" style={{ borderColor: 'var(--vibrant-teal)', display: 'inline-block' }}>View Robina's Profile</Link>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Together We Rise Banner Section */}
       <section style={{ padding: '64px 0', textAlign: 'center', backgroundColor: '#FFFFFF' }}>
         <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)', color: 'var(--deep-blue)', fontStyle: 'italic', margin: 0 }}>
           Together we Rise. <span style={{ color: 'var(--vibrant-teal)' }}>Together We Lead.</span>
         </h2>
       </section>
 
-      {/* Flagship Event Section */}
+      {/* Home Page Metrics (Impact in Numbers - V23) */}
+      <section className="layout-section" style={{ backgroundColor: 'var(--bg-secondary)', borderTop: '1px solid var(--surface-border)', borderBottom: '1px solid var(--surface-border)' }}>
+        <div className="grid-container">
+          <h2 style={{ fontSize: '3rem', textAlign: 'center', marginBottom: '80px', color: 'var(--deep-blue)' }}>Impact in Numbers</h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '48px' }}>
+            <div className="surface-card" style={{ padding: '64px 32px', textAlign: 'center' }}>
+              <h3 style={{ fontSize: '4.5rem', margin: 0, color: 'var(--deep-blue)', animation: 'pulse 2s infinite' }}>1000+</h3>
+              <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '1px' }}>Participants Engaged</p>
+            </div>
+            <div className="surface-card" style={{ padding: '64px 32px', textAlign: 'center' }}>
+              <h3 style={{ fontSize: '4.5rem', margin: 0, color: 'var(--vibrant-teal)' }}>6+</h3>
+              <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '1px' }}>High-Impact Events</p>
+            </div>
+            <div className="surface-card" style={{ padding: '64px 32px', textAlign: 'center' }}>
+              <h3 style={{ fontSize: '4.5rem', margin: 0, color: 'var(--deep-blue)' }}>4+</h3>
+              <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '1px' }}>Years of Empowerment</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="layout-section" style={{ position: 'relative' }}>
         <div className="grid-container" style={{ position: 'relative', zIndex: 1 }}>
           <h2 style={{ fontSize: '3rem', marginBottom: '40px', textAlign: 'center' }}>Flagship Event</h2>
           <div className="surface-card" style={{ padding: '64px', position: 'relative', overflow: 'hidden', maxWidth: '800px', margin: '0 auto', textAlign: 'center', background: `linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.85)), url("${eventBg}") center/cover` }}>
-            <span style={{ display: 'inline-block', backgroundColor: 'rgba(0, 196, 163, 0.1)', color: 'var(--vibrant-teal)', border: '1px solid var(--vibrant-teal)', padding: '6px 16px', borderRadius: '100px', fontFamily: 'var(--font-header)', fontSize: '0.875rem', fontWeight: 'bold', marginBottom: '24px', textTransform: 'uppercase' }}>• Live Now</span>
-            <h3 style={{ fontSize: '2.5rem', marginBottom: '16px' }}>IWD 2026 Baithak</h3>
-            <p className="text-accent" style={{ color: 'var(--google-blue)', fontSize: '1rem', marginBottom: '24px' }}>International Women's Day | Invite Only</p>
-            <p style={{ color: 'var(--text-secondary)', fontSize: '1.125rem', marginBottom: '40px' }}>
-              International Women's Day is our flagship annual milestone. Each year features a unique, dynamic theme focusing on breaking patterns and highlighting technical leadership. Apply now to step into the ecosystem.
+            <span style={{ display: 'inline-block', backgroundColor: '#00C4A3', color: '#FFFFFF', padding: '10px 24px', borderRadius: '100px', fontFamily: 'var(--font-header)', fontSize: '1rem', fontWeight: 'bold', marginBottom: '32px', textTransform: 'uppercase', boxShadow: '0 4px 12px rgba(0, 196, 163, 0.3)' }}>• Live Now</span>
+            <h3 style={{ fontSize: '3.5rem', marginBottom: '24px', color: 'var(--deep-blue)' }}>Break The Pattern</h3>
+            <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', marginBottom: '40px', lineHeight: 1.6 }}>
+              Step into the high-frequency ecosystem of Women Techmakers Hyderabad. Register for our 2026 flagship annual milestone focused on technical leadership and professional scaling.
             </p>
-            <a href="/register" className="btn-pill" style={{ borderColor: 'var(--deep-blue)', display: 'inline-block', backdropFilter: 'blur(8px)' }}>Request Invitation</a>
+            <Link to="/iwd26" className="btn-pill primary" style={{ display: 'inline-block' }}>Join the Flagship</Link>
           </div>
         </div>
       </section>

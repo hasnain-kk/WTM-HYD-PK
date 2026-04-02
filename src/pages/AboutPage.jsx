@@ -1,26 +1,39 @@
 import React from 'react';
+
 import aboutBg from '../WTM Events Pictures/DSC09380.jpeg';
 import communityImg from '../WTM Events Pictures/RAH00558.jpeg';
 import partnersBg from '../WTM Events Pictures/478403869_596286476700737_8847670728925164592_n.jpg';
 
+import wtmLogo from '../WTM Events Pictures/Partners/WTM.png';
+import nicLogo from '../WTM Events Pictures/Partners/Nic Hyderabad.png';
+import sheCloudLogo from '../WTM Events Pictures/Partners/She Cloud.jpg';
+import vibeCodersLogo from '../WTM Events Pictures/Partners/Vibe Coders Pakistan.png';
+
+const partnersData = [
+  { name: 'WTM', logo: wtmLogo },
+  { name: 'NIC Hyderabad', logo: nicLogo },
+  { name: 'SheCloud', logo: sheCloudLogo },
+  { name: 'Vibe Coders Pakistan', logo: vibeCodersLogo }
+];
+
 const AboutPage = () => {
   return (
-    <div className="about-page">
+    <div>
       <section className="layout-section" style={{ background: `linear-gradient(rgba(0, 196, 163, 0.85), rgba(66, 133, 244, 0.85)), url("${aboutBg}") center/cover border-box` }}>
         <div className="grid-container">
           <div style={{ textAlign: 'center', marginBottom: '64px' }}>
             <h2 style={{ fontSize: '3.5rem', margin: 0, color: '#FFFFFF' }}>About Our Chapter</h2>
           </div>
           <div className="flex-responsive" style={{ alignItems: 'center' }}>
-            <div className="surface-card" style={{ padding: '64px', maxWidth: '900px', margin: '0 auto', background: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(16px)' }}>
+            <div className="surface-card" style={{ padding: '48px', maxWidth: '900px', margin: '0 auto', background: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(16px)' }}>
               <p style={{ fontSize: '1.25rem', color: '#FFFFFF', lineHeight: 1.8, textAlign: 'left' }}>
-                Women Techmakers Hyderabad Pakistan is a highly active and inclusive community initiative by Women Techmakers. Built to concentrate the mentorship and empowerment efforts of professionals across Sindh, our goal is to help women from all professional fields, with a core focus on technology, to learn, scale, and become highly productive. 
+                Women Techmakers Hyderabad Pakistan is a highly active and inclusive community initiative by Women Techmakers. Built to concentrate the mentorship and empowerment efforts of professionals across Sindh, our goal is to help women from all professional fields, with a core focus on technology, to learn, scale, and become highly productive.
                 <br /><br />
                 We operate large-scale workshops, host our massive flagship International Women's Day events, and foster a culture of continuous knowledge transfer for women of every age and background.
               </p>
             </div>
             <div>
-              <img src={communityImg} alt="WTM Community" className="side-frame-img" style={{borderColor: '#FFFFFF'}} />
+              <img src={communityImg} alt="WTM Community" className="side-frame-img" style={{ borderColor: '#FFFFFF' }} />
             </div>
           </div>
         </div>
@@ -28,13 +41,12 @@ const AboutPage = () => {
 
       <section className="layout-section" style={{ background: `linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.9)), url("${partnersBg}") center/cover border-box`, transition: 'background-color var(--transition-standard)' }}>
         <div className="grid-container" style={{ textAlign: 'center' }}>
-          <h2 style={{ fontSize: '3rem', marginBottom: '24px' }}>Our Partners and Collaborators</h2>
+          <h2 style={{ fontSize: '3rem', marginBottom: '24px', textAlign: 'center' }}>Our Partners and Collaborators</h2>
           <p style={{ textAlign: 'center', color: 'var(--text-secondary)', fontSize: '1.25rem', marginBottom: '64px' }}>Collaborating to empower the next generation of technical leaders.</p>
-          
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '32px', alignItems: 'center', justifyItems: 'center' }}>
-            {['WTM', 'NIC Hyderabad', 'SheCloud', 'Vibe Coders Pakistan'].map((partner, index) => (
-              <div key={index} className="surface-card" style={{ padding: '40px 32px', width: '100%', boxSizing: 'border-box', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <span style={{ fontFamily: 'var(--font-header)', fontWeight: 'bold', fontSize: '1.5rem', color: 'var(--text-primary)' }}>{partner}</span>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '32px' }}>
+            {partnersData.map((partner, i) => (
+              <div key={i} className="surface-card" style={{ padding: '40px 32px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#FFFFFF' }}>
+                 <img src={partner.logo} alt={partner.name} style={{ maxHeight: '60px', maxWidth: '100%', objectFit: 'contain' }} />
               </div>
             ))}
           </div>
@@ -44,24 +56,21 @@ const AboutPage = () => {
       <section className="layout-section" style={{ backgroundColor: 'var(--bg-secondary)', borderTop: '1px solid var(--surface-border)' }}>
         <div className="grid-container">
           <h2 style={{ fontSize: '3rem', textAlign: 'center', marginBottom: '64px' }}>Get Involved</h2>
-          
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '32px' }}>
             <div id="sponsor" className="surface-card" style={{ padding: '48px', textAlign: 'center', display: 'flex', flexDirection: 'column' }}>
               <h3 style={{ fontSize: '2rem', marginBottom: '16px', color: 'var(--google-blue)' }}>Sponsor Us</h3>
               <p style={{ fontSize: '1.125rem', color: 'var(--text-secondary)', marginBottom: '32px', flexGrow: 1 }}>Empower the ecosystem by partnering with our annual flagship initiatives.</p>
-              <a href="mailto:women.techmakers.hyd.pk@gmail.com?subject=Sponsor Inquiry" className="btn-pill" style={{ borderColor: 'var(--google-blue)', display: 'inline-block' }}>Email Partnership Team</a>
+              <a href="mailto:women.techmakers.hyd.pk@gmail.com?subject=Sponsor Inquiry" className="btn-pill" style={{ borderColor: 'var(--google-blue)' }}>Email Partnership Team</a>
             </div>
-
             <div id="mentor" className="surface-card" style={{ padding: '48px', textAlign: 'center', display: 'flex', flexDirection: 'column' }}>
               <h3 style={{ fontSize: '2rem', marginBottom: '16px', color: 'var(--vibrant-teal)' }}>Mentor or Speaker</h3>
               <p style={{ fontSize: '1.125rem', color: 'var(--text-secondary)', marginBottom: '32px', flexGrow: 1 }}>Share your journey, teach a workshop, and inspire the next generation.</p>
-              <a href="mailto:women.techmakers.hyd.pk@gmail.com?subject=Speaker/Mentor Inquiry" className="btn-pill" style={{ borderColor: 'var(--vibrant-teal)', display: 'inline-block' }}>Submit Interest</a>
+              <a href="mailto:women.techmakers.hyd.pk@gmail.com?subject=Speaker/Mentor Inquiry" className="btn-pill" style={{ borderColor: 'var(--vibrant-teal)' }}>Submit Interest</a>
             </div>
-
             <div id="join" className="surface-card" style={{ padding: '48px', textAlign: 'center', display: 'flex', flexDirection: 'column' }}>
               <h3 style={{ fontSize: '2rem', marginBottom: '16px', color: 'var(--deep-blue)' }}>Join the Team</h3>
               <p style={{ fontSize: '1.125rem', color: 'var(--text-secondary)', marginBottom: '32px', flexGrow: 1 }}>We are actively looking for passionate community organizers to scale our mission.</p>
-              <a href="mailto:women.techmakers.hyd.pk@gmail.com?subject=Team Application" className="btn-pill" style={{ borderColor: 'var(--deep-blue)', display: 'inline-block' }}>Apply for Core</a>
+              <a href="mailto:women.techmakers.hyd.pk@gmail.com?subject=Team Application" className="btn-pill" style={{ borderColor: 'var(--deep-blue)' }}>Apply for Core</a>
             </div>
           </div>
         </div>
