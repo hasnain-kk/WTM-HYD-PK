@@ -39,8 +39,8 @@ const IWD2026Page = () => {
   ];
 
   return (
-    <div className="iwd-page" style={{ color: textWhite, minHeight: '100vh', position: 'relative', overflow: 'hidden' }}>
-      <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, pointerEvents: 'none' }}>
+    <div className="iwd-page" style={{ color: textWhite, minHeight: '100vh', position: 'relative', overflowX: 'hidden' }}>
+      <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, pointerEvents: 'none', overflow: 'hidden' }}>
         {[...Array(150)].map((_, i) => (
           <div key={i} style={{
             position: 'absolute',
@@ -94,15 +94,17 @@ const IWD2026Page = () => {
 
       <section style={{ backgroundColor: '#FFFFFF', padding: '40px 0 20px 0', textAlign: 'center', overflow: 'hidden' }}>
         <h2 className="urdu-text-header" style={{
-          fontSize: 'clamp(6rem, 15vw, 12rem)',
+          fontSize: 'clamp(4rem, 15vw, 10rem)',
           margin: 0,
           color: '#000000',
           fontFamily: '"Noto Sans Arabic", "Simplified Arabic", serif',
-          transform: 'scaleX(1.8)',
+          transform: 'scaleX(1.5)',
+          transformOrigin: 'center',
           display: 'inline-block',
           whiteSpace: 'nowrap',
           opacity: 1,
-          fontWeight: 'bold'
+          fontWeight: 'bold',
+          maxWidth: '90vw'
         }}>
           حیدرآباد
         </h2>

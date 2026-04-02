@@ -12,12 +12,14 @@ import EventsPage from './pages/EventsPage';
 import EventProfilePage from './pages/EventProfilePage';
 import IWD2026Page from './pages/IWD2026Page';
 import CodeOfConductPage from './pages/CodeOfConductPage';
+import ScrollHandler from './components/utils/ScrollHandler';
 
 import './styles/theme.css';
 
 const App = () => {
   return (
     <Router>
+      <ScrollHandler />
       <div className="app-container">
         <Header />
         <main>

@@ -23,7 +23,7 @@ const HomePage = () => {
               An inclusive ecosystem building community, visibility, and resources to accelerate equity and empower women across all professions.
             </p>
 
-            <div className="hero-entrance" style={{ display: 'flex', gap: '24px', justifyContent: 'center' }}>
+            <div className="hero-entrance" style={{ display: 'flex', gap: '24px', justifyContent: 'center', flexWrap: 'wrap' }}>
               <Link to="/events" className="btn-pill primary" style={{ fontSize: '1.125rem' }}>Explore Events</Link>
             </div>
           </div>
@@ -61,7 +61,7 @@ const HomePage = () => {
             <Link to="/events" className="btn-pill" style={{ borderColor: 'var(--vibrant-teal)', display: 'inline-block', color: 'var(--vibrant-teal)' }}>Learn More</Link>
           </div>
 
-          <div style={{ flex: '2 1 500px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '40px', textAlign: 'center' }}>
+          <div style={{ flex: '2 1 500px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(clamp(150px, 40%, 250px), 1fr))', gap: 'clamp(20px, 4vw, 40px)', textAlign: 'center' }}>
             <div>
               <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--text-secondary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: '16px' }}><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
               <h3 style={{ fontSize: '1.25rem', marginBottom: '12px' }}>Tech Conferences</h3>
@@ -112,17 +112,17 @@ const HomePage = () => {
       {/* Home Page Metrics (Impact in Numbers - V23) */}
       <section className="layout-section" style={{ backgroundColor: 'var(--bg-secondary)', borderTop: '1px solid var(--surface-border)', borderBottom: '1px solid var(--surface-border)' }}>
         <div className="grid-container">
-          <h2 style={{ fontSize: '3rem', textAlign: 'center', marginBottom: '80px', color: 'var(--deep-blue)' }}>Impact in Numbers</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '48px' }}>
-            <div className="surface-card" style={{ padding: '64px 32px', textAlign: 'center' }}>
+          <h2 style={{ fontSize: 'clamp(2.2rem, 6vw, 3rem)', textAlign: 'center', marginBottom: 'clamp(40px, 8vw, 80px)', color: 'var(--deep-blue)' }}>Impact in Numbers</h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(clamp(250px, 100%, 1fr), 1fr))', gap: 'clamp(24px, 4vw, 48px)' }}>
+            <div className="surface-card" style={{ padding: 'clamp(40px, 8vw, 64px) clamp(20px, 5vw, 32px)', textAlign: 'center' }}>
               <h3 style={{ fontSize: '4.5rem', margin: 0, color: 'var(--deep-blue)', animation: 'pulse 2s infinite' }}>1000+</h3>
               <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '1px' }}>Participants Engaged</p>
             </div>
-            <div className="surface-card" style={{ padding: '64px 32px', textAlign: 'center' }}>
+            <div className="surface-card" style={{ padding: 'clamp(40px, 8vw, 64px) clamp(20px, 5vw, 32px)', textAlign: 'center' }}>
               <h3 style={{ fontSize: '4.5rem', margin: 0, color: 'var(--vibrant-teal)' }}>6+</h3>
               <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '1px' }}>High-Impact Events</p>
             </div>
-            <div className="surface-card" style={{ padding: '64px 32px', textAlign: 'center' }}>
+            <div className="surface-card" style={{ padding: 'clamp(40px, 8vw, 64px) clamp(20px, 5vw, 32px)', textAlign: 'center' }}>
               <h3 style={{ fontSize: '4.5rem', margin: 0, color: 'var(--deep-blue)' }}>4+</h3>
               <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '1px' }}>Years of Empowerment</p>
             </div>
@@ -133,10 +133,10 @@ const HomePage = () => {
       <section className="layout-section" style={{ position: 'relative' }}>
         <div className="grid-container" style={{ position: 'relative', zIndex: 1 }}>
           <h2 style={{ fontSize: '3rem', marginBottom: '40px', textAlign: 'center' }}>Flagship Event</h2>
-          <div className="surface-card" style={{ padding: '64px', position: 'relative', overflow: 'hidden', maxWidth: '800px', margin: '0 auto', textAlign: 'center', background: `linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.85)), url("${eventBg}") center/cover` }}>
-            <span style={{ display: 'inline-block', backgroundColor: '#00C4A3', color: '#FFFFFF', padding: '10px 24px', borderRadius: '100px', fontFamily: 'var(--font-header)', fontSize: '1rem', fontWeight: 'bold', marginBottom: '32px', textTransform: 'uppercase', boxShadow: '0 4px 12px rgba(0, 196, 163, 0.3)' }}>• Live Now</span>
-            <h3 style={{ fontSize: '3.5rem', marginBottom: '24px', color: 'var(--deep-blue)' }}>Break The Pattern</h3>
-            <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', marginBottom: '40px', lineHeight: 1.6 }}>
+          <div className="surface-card" style={{ padding: 'clamp(32px, 8vw, 64px)', position: 'relative', overflow: 'hidden', maxWidth: '800px', margin: '0 auto', textAlign: 'center', background: `linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.85)), url("${eventBg}") center/cover` }}>
+            <span style={{ display: 'inline-block', backgroundColor: '#00C4A3', color: '#FFFFFF', padding: '10px 24px', borderRadius: '100px', fontFamily: 'var(--font-header)', fontSize: 'clamp(0.8rem, 2vw, 1rem)', fontWeight: 'bold', marginBottom: '32px', textTransform: 'uppercase', boxShadow: '0 4px 12px rgba(0, 196, 163, 0.3)' }}>• Live Now</span>
+            <h3 style={{ fontSize: 'clamp(2.2rem, 6vw, 3.5rem)', marginBottom: '24px', color: 'var(--deep-blue)' }}>Break The Pattern</h3>
+            <p style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)', color: 'var(--text-secondary)', marginBottom: '40px', lineHeight: 1.6 }}>
               Step into the high-frequency ecosystem of Women Techmakers Hyderabad. Register for our 2026 flagship annual milestone focused on technical leadership and professional scaling.
             </p>
             <Link to="/iwd26" className="btn-pill primary" style={{ display: 'inline-block' }}>Join the Flagship</Link>

@@ -22,10 +22,10 @@ const AboutPage = () => {
       <section className="layout-section" style={{ background: `linear-gradient(rgba(0, 196, 163, 0.85), rgba(66, 133, 244, 0.85)), url("${aboutBg}") center/cover border-box` }}>
         <div className="grid-container">
           <div style={{ textAlign: 'center', marginBottom: 'clamp(40px, 8vw, 64px)' }}>
-            <h2 style={{ fontSize: 'clamp(2.2rem, 8vw, 3.5rem)', margin: 0, color: '#FFFFFF' }}>About Our Chapter</h2>
+            <h2 style={{ fontSize: 'clamp(2rem, 8vw, 3.5rem)', margin: '0 auto', color: '#FFFFFF', maxWidth: '100%' }}>About Our Chapter</h2>
           </div>
-          <div className="flex-responsive" style={{ alignItems: 'center' }}>
-            <div className="surface-card" style={{ padding: 'clamp(24px, 5vw, 48px)', maxWidth: '900px', margin: '0 auto', background: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(16px)' }}>
+          <div className="flex-responsive" style={{ alignItems: 'center', gap: 'clamp(32px, 8vw, 48px)' }}>
+            <div className="surface-card" style={{ padding: 'clamp(20px, 5vw, 48px)', maxWidth: '100%', margin: '0 auto', background: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(16px)' }}>
               <p style={{ fontSize: 'clamp(1.1rem, 2.5vw, 1.25rem)', color: '#FFFFFF', lineHeight: 1.8, textAlign: 'left' }}>
                 Women Techmakers Hyderabad Pakistan is a highly active and inclusive community initiative by Women Techmakers. Built to concentrate the mentorship and empowerment efforts of professionals across Sindh, our goal is to help women from all professional fields, with a core focus on technology, to learn, scale, and become highly productive.
                 <br /><br />

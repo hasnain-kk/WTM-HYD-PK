@@ -44,22 +44,32 @@
   --grid-pattern: linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
 }
 
-body {
+* {
+  box-sizing: border-box;
+}
+
+html, body {
   margin: 0;
   padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
+body {
   background-color: var(--bg-primary);
   background-image: var(--grid-pattern);
   background-size: 40px 40px;
   color: var(--text-primary);
   font-family: var(--font-body);
   line-height: 1.6;
-  overflow-x: hidden;
 }
 
 h1,h2,h3,h4,h5,h6 {
   font-family: var(--font-header);
   font-weight: 700;
   margin-top: 0;
+  max-width: 100%;
 }
 
 .text-accent {
@@ -133,6 +143,9 @@ a:hover {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 24px;
+  width: 100%;
+  position: relative;
+  overflow-wrap: break-word;
 }
 
 .header-container {
@@ -390,4 +403,10 @@ input:focus {
   nav { flex-wrap: wrap; justify-content: center; gap: 16px !important; }
   h1 { font-size: 2.5rem !important; }
   h2 { font-size: 2.25rem !important; }
+}
+
+#root {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
 }
