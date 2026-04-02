@@ -1,5 +1,5 @@
 import React from 'react';
-import './theme.css';
+import '../../styles/theme.css';
 import logoLight from '../../Logo/2.png'; 
 
 const Header = () => {
