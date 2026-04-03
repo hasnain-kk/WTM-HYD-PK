@@ -20,8 +20,7 @@ import logoVibe from '../WTM Events Pictures/Partners/Vibe Coders Pakistan.png';
 import logoSheCloud from '../WTM Events Pictures/Partners/She Cloud.jpg';
 import logoTech from '../WTM Events Pictures/Partners/Technovation.png';
 
-import logo8 from '../Logo/8.png';
-import mascots from '../WTM Events Pictures/WTM Sindhi Mascote.png';
+
 
 // IWD 2026 Team Imports
 import teamAzhar from '../WTM Events Pictures/IWD 26 Team/Azhar Ali.jpeg';
@@ -272,24 +271,6 @@ const IWD2026Page = () => {
           </div>
         </section>
 
-        <section style={{ backgroundColor: '#FFFFFF', padding: '120px 0' }}>
-          <div className="grid-container flex-responsive" style={{ alignItems: 'center', gap: '80px' }}>
-            <div style={{ flex: 1.2, textAlign: 'left' }}>
-              <div style={{ marginBottom: '32px' }}>
-                <img src={logo8} alt="WTM Logo 8" style={{ height: '80px' }} />
-              </div>
-              <h2 style={{ fontSize: '4.5rem', color: '#1a73e8', margin: '0 0 32px 0', lineHeight: 1.1, fontWeight: '500' }}>
-                Empowering the <br /> Women of Sindh
-              </h2>
-              <p style={{ fontSize: '1.25rem', color: '#5f6368', lineHeight: 1.6, marginBottom: '0px', maxWidth: '550px' }}>
-                Dedicated to scaling the potential of every developer and leader across interior Sindh. We provide the architecture for excellence in technology.
-              </p>
-            </div>
-            <div style={{ flex: 1 }}>
-              <img src={mascots} alt="WTM Mascots in Ajrak" style={{ width: '100%', maxWidth: '700px' }} />
-            </div>
-          </div>
-        </section>
 
         <div style={{ backgroundColor: '#1CE9B6', color: '#FFFFFF', padding: '12px 0', overflow: 'hidden', whiteSpace: 'nowrap' }}>
           <div className="ticker-animate-reverse" style={{ display: 'inline-block', fontSize: '1.1rem', fontWeight: 'bold', letterSpacing: '4px', textTransform: 'uppercase' }}>
