@@ -161,8 +161,8 @@ const IWD2026Page = () => {
                   { title: 'Lunch', desc: 'Networking over meals' }
                 ].map((item, i) => (
                   <div key={i} style={{ padding: 'clamp(16px, 4vw, 32px)', borderRadius: '24px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
-                    <h4 style={{ fontSize: 'clamp(1.2rem, 4vw, 1.75rem)', color: accentTeal, marginBottom: '12px' }}>{item.title}</h4>
-                    <p style={{ margin: 0, opacity: 1, fontSize: 'clamp(0.875rem, 2vw, 1rem)', color: '#FFFFFF' }}>{item.desc}</p>
+                    <h4 style={{ fontSize: 'clamp(1.2rem, 4.5vw, 1.8rem)', color: accentTeal, marginBottom: '16px', fontWeight: 'bold', opacity: 1 }}>{item.title}</h4>
+                    <p style={{ margin: 0, opacity: 1, fontSize: 'clamp(0.95rem, 2.5vw, 1.1rem)', color: '#FFFFFF', fontWeight: '500' }}>{item.desc}</p>
                   </div>
                 ))}
               </div>
@@ -174,23 +174,23 @@ const IWD2026Page = () => {
           position: 'relative',
           background: `url("${eventDetailsBg}") center/cover fixed`,
         }}>
-          <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, background: `${bgBlue}E6`, backdropFilter: 'blur(10px)', zIndex: 1 }}></div>
+          <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, background: `${bgBlue}F9`, backdropFilter: 'blur(20px)', zIndex: 1 }}></div>
           <div className="grid-container" style={{ textAlign: 'center', position: 'relative', zIndex: 2 }}>
-            <h2 style={{ fontSize: 'clamp(2.5rem, 8vw, 3.5rem)', marginBottom: 'clamp(40px, 8vw, 80px)', letterSpacing: '2px', color: '#FFFFFF' }}>EVENT DETAILS</h2>
+            <h2 style={{ fontSize: 'clamp(2.5rem, 8vw, 3.5rem)', marginBottom: 'clamp(40px, 8vw, 80px)', letterSpacing: '2px', color: '#FFFFFF', opacity: 1 }}>EVENT DETAILS</h2>
 
             <div className="flex-responsive" style={{ gap: 'clamp(24px, 5vw, 48px)', justifyContent: 'center' }}>
-              <div style={{ flex: 1, padding: 'clamp(32px, 8vw, 64px) clamp(24px, 5vw, 48px)', background: 'rgba(255,255,255,0.05)', backdropFilter: 'blur(10px)', borderRadius: '48px', border: '1px solid rgba(255,255,255,0.1)', textAlign: 'center', boxShadow: '0 24px 64px rgba(0,0,0,0.2)' }}>
-                <div style={{ color: accentTeal, fontSize: '0.875rem', fontWeight: 'bold', marginBottom: '24px', letterSpacing: '3px' }}>TIME & PLACE</div>
-                <p style={{ fontSize: 'clamp(2.2rem, 8vw, 3.5rem)', margin: '0 0 12px 0', fontWeight: 'bold', lineHeight: 1.1 }}>13 APRIL <br /><span style={{ fontSize: '0.7em', opacity: 0.6 }}>2026</span></p>
+              <div style={{ flex: 1, padding: 'clamp(32px, 8vw, 64px) clamp(24px, 5vw, 48px)', background: 'rgba(255,255,255,0.08)', backdropFilter: 'blur(10px)', borderRadius: '48px', border: '1px solid rgba(255,255,255,0.15)', textAlign: 'center', boxShadow: '0 24px 64px rgba(0,0,0,0.3)' }}>
+                <div style={{ color: accentTeal, fontSize: '1rem', fontWeight: 'bold', marginBottom: '24px', letterSpacing: '3px' }}>TIME & PLACE</div>
+                <p style={{ fontSize: 'clamp(2.2rem, 8vw, 3.5rem)', margin: '0 0 12px 0', fontWeight: 'bold', lineHeight: 1.1, color: '#FFFFFF' }}>13 APRIL <br /><span style={{ fontSize: '0.75em', color: '#FFFFFF' }}>2026</span></p>
                 <p style={{ fontSize: 'clamp(1.2rem, 3vw, 1.5rem)', color: accentTeal, fontWeight: 'bold', marginTop: '32px' }}>NIC HYDERABAD</p>
               </div>
 
-              <div style={{ flex: 1, padding: 'clamp(32px, 8vw, 64px) clamp(24px, 5vw, 48px)', background: 'rgba(255,255,255,0.05)', backdropFilter: 'blur(10px)', borderRadius: '48px', border: '1px solid rgba(255,255,255,0.1)', textAlign: 'center', boxShadow: '0 24px 64px rgba(0,0,0,0.2)', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                <div style={{ color: accentTeal, fontSize: '0.875rem', fontWeight: 'bold', marginBottom: '32px', letterSpacing: '3px' }}>ELIGIBILITY</div>
-                <p style={{ fontSize: 'clamp(1.3rem, 4vw, 1.75rem)', lineHeight: 1.5, margin: 0, opacity: 0.9 }}>
+              <div style={{ flex: 1, padding: 'clamp(32px, 8vw, 64px) clamp(24px, 5vw, 48px)', background: 'rgba(255,255,255,0.08)', backdropFilter: 'blur(10px)', borderRadius: '48px', border: '1px solid rgba(255,255,255,0.15)', textAlign: 'center', boxShadow: '0 24px 64px rgba(0,0,0,0.3)', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                <div style={{ color: accentTeal, fontSize: '1rem', fontWeight: 'bold', marginBottom: '32px', letterSpacing: '3px' }}>ELIGIBILITY</div>
+                <p style={{ fontSize: 'clamp(1.3rem, 4vw, 1.75rem)', lineHeight: 1.5, margin: 0, color: '#FFFFFF' }}>
                   Open to <strong>everyone</strong> regardless of Gender, Profession, or Age.
                 </p>
-                <p style={{ fontSize: '0.875rem', marginTop: '32px', padding: '12px 24px', background: 'rgba(0, 229, 255, 0.1)', borderRadius: '100px', display: 'inline-block', color: accentTeal, fontWeight: 'bold' }}>• INVITE ONLY ACCESS</p>
+                <p style={{ fontSize: '1rem', marginTop: '32px', padding: '12px 24px', background: 'rgba(0, 229, 255, 0.2)', borderRadius: '100px', display: 'inline-block', color: accentTeal, fontWeight: 'bold' }}>• INVITE ONLY ACCESS</p>
               </div>
             </div>
 
@@ -210,9 +210,9 @@ const IWD2026Page = () => {
 
         <section className="layout-section">
           <div className="grid-container" style={{ textAlign: 'center' }}>
-            <h2 style={{ fontSize: 'clamp(2.5rem, 8vw, 3.5rem)', marginBottom: '40px' }}>Our Speakers</h2>
-            <div style={{ padding: 'clamp(32px, 8vw, 64px)', borderRadius: '48px', background: 'rgba(255,255,255,0.05)', border: '1px dashed rgba(255,255,255,0.2)' }}>
-              <p style={{ fontSize: 'clamp(1.5rem, 5vw, 2rem)', opacity: 0.5, fontStyle: 'italic', margin: 0 }}>Note: Coming Soon</p>
+            <h2 style={{ fontSize: 'clamp(2.5rem, 8vw, 3.5rem)', marginBottom: '40px', color: '#FFFFFF' }}>Our Speakers</h2>
+            <div style={{ padding: 'clamp(32px, 8vw, 64px)', borderRadius: '48px', background: 'rgba(255,255,255,0.1)', border: '1px dashed rgba(255,255,255,0.3)' }}>
+              <p style={{ fontSize: 'clamp(1.5rem, 5vw, 2.5rem)', fontWeight: 'bold', color: '#FFFFFF', margin: 0 }}>Note: Coming Soon</p>
             </div>
           </div>
         </section>
