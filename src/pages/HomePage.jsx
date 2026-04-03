@@ -7,7 +7,16 @@ import audienceImg from '../WTM Events Pictures/DSC09677.jpg';
 import ambassadorImg from '../WTM Events Pictures/Robina Picture/Robina Mirbahar.jpg';
 import eventBg from '../WTM Events Pictures/477327603_592980400364678_3971829522026014964_n.jpg';
 
+import useSEO from '../hooks/useSEO';
+
 const HomePage = () => {
+  useSEO({
+    title: 'WTM hyderabad Pakistan',
+    description: 'Official platform for WTM Hyderabad. Empowering women across all professions in Sindh with a focus on technical leadership, career scaling, and inclusive mentorship.',
+    image: '/og-home.png',
+    url: window.location.href
+  });
+
   return (
     <div>
       <section className="layout-section" style={{ minHeight: 'clamp(60vh, 70vw, 85vh)', display: 'flex', alignItems: 'center', background: `linear-gradient(rgba(255,255,255,0.65), rgba(255,255,255,0.8)), url("${heroBg}") center/cover no-repeat` }}>

@@ -31,8 +31,17 @@ import teamRobina from '../WTM Events Pictures/IWD 26 Team/Robina Mirbahar.jpeg'
 import teamSandia from '../WTM Events Pictures/IWD 26 Team/Sandia.jpeg';
 import teamTunhina from '../WTM Events Pictures/IWD 26 Team/Tunhina.jpeg';
 
+import useSEO from '../hooks/useSEO';
+
 
 const IWD2026Page = () => {
+  useSEO({
+    title: 'IWD 26 Baithak',
+    description: 'Join WTM Hyderabad for the 2026 Flagship "Break the Pattern" event. A day of technical leadership, networking, and professional scaling.',
+    image: '/og-iwd.jpg',
+    url: window.location.href
+  });
+
   const bgBlue = '#0033BD';
   const textWhite = '#FFFFFF';
   const accentTeal = '#00E5FF';
