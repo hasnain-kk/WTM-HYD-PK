@@ -17,10 +17,27 @@ import ScrollHandler from './components/utils/ScrollHandler';
 import './styles/theme.css';
 
 const App = () => {
+  const [isLoading, setIsLoading] = React.useState(true);
+
+  React.useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 3000); // 3-second premium branding experience
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <Router>
       <ScrollHandler />
-      <div className="app-container" style={{ paddingTop: '72px' }}>
+      
+      <div className={`preloader-overlay ${!isLoading ? 'fade-out' : ''}`}>
+        <div style={{ textAlign: 'center' }}>
+          <div className="preloader-text">WTM HYDERABAD</div>
+          <div className="preloader-subtext">Breaking the Pattern</div>
+        </div>
+      </div>
+
+      <div className="app-container" style={{ paddingTop: '72px', opacity: isLoading ? 0 : 1, transition: 'opacity 1s ease-in-out' }}>
         <Header />
         <main>
           <Routes>
