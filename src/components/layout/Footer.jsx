@@ -32,9 +32,9 @@ const Footer = () => {
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap', gap: 'clamp(24px, 5vw, 48px)', borderBottom: '1px solid var(--surface-border)', paddingBottom: '32px' }}>
           <span style={{ fontSize: '0.875rem', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--text-secondary)' }}>Follow Us</span>
           <div style={{ display: 'flex', gap: '24px', alignItems: 'center' }}>
-            <a href="https://www.linkedin.com/company/women-techmaker-hyderabad-pakistan" target="_blank" rel="noreferrer" className="footer-link" style={{ fontSize: '1rem', color: '#0077b5' }}>LinkedIn</a>
-            <a href="https://web.facebook.com/womentechmakershyderabadpakistan" target="_blank" rel="noreferrer" className="footer-link" style={{ fontSize: '1rem', color: '#1877F2' }}>Facebook</a>
-            <a href="https://www.instagram.com/wtm.hydpk/" target="_blank" rel="noreferrer" className="footer-link" style={{ fontSize: '1rem', color: '#E4405F' }}>Instagram</a>
+            <a href="https://www.linkedin.com/company/women-techmaker-hyderabad-pakistan" target="_blank" rel="noreferrer" className="footer-link" style={{ fontSize: '1rem', color: 'var(--vibrant-teal)' }}>LinkedIn</a>
+            <a href="https://web.facebook.com/womentechmakershyderabadpakistan" target="_blank" rel="noreferrer" className="footer-link" style={{ fontSize: '1rem', color: 'var(--vibrant-teal)' }}>Facebook</a>
+            <a href="https://www.instagram.com/wtm.hydpk/" target="_blank" rel="noreferrer" className="footer-link" style={{ fontSize: '1rem', color: 'var(--vibrant-teal)' }}>Instagram</a>
             <div style={{ width: '1px', height: '20px', backgroundColor: 'var(--surface-border)' }}></div>
             <a href="mailto:women.techmakers.hyd.pk@gmail.com" className="footer-link" style={{ fontSize: '1rem', color: 'var(--vibrant-teal)', fontWeight: 'bold' }}>Email Us</a>
           </div>
