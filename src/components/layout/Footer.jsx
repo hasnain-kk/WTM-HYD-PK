@@ -7,7 +7,7 @@ const Footer = () => {
   const location = useLocation();
   const currentRoute = location.pathname;
 
-  const showSindhSection = currentRoute === '/' || currentRoute === '/about' || currentRoute.startsWith('/team/');
+  const showSindhSection = currentRoute === '/' || currentRoute === '/about' || currentRoute === '/events' || currentRoute === '/iwd26' || currentRoute.startsWith('/team/');
 
   return (
     <footer style={{ backgroundColor: 'var(--footer-bg)', transition: 'background-color var(--transition-standard)' }}>
