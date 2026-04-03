@@ -297,7 +297,7 @@ a:hover {
   background-color: transparent;
   perspective: 1000px;
   width: 100%;
-  height: clamp(350px, 80vw, 500px);
+  height: clamp(240px, 40vw, 320px);
   cursor: pointer;
 }
 
@@ -321,13 +321,16 @@ a:hover {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   overflow: hidden;
-  border-radius: 32px;
+  border-radius: 20px;
+  border: 4px solid var(--accent-teal, #00E5FF);
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
 }
 
 .flip-card-front img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
 .flip-card-back {

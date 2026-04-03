@@ -249,7 +249,11 @@ const IWD2026Page = () => {
               <p style={{ color: 'var(--text-secondary)', fontSize: '1.25rem' }}>Previous highlights from the WTM Hyderabad Baithak series.</p>
             </div>
             
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(clamp(280px, 100%, 350px), 1fr))', gap: '32px' }}>
+            <div style={{ 
+              display: 'grid', 
+              gridTemplateColumns: 'repeat(auto-fit, minmax(clamp(140px, 45%, 320px), 1fr))', 
+              gap: 'clamp(12px, 3vw, 24px)' 
+            }}>
               {flipItems.map((item, i) => (
                 <div key={i} className="flip-card">
                   <div className="flip-card-inner">
