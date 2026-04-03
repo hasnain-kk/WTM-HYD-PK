@@ -164,7 +164,7 @@ a:hover {
   top: 0;
   width: 100%;
   z-index: 1000;
-  padding: 12px 0;
+  padding: clamp(16px, 2.5vh, 24px) 0;
   transition: all var(--transition-standard);
 }
 
