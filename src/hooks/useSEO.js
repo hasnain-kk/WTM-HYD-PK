@@ -17,19 +17,22 @@ const useSEO = ({ title, description, image, url }) => {
     };
 
     // 3. Apply Metadata
+    const baseUrl = 'https://wtm-hyderabad.vercel.app';
+    const finalImage = image?.startsWith('http') ? image : `${baseUrl}${image}`;
+
     updateMeta('meta[name="title"]', title);
     updateMeta('meta[name="description"]', description);
     
     // Open Graph
     updateMeta('meta[property="og:title"]', title);
     updateMeta('meta[property="og:description"]', description);
-    updateMeta('meta[property="og:image"]', image);
+    updateMeta('meta[property="og:image"]', finalImage);
     updateMeta('meta[property="og:url"]', url);
 
     // Twitter
     updateMeta('meta[property="twitter:title"]', title);
     updateMeta('meta[property="twitter:description"]', description);
-    updateMeta('meta[property="twitter:image"]', image);
+    updateMeta('meta[property="twitter:image"]', finalImage);
     updateMeta('meta[property="twitter:url"]', url);
 
   }, [title, description, image, url]);
