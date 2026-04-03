@@ -258,8 +258,7 @@ a:hover {
   h2 { font-size: clamp(1.8rem, 8vw, 2.5rem) !important; }
   h3 { font-size: clamp(1.5rem, 6vw, 2rem) !important; }
   .nav-link { font-size: 0.8rem; margin-bottom: 4px; }
-  .header-container .grid-container { justify-content: center !important; }
-  nav { gap: 12px !important; margin-top: 12px; }
+  nav { gap: 12px; }
   
   .iwd-page h2 { font-size: clamp(2rem, 10vw, 3.5rem) !important; line-height: 1.2 !important; }
   .iwd-page .grid-container { padding: 0 16px !important; }
@@ -420,12 +419,11 @@ input:focus {
   .side-frame-img { height: 300px; }
   .layout-section { padding: clamp(48px, 10vw, 80px) 24px; }
   .header-container .grid-container {
-    flex-direction: column;
-    gap: 16px;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
   }
-  nav { flex-wrap: wrap; justify-content: center; gap: 16px !important; }
+  nav { flex-wrap: nowrap; justify-content: flex-end; gap: 8px; }
   h1 { font-size: clamp(2rem, 8vw, 3rem) !important; }
   h2 { font-size: clamp(1.75rem, 6vw, 2.5rem) !important; }
   
