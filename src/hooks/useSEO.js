@@ -17,7 +17,7 @@ const useSEO = ({ title, description, image, url }) => {
     };
 
     // 3. Apply Metadata
-    const baseUrl = 'https://wtm-hyderabad.vercel.app';
+    const baseUrl = 'https://wtm-hyd-pk.vercel.app';
     const finalImage = image?.startsWith('http') ? image : `${baseUrl}${image}`;
 
     updateMeta('meta[name="title"]', title);
