@@ -166,7 +166,7 @@ const IWD2026Page = () => {
                   { title: 'Panels', desc: 'Expert technical discussions' },
                   { title: 'Workshops', desc: 'Hands-on learning sessions' },
                   { title: 'Activity', desc: 'Interactive community building' },
-                  { title: 'Lunch', desc: 'Networking over meals' }
+                  { title: 'Chat & Chai', desc: 'Networking with Refreshment' }
                 ].map((item, i) => (
                   <div key={i} style={{ padding: 'clamp(16px, 4vw, 32px)', borderRadius: '24px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
                     <h4 style={{ fontSize: 'clamp(1.2rem, 4.5vw, 1.8rem)', color: accentTeal, marginBottom: '16px', fontWeight: 'bold', opacity: 1 }}>{item.title}</h4>
