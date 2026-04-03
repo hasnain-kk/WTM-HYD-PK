@@ -31,9 +31,10 @@ const App = () => {
       <ScrollHandler />
       
       <div className={`preloader-overlay ${!isLoading ? 'fade-out' : ''}`}>
-        <div style={{ textAlign: 'center' }}>
-          <div className="preloader-text">WTM HYDERABAD</div>
-          <div className="preloader-subtext">Breaking the Pattern</div>
+        <div className="dot-loader">
+          <div className="dot"></div>
+          <div className="dot"></div>
+          <div className="dot"></div>
         </div>
       </div>
 
