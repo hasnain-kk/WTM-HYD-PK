@@ -23,7 +23,7 @@ const Header = () => {
             <a 
               href="https://luma.com/event/evt-WbCg1FNBS1W7OdG" 
               className="btn-pill" 
-              style={{ fontWeight: 'bold', color: '#FFFFFF', background: '#0033BD', padding: '10px 32px', borderRadius: '100px', fontSize: '1rem', textDecoration: 'none' }}
+              style={{ fontWeight: 'bold', color: '#FFFFFF', background: '#0033BD', padding: '8px 24px', borderRadius: '100px', fontSize: '0.9rem', textDecoration: 'none', border: '2px solid #00E5FF' }}
               data-luma-action="checkout"
               data-luma-event-id="evt-WbCg1FNBS1W7OdG"
             >
