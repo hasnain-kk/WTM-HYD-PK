@@ -77,7 +77,7 @@ const Footer = () => {
 
         <div className="footer-bottom" style={{ borderTop: '1px solid var(--surface-border)', paddingTop: '32px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
           <span className="text-overline" style={{ color: 'var(--text-secondary)', fontSize: '0.875rem' }}>© 2026 Women Techmakers Hyderabad</span>
-          <span className="text-overline" style={{ color: 'var(--text-primary)', fontSize: '0.875rem' }}>Built by Hasnain KK</span>
+          <span className="text-overline" style={{ color: 'var(--text-primary)', fontSize: '0.875rem' }}>Built with <span style={{ color: 'var(--deep-blue)' }}>❤️</span> by <a href="https://www.linkedin.com/in/hasnainkk" target="_blank" rel="noreferrer" style={{ color: '#0077b5', fontWeight: 'bold' }}>Hasnain KK</a></span>
         </div>
       </div>
     </footer>

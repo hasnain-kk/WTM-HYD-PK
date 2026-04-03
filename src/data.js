@@ -1,4 +1,7 @@
 import robinaImg from './WTM Events Pictures/Robina Picture/Robina Mirbahar.jpg';
+import hasnainImg from './WTM Events Pictures/IWD 26 Team/Hasnain KK.jpeg';
+import tunhinaImg from './WTM Events Pictures/IWD 26 Team/Tunhina.jpeg';
+import hurainImg from './WTM Events Pictures/IWD 26 Team/Hurain.jpeg';
 import iwd26Img from './WTM Events Pictures/IWD26/Event lookup.jpg';
 import impactFutureImg from './WTM Events Pictures/RAH00576.jpg';
 import accelerateActionImg from './WTM Events Pictures/478403869_596286476700737_8847670728925164592_n.jpg';
@@ -24,7 +27,7 @@ export const sharedTeamData = [
     role: 'Organizer',
     gender: 'male',
     bio: 'Hasnain is a technical architect overseeing the expansion of Women Techmakers Hyderabad. His focus is on establishing robust technical pipelines and promoting inclusive leadership across Sindh. He is deeply committed to empowering juniors and mapping community growth with real-world developer tools.',
-    photoUrl: 'https://ui-avatars.com/api/?name=Hasnain+KK&background=EAEAEA&color=4285F4&size=400&bold=true',
+    photoUrl: hasnainImg,
     socials: [
       { platform: 'LinkedIn', url: '#' },
       { platform: 'GitHub', url: '#' }
@@ -32,12 +35,12 @@ export const sharedTeamData = [
   },
   {
     id: 3,
-    slug: 'tunjina',
-    name: 'Tunjina',
+    slug: 'tunhina',
+    name: 'Tunhina',
     role: 'Organizer',
     gender: 'female',
-    bio: 'Tunjina serves as a lead organizer for Women Techmakers Hyderabad, focusing on community outreach and educational curriculum design. She is passionate about closing the gender gap in technology through accessible mentorship and technical skill-sharing.',
-    photoUrl: 'https://ui-avatars.com/api/?name=Tunjina&background=EAEAEA&color=00C4A3&size=400&bold=true',
+    bio: 'Tunhina serves as a lead organizer for Women Techmakers Hyderabad, focusing on community outreach and educational curriculum design. She is passionate about closing the gender gap in technology through accessible mentorship and technical skill-sharing.',
+    photoUrl: tunhinaImg,
     socials: [
       { platform: 'LinkedIn', url: '#' }
     ]
@@ -49,7 +52,7 @@ export const sharedTeamData = [
     role: 'Organizer',
     gender: 'female',
     bio: 'Hurain is a core organizer at WTM Hyderabad, facilitating large-scale technical gatherings and local meetups. She works on optimizing the attendee experience and ensuring every event fosters a culture of inclusivity and professional growth.',
-    photoUrl: 'https://ui-avatars.com/api/?name=Hurain&background=EAEAEA&color=1967D2&size=400&bold=true',
+    photoUrl: hurainImg,
     socials: [
       { platform: 'LinkedIn', url: '#' }
     ]
