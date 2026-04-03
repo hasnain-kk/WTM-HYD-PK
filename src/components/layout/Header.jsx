@@ -42,7 +42,7 @@ const Header = () => {
           {isIWDPage ? (
             <a 
               href="https://luma.com/event/evt-WbCg1FNBS1W7OdG" 
-              className="btn-pill" 
+              className="btn-pill btn-cta-animated" 
               style={{ fontWeight: 'bold', color: '#FFFFFF', background: '#0033BD', padding: '8px clamp(12px, 2.5vw, 24px)', borderRadius: '100px', fontSize: '0.85rem', textDecoration: 'none', border: '2px solid #00E5FF', whiteSpace: 'nowrap' }}
               data-luma-action="checkout"
               data-luma-event-id="evt-WbCg1FNBS1W7OdG"
