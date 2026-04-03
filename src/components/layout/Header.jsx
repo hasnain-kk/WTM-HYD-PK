@@ -8,22 +8,22 @@ const Header = () => {
 
   return (
     <header className="header-container">
-      <div className="grid-container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%', flexWrap: 'wrap', gap: '16px' }}>
-        <div style={{ marginBottom: '8px', flexShrink: 0 }}>
+      <div className="grid-container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%', flexWrap: 'nowrap', gap: '12px' }}>
+        <div style={{ flexShrink: 0 }}>
           <Link to="/">
             <img
               src={wtmLogo}
               alt="WTM Hyderabad"
-              style={{ height: 'clamp(32px, 5vw, 40px)', display: 'block' }}
+              style={{ height: 'clamp(32px, 4.5vw, 40px)', display: 'block' }}
             />
           </Link>
         </div>
-        <nav style={{ display: 'flex', gap: 'clamp(12px, 3vw, 32px)', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center' }}>
+        <nav style={{ display: 'flex', gap: 'clamp(12px, 3vw, 32px)', flexWrap: 'nowrap', justifyContent: 'flex-end', alignItems: 'center' }}>
           {currentRoute === '/iwd26' ? (
             <a 
               href="https://luma.com/event/evt-WbCg1FNBS1W7OdG" 
               className="btn-pill" 
-              style={{ fontWeight: 'bold', color: '#FFFFFF', background: '#0033BD', padding: '8px 24px', borderRadius: '100px', fontSize: '0.9rem', textDecoration: 'none', border: '2px solid #00E5FF' }}
+              style={{ fontWeight: 'bold', color: '#FFFFFF', background: '#0033BD', padding: '10px clamp(12px, 2.5vw, 24px)', borderRadius: '100px', fontSize: 'clamp(0.8rem, 2.5vw, 0.9rem)', textDecoration: 'none', border: '2px solid #00E5FF', whiteSpace: 'nowrap' }}
               data-luma-action="checkout"
               data-luma-event-id="evt-WbCg1FNBS1W7OdG"
             >
