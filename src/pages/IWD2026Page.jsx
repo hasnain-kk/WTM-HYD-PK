@@ -29,7 +29,7 @@ import teamHasnain from '../WTM Events Pictures/IWD 26 Team/Hasnain KK.jpeg';
 import teamHurain from '../WTM Events Pictures/IWD 26 Team/Hurain.jpeg';
 import teamRobina from '../WTM Events Pictures/IWD 26 Team/Robina Mirbahar.jpeg';
 import teamSandia from '../WTM Events Pictures/IWD 26 Team/Sandia.jpeg';
-import teamTunhina from '../WTM Events Pictures/IWD 26 Team/Tunhina.jpeg';
+import teamTunjina from '../WTM Events Pictures/IWD 26 Team/Tunhina.jpeg';
 
 import useSEO from '../hooks/useSEO';
 
@@ -58,7 +58,7 @@ const IWD2026Page = () => {
   const eventTeam = [
     { name: 'Robina Mirbahar', img: teamRobina },
     { name: 'Hasnain KK', img: teamHasnain },
-    { name: 'Tunhina', img: teamTunhina },
+    { name: 'Tunjina', img: teamTunjina },
     { name: 'Hurain', img: teamHurain },
     { name: 'Azhar Ali', img: teamAzhar },
     { name: 'Faaiz Ali', img: teamFaaiz },
@@ -235,6 +235,31 @@ const IWD2026Page = () => {
                     <img src={member.img} alt={member.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   </div>
                   <h3 style={{ fontSize: 'clamp(1rem, 3vw, 1.25rem)', color: '#FFFFFF', margin: 0, fontWeight: 'bold' }}>{member.name}</h3>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+
+        <section className="layout-section" style={{ backgroundColor: '#F8F9FA' }}>
+          <div className="grid-container">
+            <div style={{ textAlign: 'center', marginBottom: 'clamp(40px, 8vw, 80px)' }}>
+              <h2 style={{ fontSize: 'clamp(2.2rem, 6vw, 3.5rem)', color: bgBlue, marginBottom: '16px' }}>Memorable Moments</h2>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '1.25rem' }}>Previous highlights from the WTM Hyderabad Baithak series.</p>
+            </div>
+            
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(clamp(280px, 100%, 350px), 1fr))', gap: '32px' }}>
+              {flipItems.map((item, i) => (
+                <div key={i} className="flip-card">
+                  <div className="flip-card-inner">
+                    <div className="flip-card-front">
+                      <img src={item.img} alt={item.text} />
+                    </div>
+                    <div className="flip-card-back">
+                      <h3>{item.text}</h3>
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>

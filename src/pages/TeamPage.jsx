@@ -1,8 +1,16 @@
 import React from 'react';
+import useSEO from '../hooks/useSEO';
 import { Link } from 'react-router-dom';
 import { sharedTeamData } from '../data';
 
 const TeamPage = () => {
+  useSEO({
+    title: 'Meet the Team | WTM hyderabad Pakistan',
+    description: 'Meet the dedicated organizers and community leads behind WTM Hyderabad. Empowering women in technology and leadership.',
+    image: '/og-iwd.jpg',
+    url: window.location.href
+  });
+
   const visibleTeam = sharedTeamData.filter(m => !m.hidden);
   
   return (

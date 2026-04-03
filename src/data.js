@@ -1,6 +1,6 @@
 import robinaImg from './WTM Events Pictures/Robina Picture/Robina Mirbahar.jpg';
 import hasnainImg from './WTM Events Pictures/IWD 26 Team/Hasnain KK.jpeg';
-import tunhinaImg from './WTM Events Pictures/IWD 26 Team/Tunhina.jpeg';
+import tunjinaImg from './WTM Events Pictures/IWD 26 Team/Tunhina.jpeg';
 import hurainImg from './WTM Events Pictures/IWD 26 Team/Hurain.jpeg';
 import iwd26Img from './WTM Events Pictures/IWD26/Event lookup.jpg';
 import impactFutureImg from './WTM Events Pictures/RAH00576.jpg';
@@ -35,12 +35,12 @@ export const sharedTeamData = [
   },
   {
     id: 3,
-    slug: 'tunhina',
-    name: 'Tunhina',
+    slug: 'tunjina',
+    name: 'Tunjina',
     role: 'Organizer',
     gender: 'female',
-    bio: 'Tunhina serves as a lead organizer for Women Techmakers Hyderabad, focusing on community outreach and educational curriculum design. She is passionate about closing the gender gap in technology through accessible mentorship and technical skill-sharing.',
-    photoUrl: tunhinaImg,
+    bio: 'Tunjina serves as a lead organizer for Women Techmakers Hyderabad, focusing on community outreach and educational curriculum design. She is passionate about closing the gender gap in technology through accessible mentorship and technical skill-sharing.',
+    photoUrl: tunjinaImg,
     socials: [
       { platform: 'LinkedIn', url: '#' }
     ]

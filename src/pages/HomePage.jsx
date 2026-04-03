@@ -1,4 +1,5 @@
 import React from 'react';
+import useSEO from '../hooks/useSEO';
 import { Link } from 'react-router-dom';
 
 import heroBg from '../WTM Events Pictures/RAH00576.jpg';
@@ -7,13 +8,11 @@ import audienceImg from '../WTM Events Pictures/DSC09677.jpg';
 import ambassadorImg from '../WTM Events Pictures/Robina Picture/Robina Mirbahar.jpg';
 import eventBg from '../WTM Events Pictures/477327603_592980400364678_3971829522026014964_n.jpg';
 
-import useSEO from '../hooks/useSEO';
-
 const HomePage = () => {
   useSEO({
     title: 'WTM hyderabad Pakistan',
     description: 'Official platform for WTM Hyderabad. Empowering women across all professions in Sindh with a focus on technical leadership, career scaling, and inclusive mentorship.',
-    image: '/og-home.png',
+    image: '/og-iwd.jpg',
     url: window.location.href
   });
 
