@@ -47,29 +47,6 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Gallery: We are Coming long way */}
-      <section className="layout-section" style={{ padding: '80px 0', backgroundColor: '#FFFFFF' }}>
-        <div className="grid-container">
-          <h2 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', color: 'var(--deep-blue)', textAlign: 'center', marginBottom: '60px' }}>
-            We are Coming <span style={{ color: 'var(--vibrant-teal)' }}>Long Way</span>
-          </h2>
-        </div>
-        <div className="marquee-container">
-          <div className="marquee-content">
-            {[...pastEvents, ...pastEvents].map((img, idx) => (
-              <img 
-                key={idx} 
-                src={img} 
-                alt={`Past Event ${idx}`} 
-                className="marquee-poster" 
-                loading="lazy" 
-                decoding="async" 
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="layout-section">
         <div className="grid-container">
           <div style={{ textAlign: 'center', marginBottom: 'clamp(40px, 8vw, 80px)' }}>
@@ -157,13 +134,13 @@ const HomePage = () => {
       </section>
 
       {/* Gallery: Our Past Event (Forced Speed & Unstoppable) */}
-      <section className="layout-section" style={{ padding: '80px 0', backgroundColor: '#FFFFFF' }}>
+      <section className="layout-section" style={{ padding: '80px 0', backgroundColor: 'var(--bg-secondary)' }}>
         <div className="grid-container">
-          <h2 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', color: 'var(--deep-blue)', textAlign: 'center', marginBottom: '60px' }}>
+          <h2 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', color: 'black', textAlign: 'center', marginBottom: '60px' }}>
             Our <span style={{ color: 'var(--vibrant-teal)' }}>Past Event</span>
           </h2>
         </div>
-        <div className="marquee-container">
+        <div className="marquee-container" style={{ backgroundColor: 'transparent' }}>
           <div className="marquee-content">
             {[...pastEvents, ...pastEvents].map((img, idx) => (
               <img 

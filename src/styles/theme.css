@@ -122,10 +122,15 @@ a:hover {
   transform: translateY(-2px);
 }
 
+.btn-pill:active {
+  transform: scale(0.95) translateY(0);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
 .btn-pill.primary {
   background: linear-gradient(135deg, var(--deep-blue) 0%, var(--google-blue) 50%, var(--vibrant-teal) 100%);
   background-size: 200% 200%;
-  border: none;
+  border: 2px solid rgba(255, 255, 255, 0.4);
   color: #FFFFFF;
   box-shadow: 0 4px 16px rgba(0, 196, 163, 0.3);
   animation: gradientShift 8s ease infinite;
@@ -141,6 +146,12 @@ a:hover {
   box-shadow: 0 8px 32px rgba(0, 196, 163, 0.5);
   transform: translateY(-2px);
   color: #FFFFFF;
+  border-color: #FFFFFF;
+}
+
+.btn-pill.primary:active {
+  transform: scale(0.95) translateY(0);
+  box-shadow: inset 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .layout-section {
@@ -742,6 +753,10 @@ input:focus {
 .flagship-portal-btn:hover {
   transform: scale(1.05);
   border-color: #00BFA5;
+}
+
+.flagship-portal-btn:active {
+  transform: scale(0.95) translateY(0);
 }
 
 @media (max-width: 992px) {
