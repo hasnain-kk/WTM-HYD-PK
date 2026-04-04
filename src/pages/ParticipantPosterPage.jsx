@@ -52,12 +52,12 @@ const ParticipantPosterPage = () => {
         });
       }
 
-      // Initialize Segmenter
+      // Initialize Segmenter (Optimized 'Landscape' model for maximum efficiency)
       const model = window.bodySegmentation.SupportedModels.MediaPipeSelfieSegmentation;
       segmenterRef.current = await window.bodySegmentation.createSegmenter(model, {
         runtime: 'mediapipe',
         solutionPath: 'https://cdn.jsdelivr.net/npm/@mediapipe/selfie_segmentation',
-        modelType: 'general'
+        modelType: 'landscape'
       });
     };
 
@@ -154,14 +154,26 @@ const ParticipantPosterPage = () => {
     await new Promise(r => overlayImg.onload = r);
     ctx.drawImage(overlayImg, 0, 0, POSTER_WIDTH, POSTER_HEIGHT);
 
-    // 4. Draw Name Text (BOLD & LARGER)
+    // 4. Draw Name Text (BOLD, DYNAMIC SCALING)
     ctx.fillStyle = '#FFFFFF';
-    ctx.font = "bold 70px 'Product Sans', sans-serif";
+    let fontSize = 70;
+    ctx.font = `bold ${fontSize}px 'Product Sans', sans-serif`;
     ctx.textAlign = 'left';
-    ctx.textBaseline = 'top';
+    ctx.textBaseline = 'middle';
+    
+    // Auto-scale font if name is too long (Max Width: 468px)
+    const MAX_TEXT_WIDTH = TEXT_FRAME.w;
+    let textMetrics = ctx.measureText(name.toUpperCase());
+    
+    while (textMetrics.width > MAX_TEXT_WIDTH && fontSize > 20) {
+      fontSize -= 2;
+      ctx.font = `bold ${fontSize}px 'Product Sans', sans-serif`;
+      textMetrics = ctx.measureText(name.toUpperCase());
+    }
     
     // Vertical centering within name box (Y: 841, H: 175)
-    const textY = TEXT_FRAME.y + (TEXT_FRAME.h / 2) - 40; 
+    // The exact middle of y:841 and y:1016 is 928
+    const textY = TEXT_FRAME.y + (TEXT_FRAME.h / 2); 
     ctx.fillText(name.toUpperCase(), TEXT_FRAME.x, textY);
 
     setIsProcessing(false);
