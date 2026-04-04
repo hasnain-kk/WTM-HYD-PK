@@ -32,6 +32,7 @@ import teamSandia from '../WTM Events Pictures/IWD 26 Team/Sandia.jpeg';
 import teamTunjina from '../WTM Events Pictures/IWD 26 Team/Tunhina.jpeg';
 import teamKashaf from '../WTM Events Pictures/IWD 26 Team/Kashaf Abdullah.jpg';
 import teamWasio from '../WTM Events Pictures/IWD 26 Team/Abdul Wasio.jpg';
+import teamDawood from '../WTM Events Pictures/IWD 26 Team/Muhammad Dawood.png';
 
 import useSEO from '../hooks/useSEO';
 
@@ -66,7 +67,8 @@ const IWD2026Page = () => {
     { name: 'Azhar Ali', img: teamAzhar },
     { name: 'Faaiz Ali', img: teamFaaiz },
     { name: 'Sandia', img: teamSandia },
-    { name: 'Abdul Wasio', img: teamWasio }
+    { name: 'Abdul Wasio', img: teamWasio },
+    { name: 'Muhammad Dawood', img: teamDawood }
   ];
 
   return (

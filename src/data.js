@@ -18,8 +18,7 @@ export const sharedTeamData = [
     bio: 'Robina serves as a crucial bridge between local talent and global technical ecosystems. Her drive to empower marginalized professionals natively within Sindh has scaled the WTM operations profoundly. She actively curates safe spaces for learning and leads mentorship pipelines directly prioritizing young girls.',
     photoUrl: robinaNewImg,
     socials: [
-      { platform: 'LinkedIn', url: 'https://www.linkedin.com/in/robina-mirbahar-7538a7151/' },
-      { platform: 'Twitter', url: '#' }
+      { platform: 'LinkedIn', url: 'https://www.linkedin.com/in/robinamirbahar/' }
     ]
   },
   {
@@ -31,44 +30,32 @@ export const sharedTeamData = [
     bio: 'Hasnain is a technical architect overseeing the expansion of Women Techmakers Hyderabad. His focus is on establishing robust technical pipelines and promoting inclusive leadership across Sindh. He is deeply committed to empowering juniors and mapping community growth with real-world developer tools.',
     photoUrl: hasnainImg,
     socials: [
-      { platform: 'LinkedIn', url: 'https://www.linkedin.com/in/hasnain-kk/' },
-      { platform: 'GitHub', url: 'https://github.com/hasnain-kk' }
+      { platform: 'LinkedIn', url: 'https://www.linkedin.com/in/hasnainkk/' },
+      { platform: 'Website', url: 'https://hasnainkk.bio.link' }
     ]
   },
   {
     id: 3,
-    slug: 'muhammad-dawood',
-    name: 'Muhammad Dawood',
+    slug: 'tunjina',
+    name: 'Tunjina Ali',
     role: 'Organizer',
-    gender: 'male',
-    bio: 'Muhammad Dawood is a key organizer for Women Techmakers Hyderabad, focusing on logistical excellence and community impact. He works on scaling our technical outreach and ensuring that every flagship event, like IWD 2026, delivers unparalleled value to the tech ecosystem in Sindh.',
-    photoUrl: dawoodImg,
+    gender: 'female',
+    bio: 'Tunjina Ali serves as a lead organizer for Women Techmakers Hyderabad, focusing on community outreach and educational curriculum design. She is passionate about closing the gender gap in technology through accessible mentorship and technical skill-sharing.',
+    photoUrl: tunjinaImg,
     socials: [
-      { platform: 'LinkedIn', url: '#' }
+      { platform: 'LinkedIn', url: 'https://www.linkedin.com/in/tunjinaali07/' }
     ]
   },
   {
     id: 4,
-    slug: 'tunjina',
-    name: 'Tunjina',
-    role: 'Organizer',
-    gender: 'female',
-    bio: 'Tunjina serves as a lead organizer for Women Techmakers Hyderabad, focusing on community outreach and educational curriculum design. She is passionate about closing the gender gap in technology through accessible mentorship and technical skill-sharing.',
-    photoUrl: tunjinaImg,
-    socials: [
-      { platform: 'LinkedIn', url: '#' }
-    ]
-  },
-  {
-    id: 5,
     slug: 'hurain',
-    name: 'Hurain',
+    name: 'Hurrain Soomro',
     role: 'Organizer',
     gender: 'female',
-    bio: 'Hurain is a core organizer at WTM Hyderabad, facilitating large-scale technical gatherings and local meetups. She works on optimizing the attendee experience and ensuring every event fosters a culture of inclusivity and professional growth.',
+    bio: 'Hurrain Soomro is a core organizer at WTM Hyderabad, facilitating large-scale technical gatherings and local meetups. She works on optimizing the attendee experience and ensuring every event fosters a culture of inclusivity and professional growth.',
     photoUrl: hurainImg,
     socials: [
-      { platform: 'LinkedIn', url: '#' }
+      { platform: 'LinkedIn', url: 'https://www.linkedin.com/in/hurrainsoomro/' }
     ]
   }
 ];
