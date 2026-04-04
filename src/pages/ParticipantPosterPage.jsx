@@ -60,15 +60,31 @@ const ParticipantPosterPage = () => {
 
   // 1. Pre-load Assets for Instant Rendering
   useEffect(() => {
+    let imagesLoaded = 0;
+    const totalImages = 2;
+
+    const checkAllLoaded = () => {
+      imagesLoaded++;
+      if (imagesLoaded === totalImages) {
+        drawPoster(); // Initial draw once everything is ready
+      }
+    };
+
     const bg = new Image();
     bg.crossOrigin = "anonymous";
     bg.src = posterBg;
-    bg.onload = () => { bgRef.current = bg; };
+    bg.onload = () => { 
+      bgRef.current = bg; 
+      checkAllLoaded();
+    };
 
     const ov = new Image();
     ov.crossOrigin = "anonymous";
     ov.src = posterOverlay;
-    ov.onload = () => { overlayRef.current = ov; };
+    ov.onload = () => { 
+      overlayRef.current = ov; 
+      checkAllLoaded();
+    };
   }, []);
 
   // 2. Optimized "Live" Drawing Engine
@@ -77,17 +93,16 @@ const ParticipantPosterPage = () => {
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
     
-    // 1. Background (Always draw if loaded)
+    // 1. Background
     ctx.clearRect(0, 0, POSTER_WIDTH, POSTER_HEIGHT);
     if (bgRef.current) {
       ctx.drawImage(bgRef.current, 0, 0, POSTER_WIDTH, POSTER_HEIGHT);
     } else {
-      // Placeholder while loading
-      ctx.fillStyle = '#F8F9FA';
+      ctx.fillStyle = '#FFFFFF';
       ctx.fillRect(0, 0, POSTER_WIDTH, POSTER_HEIGHT);
     }
 
-    // 2. User Photo (Only if present)
+    // 2. User Photo
     if (image) {
       ctx.save();
       ctx.beginPath();
@@ -102,12 +117,12 @@ const ParticipantPosterPage = () => {
       ctx.restore();
     }
 
-    // 3. Overlay (Always draw if loaded)
+    // 3. Overlay
     if (overlayRef.current) {
       ctx.drawImage(overlayRef.current, 0, 0, POSTER_WIDTH, POSTER_HEIGHT);
     }
 
-    // 4. Name Text (Live Sync)
+    // 4. Name Text
     if (name) {
       ctx.fillStyle = '#FFFFFF';
       const fontSize = 70;
@@ -173,57 +188,65 @@ const ParticipantPosterPage = () => {
           </p>
         </div>
 
-        {/* Tier 2: Studio Body (Single Column Flow) */}
+        {/* Tier 2: Studio Body (Balanced Side-by-Side) */}
         <div className="workbench-dynamic-grid">
           
-          {/* Step 1 & 2: Inputs */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', width: '100%', maxWidth: '600px', margin: '0 auto' }}>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '4px' }}>
-                <span style={{ background: 'var(--google-blue)', color: '#FFF', width: '28px', height: '28px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.85rem', fontWeight: 'bold' }}>1</span>
-                <label style={{ color: 'var(--deep-blue)', fontSize: '0.9rem', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '1px' }}>Verify Your Name</label>
-              </div>
-              <input 
-                type="text" 
-                className="generator-input-field" 
-                placeholder="Type your name..." 
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                style={{ background: '#F8F9FA', color: 'var(--deep-blue)', border: '2px solid rgba(25, 118, 210, 0.1)', width: '100%', boxSizing: 'border-box' }}
-              />
-            </div>
-
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '4px' }}>
-                <span style={{ background: 'var(--google-blue)', color: '#FFF', width: '28px', height: '28px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.85rem', fontWeight: 'bold' }}>2</span>
-                <label style={{ color: 'var(--deep-blue)', fontSize: '0.9rem', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '1px' }}>Professional Portrait</label>
-              </div>
-              <div style={{ position: 'relative', width: '100%' }}>
-                <input 
-                  type="file" 
-                  accept="image/*" 
-                  onChange={handleImageUpload}
-                  style={{ position: 'absolute', opacity: 0, width: '100%', height: '100%', cursor: 'pointer', zIndex: 2 }}
-                />
-                <div className="generator-input-field" style={{ 
-                  background: image ? 'rgba(0, 196, 163, 0.08)' : '#F8F9FA', 
-                  borderColor: image ? 'var(--vibrant-teal)' : 'rgba(25, 118, 210, 0.1)', 
-                  textAlign: 'center', 
-                  cursor: 'pointer',
-                  color: image ? 'var(--vibrant-teal)' : 'var(--text-secondary)',
-                  width: '100%',
-                  boxSizing: 'border-box',
-                  fontWeight: 'bold'
-                }}>
-                  {image ? '✓ Portrait Selected' : 'Choose File...'}
+          {/* LEFT: Inputs */}
+          <div className="workbench-inputs">
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', maxWidth: '500px', margin: '0 auto' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', textAlign: 'left' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '4px' }}>
+                  <span style={{ background: 'var(--google-blue)', color: '#FFF', width: '28px', height: '28px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.85rem', fontWeight: 'bold' }}>1</span>
+                  <label style={{ color: 'var(--deep-blue)', fontSize: '0.9rem', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '1px' }}>Verify Your Name</label>
                 </div>
+                <input 
+                  type="text" 
+                  className="generator-input-field" 
+                  placeholder="Type your name..." 
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  style={{ background: '#F8F9FA', color: 'var(--deep-blue)', border: '2px solid rgba(25, 118, 210, 0.1)', width: '100%', boxSizing: 'border-box' }}
+                />
+              </div>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', textAlign: 'left' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '4px' }}>
+                  <span style={{ background: 'var(--google-blue)', color: '#FFF', width: '28px', height: '28px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.85rem', fontWeight: 'bold' }}>2</span>
+                  <label style={{ color: 'var(--deep-blue)', fontSize: '0.9rem', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '1px' }}>Professional Portrait</label>
+                </div>
+                <div style={{ position: 'relative', width: '100%' }}>
+                  <input 
+                    type="file" 
+                    accept="image/*" 
+                    onChange={handleImageUpload}
+                    style={{ position: 'absolute', opacity: 0, width: '100%', height: '100%', cursor: 'pointer', zIndex: 2 }}
+                  />
+                  <div className="generator-input-field" style={{ 
+                    background: image ? 'rgba(0, 196, 163, 0.08)' : '#F8F9FA', 
+                    borderColor: image ? 'var(--vibrant-teal)' : 'rgba(25, 118, 210, 0.1)', 
+                    textAlign: 'center', 
+                    cursor: 'pointer',
+                    color: image ? 'var(--vibrant-teal)' : 'var(--text-secondary)',
+                    width: '100%',
+                    boxSizing: 'border-box',
+                    fontWeight: 'bold'
+                  }}>
+                    {image ? '✓ Portrait Selected' : 'Choose File...'}
+                  </div>
+                </div>
+              </div>
+
+              <div style={{ margin: '16px 0', padding: '16px', background: 'rgba(0, 196, 163, 0.04)', borderRadius: '12px', border: '1px dashed var(--vibrant-teal)', textAlign: 'center' }}>
+                <p style={{ color: 'var(--vibrant-teal)', fontSize: '0.85rem', fontWeight: 'bold', margin: 0 }}>
+                  ⌨️ Live Identity Studio Active
+                </p>
               </div>
             </div>
           </div>
 
-          {/* Live Preview Section (Below Photo) */}
-          <div className="workbench-preview" style={{ width: '100%', maxWidth: '600px', margin: '0 auto' }}>
-            <div className="canvas-preview-box" style={{ boxShadow: name && image ? '0 30px 80px rgba(0, 196, 163, 0.15)' : '0 10px 40px rgba(0, 0, 0, 0.05)' }}>
+          {/* RIGHT: Live Preview (Always Visible) */}
+          <div className="workbench-preview">
+            <div className="canvas-preview-box" style={{ boxShadow: '0 20px 60px rgba(0,0,0,0.08)' }}>
               <canvas 
                 ref={canvasRef} 
                 width={POSTER_WIDTH} 
@@ -231,9 +254,9 @@ const ParticipantPosterPage = () => {
                 style={{ display: 'block', width: '100%', height: 'auto', borderRadius: '12px' }}
               />
             </div>
-            <div style={{ marginTop: '16px', textAlign: 'center' }}>
+            <div style={{ marginTop: '20px', textAlign: 'center' }}>
               <p style={{ color: 'var(--vibrant-teal)', fontSize: '0.85rem', fontWeight: 'bold', margin: 0 }}>
-                {isReady && name && image ? '✓ Ready to Download' : '⌨️ Live Identity Preview'}
+                {isReady && name && image ? '✓ Ready to Download' : 'Previewing Baithak Template'}
               </p>
             </div>
           </div>
