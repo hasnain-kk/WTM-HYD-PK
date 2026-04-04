@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import useSEO from '../hooks/useSEO';
 
 // Asset Imports
-import posterBg from '../WTM Events Pictures/Participent Poster/IWD 26 Baithak Posters (1).png';
+import posterBg from '../WTM Events Pictures/Participent Poster/IWD 26 Baithak Posters (3).png';
 import posterOverlay from '../WTM Events Pictures/Participent Poster/IWD 26 Baithak Posters (3).png';
 
 const ParticipantPosterPage = () => {
