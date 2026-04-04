@@ -131,7 +131,13 @@ const ParticipantPosterPage = () => {
     // 2. Process & Draw User Photo
     const cutout = await removeBackground(image);
     
-    // Calculate scaling to fit the box (374x408)
+    // Exact Clip to the Photo Frame to prevent "Bleeding"
+    ctx.save();
+    ctx.beginPath();
+    ctx.rect(PHOTO_FRAME.x, PHOTO_FRAME.y, PHOTO_FRAME.w, PHOTO_FRAME.h);
+    ctx.clip();
+
+    // Calculate scaling to fit the box (379x408)
     const scale = Math.max(PHOTO_FRAME.w / cutout.width, PHOTO_FRAME.h / cutout.height);
     const drawW = cutout.width * scale;
     const drawH = cutout.height * scale;
@@ -139,6 +145,7 @@ const ParticipantPosterPage = () => {
     const offsetY = PHOTO_FRAME.y + (PHOTO_FRAME.h - drawH) / 2;
 
     ctx.drawImage(cutout, offsetX, offsetY, drawW, drawH);
+    ctx.restore(); // Exit Clip
 
     // 3. Draw Transparent Overlay
     const overlayImg = new Image();
@@ -147,14 +154,14 @@ const ParticipantPosterPage = () => {
     await new Promise(r => overlayImg.onload = r);
     ctx.drawImage(overlayImg, 0, 0, POSTER_WIDTH, POSTER_HEIGHT);
 
-    // 4. Draw Name Text
-    ctx.fillStyle = '#FFFFFF'; // Standard high-contrast, will adjust if user prefers Google Blue
-    ctx.font = "40px 'Product Sans', sans-serif";
+    // 4. Draw Name Text (BOLD & LARGER)
+    ctx.fillStyle = '#FFFFFF';
+    ctx.font = "bold 70px 'Product Sans', sans-serif";
     ctx.textAlign = 'left';
     ctx.textBaseline = 'top';
     
     // Vertical centering within name box (Y: 841, H: 175)
-    const textY = TEXT_FRAME.y + (TEXT_FRAME.h / 2) - 20; 
+    const textY = TEXT_FRAME.y + (TEXT_FRAME.h / 2) - 40; 
     ctx.fillText(name.toUpperCase(), TEXT_FRAME.x, textY);
 
     setIsProcessing(false);
@@ -178,18 +185,21 @@ const ParticipantPosterPage = () => {
     <div className="poster-container">
       <div className="poster-workbench">
         <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-          <h1 style={{ color: '#FFFFFF', fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '16px' }}>Welcome!</h1>
-          <p style={{ color: 'var(--vibrant-teal)', fontSize: '1.2rem', opacity: 0.9 }}>
+          <h1 style={{ color: '#FFFFFF', fontSize: 'clamp(2rem, 5vw, 2.5rem)', fontWeight: 'bold', marginBottom: '8px' }}>Welcome!</h1>
+          <p style={{ color: 'var(--vibrant-teal)', fontSize: 'clamp(1rem, 3.5vw, 1.2rem)', opacity: 0.9, fontWeight: '500' }}>
             Congratulations for Being Shortlisted for IWD 26 Baithak
           </p>
-          <div style={{ height: '4px', width: '80px', background: 'var(--vibrant-teal)', margin: '24px auto' }}></div>
+          <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.9rem', marginTop: '4px', textTransform: 'uppercase', letterSpacing: '3px' }}>
+            Participants Poster Generator
+          </p>
+          <div style={{ height: '3px', width: '60px', background: 'var(--vibrant-teal)', margin: '20px auto' }}></div>
         </div>
 
         <div className="canvas-preview-box">
           {isProcessing && (
             <div className="ai-loading-aura">
               <div className="pulsing-aura"></div>
-              <p style={{ color: '#FFFFFF', marginTop: '20px', fontWeight: 'bold', letterSpacing: '2px' }}>AI REMOVING BACKGROUND...</p>
+              <p style={{ color: '#FFFFFF', marginTop: '20px', fontWeight: 'bold', letterSpacing: '2px', fontSize: '0.8rem' }}>AI CROP & PROCESSING...</p>
             </div>
           )}
           <canvas 
@@ -202,7 +212,7 @@ const ParticipantPosterPage = () => {
             <div style={{ height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#F8F9FA', color: '#5F6368', textAlign: 'center', padding: '40px' }}>
               <div>
                 <p style={{ fontSize: '1.2rem', fontWeight: '500' }}>Your Poster Preview will appear here</p>
-                <p style={{ fontSize: '0.9rem', marginTop: '8px' }}>Uplode your SelfProtrait Picture Below</p>
+                <p style={{ fontSize: '0.85rem', marginTop: '8px' }}>Uplode your SelfProtrait Picture Below</p>
               </div>
             </div>
           )}
@@ -210,8 +220,8 @@ const ParticipantPosterPage = () => {
 
         <div className="generator-controls">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px' }}>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              <label style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.85rem', fontWeight: 'bold', marginLeft: '20px' }}>PARTICIPANT NAME</label>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+              <label style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.8rem', fontWeight: 'bold', marginLeft: '20px' }}>PARTICIPANT NAME</label>
               <input 
                 type="text" 
                 className="generator-input-field" 
@@ -220,8 +230,8 @@ const ParticipantPosterPage = () => {
                 onChange={(e) => setName(e.target.value)}
               />
             </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              <label style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.85rem', fontWeight: 'bold', marginLeft: '20px' }}>SELFIE / PORTRAIT</label>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+              <label style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.8rem', fontWeight: 'bold', marginLeft: '20px' }}>UP-LOAD PORTRAIT</label>
               <div style={{ position: 'relative' }}>
                 <input 
                   type="file" 
@@ -229,7 +239,7 @@ const ParticipantPosterPage = () => {
                   onChange={handleImageUpload}
                   style={{ position: 'absolute', opacity: 0, width: '100%', height: '100%', cursor: 'pointer', zIndex: 2 }}
                 />
-                <div className="generator-input-field" style={{ background: image ? 'rgba(0, 229, 255, 0.1)' : 'rgba(255,255,255,0.05)', borderColor: image ? 'var(--vibrant-teal)' : 'rgba(255,255,255,0.1)', textAlign: 'center' }}>
+                <div className="generator-input-field" style={{ background: image ? 'rgba(0, 229, 255, 0.1)' : 'rgba(255,255,255,0.05)', borderColor: image ? 'var(--vibrant-teal)' : 'rgba(255,255,255,0.1)', textAlign: 'center', cursor: 'pointer' }}>
                   {image ? '✓ Photo Selected' : 'Choose Photo...'}
                 </div>
               </div>
@@ -237,23 +247,24 @@ const ParticipantPosterPage = () => {
           </div>
 
           <button 
-            className="btn-pill" 
+            className="btn-pill btn-cta-animated" 
             onClick={generatePoster}
             disabled={!image || !name || isProcessing}
             style={{ 
               width: '100%', 
               background: (!image || !name || isProcessing) ? '#5F6368' : 'var(--vibrant-teal)', 
               color: '#000B29', 
-              fontSize: '1.2rem', 
-              padding: '20px',
-              opacity: (!image || !name || isProcessing) ? 0.5 : 1
+              fontSize: '1.1rem', 
+              padding: '18px',
+              opacity: (!image || !name || isProcessing) ? 0.5 : 1,
+              marginTop: '10px'
             }}
           >
             {isProcessing ? 'AI Processing...' : 'Now Generate the Poster for Attending'}
           </button>
 
           {isReady && (
-            <div style={{ animation: 'fadeIn 1s ease' }}>
+            <div className="reveal-celebration">
               <button 
                 className="btn-pill" 
                 onClick={downloadPoster}
@@ -262,17 +273,19 @@ const ParticipantPosterPage = () => {
                 Download Poster
               </button>
 
-              <div className="copy-strip">
-                <p style={{ margin: 0, fontSize: '0.9rem', color: '#FFFFFF', opacity: 0.6, marginBottom: '12px' }}>Copy this caption for your Socials:</p>
-                <div style={{ background: 'rgba(255,255,255,0.05)', padding: '16px', borderRadius: '12px', fontSize: '0.9rem', color: '#FFFFFF', whiteSpace: 'pre-line', marginBottom: '16px', border: '1px solid rgba(255,255,255,0.1)' }}>
+              <div className="copy-strip" style={{ textAlign: 'center' }}>
+                <p style={{ color: '#FFFFFF', fontWeight: '600', marginBottom: '8px' }}>Share this Poster on your Socials!</p>
+                <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.85rem', marginBottom: '16px' }}>Mention us! We love to see your posters.</p>
+                
+                <div style={{ background: 'rgba(255,255,255,0.05)', padding: '16px', borderRadius: '12px', fontSize: '0.85rem', color: '#FFFFFF', whiteSpace: 'pre-line', marginBottom: '16px', border: '1px solid rgba(255,255,255,0.1)', textAlign: 'left' }}>
                   {captionText}
                 </div>
                 <button 
                   className="copy-btn" 
                   onClick={copyToClipboard}
-                  style={{ background: copySuccess ? '#34A853' : 'var(--google-blue)' }}
+                  style={{ background: copySuccess ? '#34A853' : 'var(--google-blue)', width: '100%' }}
                 >
-                  {copySuccess ? '✓ Copied!' : 'Copy Caption'}
+                  {copySuccess ? '✓ Caption Copied!' : 'Copy Posting Caption'}
                 </button>
               </div>
             </div>
