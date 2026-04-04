@@ -61,8 +61,8 @@ const IWD2026Page = () => {
   const eventTeam = [
     { name: 'Robina Mirbahar', img: teamRobina },
     { name: 'Hasnain KK', img: teamHasnain },
-    { name: 'Tunjina', img: teamTunjina },
-    { name: 'Hurain', img: teamHurain },
+    { name: 'Tunjina Ali', img: teamTunjina },
+    { name: 'Hurrain Soomro', img: teamHurain },
     { name: 'Kashaf Abdullah', img: teamKashaf },
     { name: 'Azhar Ali', img: teamAzhar },
     { name: 'Faaiz Ali', img: teamFaaiz },

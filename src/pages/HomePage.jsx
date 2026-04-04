@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import useSEO from '../hooks/useSEO';
 import { Link } from 'react-router-dom';
 
@@ -9,14 +9,28 @@ import ambassadorImg from '../WTM Events Pictures/Robina Picture/Robina Mirbahar
 import eventLookupImg from '../WTM Events Pictures/IWD26/Event lookup.jpg';
 
 // Past Event Posters
-import p23 from '../WTM Events Pictures/New folder/23.png';
-import p24 from '../WTM Events Pictures/New folder/24.png';
-import p25 from '../WTM Events Pictures/New folder/25.png';
-import p26 from '../WTM Events Pictures/New folder/26.png';
-import p27 from '../WTM Events Pictures/New folder/27.png';
+import p23 from '../WTM Events Pictures/New folder/23.jpg';
+import p24 from '../WTM Events Pictures/New folder/24.jpg';
+import p25 from '../WTM Events Pictures/New folder/25.jpg';
+import p26 from '../WTM Events Pictures/New folder/26.jpg';
+import p27 from '../WTM Events Pictures/New folder/27.jpg';
 
 const HomePage = () => {
+  const [imagesLoaded, setImagesLoaded] = useState(false);
   const pastEvents = [p23, p24, p25, p26, p27];
+
+  useEffect(() => {
+    // Preload gallery images for 'Fast Lead' view
+    let loadedCount = 0;
+    pastEvents.forEach(src => {
+      const img = new Image();
+      img.src = src;
+      img.onload = () => {
+        loadedCount++;
+        if (loadedCount === pastEvents.length) setImagesLoaded(true);
+      };
+    });
+  }, []);
 
   useSEO({
     title: 'WTM Hyderabad Pakistan | Empowering Women in Tech & Sindh',
@@ -149,13 +163,20 @@ const HomePage = () => {
       </section>
 
       {/* Gallery: Our Past Event (Forced Speed & Unstoppable) */}
-      <section className="layout-section" style={{ padding: '80px 0', backgroundColor: 'var(--bg-secondary)' }}>
+      <section className="layout-section" style={{ padding: '80px 0', backgroundColor: 'var(--bg-secondary)', position: 'relative' }}>
         <div className="grid-container">
           <h2 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', color: 'black', textAlign: 'center', marginBottom: '60px' }}>
             Our <span style={{ color: 'var(--vibrant-teal)' }}>Past Event</span>
           </h2>
         </div>
-        <div className="marquee-container" style={{ backgroundColor: 'transparent' }}>
+
+        {!imagesLoaded && (
+          <div style={{ height: '350px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <div className="loader-ring" style={{ width: '40px', height: '40px', border: '3px solid rgba(28, 233, 182, 0.2)', borderTopColor: '#1CE9B6', borderRadius: '50%', animation: 'spin 1s infinite linear' }}></div>
+          </div>
+        )}
+
+        <div className="marquee-container" style={{ backgroundColor: 'transparent', opacity: imagesLoaded ? 1 : 0, transition: 'opacity 1s ease' }}>
           <div className="marquee-content">
             {[...pastEvents, ...pastEvents].map((img, idx) => (
               <img 
@@ -196,12 +217,12 @@ const HomePage = () => {
       <section className="layout-section">
         <div className="grid-container">
           <h2 style={{ fontSize: '3rem', marginBottom: '40px', textAlign: 'center', color: 'var(--deep-blue)' }}>Flagship Event</h2>
-          <div style={{ maxWidth: '1000px', margin: '0 auto', textAlign: 'center' }}>
+          <div style={{ maxWidth: '450px', margin: '0 auto', textAlign: 'center' }}>
             <Link to="/iwd26" className="flagship-portal-btn">
               <img 
                 src={eventLookupImg} 
                 alt="WTM Hyderabad Flagship Event - Click it" 
-                style={{ width: '100%', height: 'auto', display: 'block' }}
+                style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '24px' }}
                 loading="lazy"
                 decoding="async"
               />
