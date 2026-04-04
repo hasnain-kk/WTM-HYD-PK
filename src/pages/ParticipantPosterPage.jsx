@@ -100,14 +100,6 @@ const ParticipantPosterPage = () => {
       const offsetY = PHOTO_FRAME.y + (PHOTO_FRAME.h - drawH) / 2;
       ctx.drawImage(image, offsetX, offsetY, drawW, drawH);
       ctx.restore();
-    } else {
-      // Placeholder box
-      ctx.fillStyle = 'rgba(25, 118, 210, 0.05)';
-      ctx.fillRect(PHOTO_FRAME.x, PHOTO_FRAME.y, PHOTO_FRAME.w, PHOTO_FRAME.h);
-      ctx.strokeStyle = 'rgba(25, 118, 210, 0.1)';
-      ctx.setLineDash([10, 10]);
-      ctx.strokeRect(PHOTO_FRAME.x, PHOTO_FRAME.y, PHOTO_FRAME.w, PHOTO_FRAME.h);
-      ctx.setLineDash([]);
     }
 
     // 3. Overlay (Always draw if loaded)
@@ -141,10 +133,6 @@ const ParticipantPosterPage = () => {
         }
       }
       ctx.fillText(line, TEXT_FRAME.x, currentY);
-    } else {
-      ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
-      ctx.font = `italic 50px 'Product Sans', sans-serif`;
-      ctx.fillText("Your Name Here...", TEXT_FRAME.x, TEXT_FRAME.y);
     }
     
     setIsReady(true);
@@ -288,7 +276,6 @@ const ParticipantPosterPage = () => {
             </div>
           </div>
         </div>
-
       </div>
     </div>
   );
