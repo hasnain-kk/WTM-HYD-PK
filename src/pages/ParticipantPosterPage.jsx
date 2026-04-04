@@ -28,7 +28,7 @@ const ParticipantPosterPage = () => {
   const PHOTO_FRAME = { x: 584, y: 680, w: 379, h: 408 };
   const TEXT_FRAME = { x: 50, y: 841, w: 468, h: 175 };
 
-  const captionText = `Im Attending IWD 26 Break The Pattern Baithak\n\nMention us\n\n#BreakThePattern #IWD26 #WTMHydPK`;
+  const captionText = `Im attending IWD 26 Break The Pattern Baithak Hyderabad PK.\n\nMention us @Women Techmakers Hyderabad Pakistan @Technovation @WomenTechmakers \n\n#BreakThePattern #IWD26 #WTMHydPK`;
 
   // Dynamic TF.js Script Loading
   useEffect(() => {
