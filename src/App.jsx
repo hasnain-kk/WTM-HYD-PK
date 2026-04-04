@@ -11,6 +11,7 @@ import TeamProfilePage from './pages/TeamProfilePage';
 import EventsPage from './pages/EventsPage';
 import EventProfilePage from './pages/EventProfilePage';
 import IWD2026Page from './pages/IWD2026Page';
+import ParticipantPosterPage from './pages/ParticipantPosterPage';
 import CodeOfConductPage from './pages/CodeOfConductPage';
 import ScrollHandler from './components/utils/ScrollHandler';
 
@@ -49,6 +50,7 @@ const App = () => {
             <Route path="/events" element={<EventsPage />} />
             <Route path="/events/:slug" element={<EventProfilePage />} />
             <Route path="/iwd26" element={<IWD2026Page />} />
+            <Route path="/iwd26/participants" element={<ParticipantPosterPage />} />
             <Route path="/code-of-conduct" element={<CodeOfConductPage />} />
           </Routes>
         </main>

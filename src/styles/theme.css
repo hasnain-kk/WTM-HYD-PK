@@ -504,3 +504,114 @@ input:focus {
   visibility: hidden;
   pointer-events: none;
 }
+
+/* AI Poster Generator Styles */
+.poster-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 80px 24px;
+}
+
+.poster-workbench {
+  background: #000B29;
+  border-radius: 48px;
+  padding: clamp(32px, 8vw, 64px);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5);
+}
+
+.canvas-preview-box {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto 40px auto;
+  background: #FFFFFF;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 229, 255, 0.2);
+  position: relative;
+  aspect-ratio: 1080 / 1400;
+}
+
+.canvas-preview-box canvas {
+  width: 100% !important;
+  height: auto !important;
+  display: block;
+}
+
+.generator-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.generator-input-field {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  padding: 18px 24px;
+  border-radius: 100px;
+  color: #FFFFFF;
+  font-family: inherit;
+  font-size: 1.1rem;
+  transition: 0.3s;
+}
+
+.generator-input-field:focus {
+  border-color: var(--vibrant-teal);
+  background: rgba(255, 255, 255, 0.08);
+  outline: none;
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.2);
+}
+
+.copy-strip {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 24px;
+  border-radius: 24px;
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+  margin-top: 40px;
+}
+
+.copy-strip p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 16px;
+}
+
+.copy-btn {
+  background: #34A853;
+  color: #FFFFFF;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 100px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.copy-btn:hover { transform: scale(1.05); background: #2D9147; }
+
+/* AI Loading Aura */
+.ai-loading-aura {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 50;
+  pointer-events: none;
+}
+
+.pulsing-aura {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--vibrant-teal) 0%, transparent 70%);
+  animation: auraPulse 2s infinite ease-in-out;
+}
+
+@keyframes auraPulse {
+  0%, 100% { transform: scale(0.8); opacity: 0.3; }
+  50% { transform: scale(1.5); opacity: 0.6; }
+}
