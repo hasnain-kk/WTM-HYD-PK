@@ -1,5 +1,7 @@
 import robinaImg from './WTM Events Pictures/Robina Picture/Robina Mirbahar.jpg';
+import robinaNewImg from './WTM Events Pictures/IWD 26 Team/Robina Mirbahar.jpeg';
 import hasnainImg from './WTM Events Pictures/IWD 26 Team/Hasnain KK.jpeg';
+import dawoodImg from './WTM Events Pictures/IWD 26 Team/Muhammad Dawood.png';
 import tunjinaImg from './WTM Events Pictures/IWD 26 Team/Tunhina.jpeg';
 import hurainImg from './WTM Events Pictures/IWD 26 Team/Hurain.jpeg';
 import iwd26Img from './WTM Events Pictures/IWD26/Event lookup.jpg';
@@ -14,7 +16,7 @@ export const sharedTeamData = [
     role: 'Ambassador',
     gender: 'female',
     bio: 'Robina serves as a crucial bridge between local talent and global technical ecosystems. Her drive to empower marginalized professionals natively within Sindh has scaled the WTM operations profoundly. She actively curates safe spaces for learning and leads mentorship pipelines directly prioritizing young girls.',
-    photoUrl: robinaImg,
+    photoUrl: robinaNewImg,
     socials: [
       { platform: 'LinkedIn', url: 'https://www.linkedin.com/in/robina-mirbahar-7538a7151/' },
       { platform: 'Twitter', url: '#' }
@@ -29,12 +31,24 @@ export const sharedTeamData = [
     bio: 'Hasnain is a technical architect overseeing the expansion of Women Techmakers Hyderabad. His focus is on establishing robust technical pipelines and promoting inclusive leadership across Sindh. He is deeply committed to empowering juniors and mapping community growth with real-world developer tools.',
     photoUrl: hasnainImg,
     socials: [
-      { platform: 'LinkedIn', url: '#' },
-      { platform: 'GitHub', url: '#' }
+      { platform: 'LinkedIn', url: 'https://www.linkedin.com/in/hasnain-kk/' },
+      { platform: 'GitHub', url: 'https://github.com/hasnain-kk' }
     ]
   },
   {
     id: 3,
+    slug: 'muhammad-dawood',
+    name: 'Muhammad Dawood',
+    role: 'Organizer',
+    gender: 'male',
+    bio: 'Muhammad Dawood is a key organizer for Women Techmakers Hyderabad, focusing on logistical excellence and community impact. He works on scaling our technical outreach and ensuring that every flagship event, like IWD 2026, delivers unparalleled value to the tech ecosystem in Sindh.',
+    photoUrl: dawoodImg,
+    socials: [
+      { platform: 'LinkedIn', url: '#' }
+    ]
+  },
+  {
+    id: 4,
     slug: 'tunjina',
     name: 'Tunjina',
     role: 'Organizer',
@@ -46,7 +60,7 @@ export const sharedTeamData = [
     ]
   },
   {
-    id: 4,
+    id: 5,
     slug: 'hurain',
     name: 'Hurain',
     role: 'Organizer',
