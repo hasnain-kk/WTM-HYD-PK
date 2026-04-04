@@ -74,36 +74,39 @@ const ParticipantPosterPage = () => {
   };
 
   const removeBackground = async (sourceImg) => {
-    if (!segmenterRef.current) return sourceImg;
-
-    // Create persistent high-res segment processing
-    const tempCanvas = document.createElement('canvas');
-    const tempCtx = tempCanvas.getContext('2d');
-    tempCanvas.width = sourceImg.width;
-    tempCanvas.height = sourceImg.height;
-    tempCtx.drawImage(sourceImg, 0, 0);
-
-    const segmentation = await segmenterRef.current.segmentPeople(tempCanvas);
-    const foregroundMask = await segmentation[0].mask.toImageData();
-    
-    // Apply Mask
-    const outputCanvas = document.createElement('canvas');
-    outputCanvas.width = sourceImg.width;
-    outputCanvas.height = sourceImg.height;
-    const outputCtx = outputCanvas.getContext('2d');
-    
-    outputCtx.drawImage(sourceImg, 0, 0);
-    const pixelData = outputCtx.getImageData(0, 0, outputCanvas.width, outputCanvas.height);
-    
-    for (let i = 3; i < pixelData.data.length; i += 4) {
-      // The mask returns 0 for background and 255 for foreground (approx)
-      if (foregroundMask.data[i] < 50) {
-        pixelData.data[i] = 0; // Transparent
-      }
+    if (!window.imglyBackgroundRemoval) {
+      console.warn('Advanced AI not ready, falling back to basic...');
+      return sourceImg;
     }
-    
-    outputCtx.putImageData(pixelData, 0, 0);
-    return outputCanvas;
+
+    try {
+      // Convert Image to Blob for @imgly
+      const canvas = document.createElement('canvas');
+      canvas.width = sourceImg.width;
+      canvas.height = sourceImg.height;
+      const ctx = canvas.getContext('2d');
+      ctx.drawImage(sourceImg, 0, 0);
+      
+      const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
+      
+      // Perform High-Fidelity Background Removal
+      // This uses WASM for extreme precision
+      const resultBlob = await window.imglyBackgroundRemoval.removeBackground(blob, {
+        progress: (status, progress) => {
+          console.log(`AI Processing: ${status} (${Math.round(progress * 100)}%)`);
+        }
+      });
+      
+      // Convert back to Image
+      const resultUrl = URL.createObjectURL(resultBlob);
+      const resultImg = new Image();
+      await new Promise(r => resultImg.onload = r);
+      resultImg.src = resultUrl;
+      return resultImg;
+    } catch (err) {
+      console.error('Advanced AI failed:', err);
+      return sourceImg; // Fallback
+    }
   };
 
   const generatePoster = async () => {
@@ -121,7 +124,7 @@ const ParticipantPosterPage = () => {
     await new Promise(r => bgImg.onload = r);
     ctx.drawImage(bgImg, 0, 0, POSTER_WIDTH, POSTER_HEIGHT);
 
-    // 2. Process & Draw User Photo
+    // 2. Process & Draw User Photo (Free Pro Quality)
     const cutout = await removeBackground(image);
     
     // Exact Clip to the Photo Frame to prevent "Bleeding"
