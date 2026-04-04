@@ -136,11 +136,11 @@ const ParticipantPosterPage = () => {
 
   return (
     <div className="poster-container">
-      <div className={`poster-workbench ${isCelebrating ? 'celebrate' : ''}`}>
-        <div className="workbench-grid">
+      <div className={`poster-workbench ${isCelebrating ? 'celebrate' : ''}`} style={{ maxWidth: image ? '1200px' : '600px' }}>
+        <div className={`workbench-dynamic-grid ${image ? 'expanded' : ''}`}>
           
           {/* Left Column: Inputs & Instructions */}
-          <div className="workbench-inputs">
+          <div className="workbench-inputs" style={{ textAlign: image ? 'left' : 'center' }}>
             <div style={{ marginBottom: '40px' }}>
               <h1 style={{ color: 'var(--deep-blue)', fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', fontWeight: 'bold', marginBottom: '12px' }}>Welcome!</h1>
               <p style={{ color: 'var(--vibrant-teal)', fontSize: 'clamp(1rem, 2.5vw, 1.3rem)', fontWeight: '700', letterSpacing: '0.5px', marginBottom: '16px' }}>
@@ -149,23 +149,23 @@ const ParticipantPosterPage = () => {
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '3px', fontWeight: '600' }}>
                 Participants Poster Generator
               </p>
-              <div style={{ height: '4px', width: '80px', background: 'var(--google-blue)', marginTop: '24px' }}></div>
+              <div style={{ height: '4px', width: '80px', background: 'var(--google-blue)', marginTop: '24px', margin: image ? '24px 0 0 0' : '24px auto 0 auto' }}></div>
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', textAlign: 'left' }}>
                 <label style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', fontWeight: 'bold', textTransform: 'uppercase' }}>1. Enter Your Name</label>
                 <input 
                   type="text" 
                   className="generator-input-field" 
-                  placeholder="Full name as you'd like it on the badge..." 
+                  placeholder="Full name for the badge..." 
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   style={{ background: '#F8F9FA', color: 'var(--deep-blue)', border: '2px solid rgba(25, 118, 210, 0.1)' }}
                 />
               </div>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', textAlign: 'left' }}>
                 <label style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', fontWeight: 'bold', textTransform: 'uppercase' }}>2. Upload Portrait Photo</label>
                 <div style={{ position: 'relative' }}>
                   <input 
@@ -184,7 +184,6 @@ const ParticipantPosterPage = () => {
                     {image ? '✓ Portrait Selected' : 'Choose File...'}
                   </div>
                 </div>
-                <p style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', opacity: 0.7 }}>Recommended: High-resolution vertical portrait.</p>
               </div>
 
               <button 
@@ -205,70 +204,71 @@ const ParticipantPosterPage = () => {
             </div>
           </div>
 
-          {/* Right Column: Live Preview & Ready Actions */}
-          <div className="workbench-preview">
-            <div className="canvas-preview-box">
-              {isProcessing && (
-                <div style={{ position: 'absolute', inset: 0, background: 'rgba(255,255,255,0.9)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 10 }}>
-                  <div style={{ textAlign: 'center' }}>
-                    <div className="dot-loader" style={{ marginBottom: '16px' }}>
-                      <div className="dot" style={{ background: 'var(--google-blue)' }}></div>
-                      <div className="dot" style={{ background: 'var(--vibrant-teal)' }}></div>
-                      <div className="dot" style={{ background: 'var(--google-red)' }}></div>
+          {/* Right Column: Reveal Preview Area only after Upload */}
+          {image && (
+            <div className="workbench-preview img-fade-in" style={{ animationDelay: '0.2s' }}>
+              <div className="canvas-preview-box" style={{ boxShadow: isReady ? '0 30px 80px rgba(0, 196, 163, 0.2)' : '0 30px 80px rgba(25, 118, 210, 0.1)' }}>
+                {isProcessing && (
+                  <div style={{ position: 'absolute', inset: 0, background: 'rgba(255,255,255,0.9)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 10 }}>
+                    <div style={{ textAlign: 'center' }}>
+                      <div className="dot-loader" style={{ marginBottom: '16px' }}>
+                        <div className="dot" style={{ background: 'var(--google-blue)' }}></div>
+                        <div className="dot" style={{ background: 'var(--vibrant-teal)' }}></div>
+                        <div className="dot" style={{ background: 'var(--google-red)' }}></div>
+                      </div>
+                      <p style={{ color: 'var(--google-blue)', fontWeight: 'bold', fontSize: '0.8rem', letterSpacing: '2px' }}>PROCESSING...</p>
                     </div>
-                    <p style={{ color: 'var(--google-blue)', fontWeight: 'bold', fontSize: '0.8rem', letterSpacing: '2px' }}>PROCESSING...</p>
                   </div>
-                </div>
-              )}
-              <canvas 
-                ref={canvasRef} 
-                width={POSTER_WIDTH} 
-                height={POSTER_HEIGHT}
-                style={{ display: isReady ? 'block' : 'none', width: '100%', height: 'auto' }}
-              />
-              {!isReady && !isProcessing && (
-                <div style={{ height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#F8F9FA', color: 'var(--text-secondary)', textAlign: 'center', padding: '40px' }}>
-                  <div>
-                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.2, marginBottom: '24px' }}>
-                      <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                      <circle cx="8.5" cy="8.5" r="1.5"/>
-                      <polyline points="21 15 16 10 5 21"/>
-                    </svg>
-                    <p style={{ fontSize: '1.1rem', fontWeight: '500' }}>Live Preview Area</p>
-                    <p style={{ fontSize: '0.85rem', marginTop: '8px', opacity: 0.7 }}>Fill details to see your badge</p>
+                )}
+                <canvas 
+                  ref={canvasRef} 
+                  width={POSTER_WIDTH} 
+                  height={POSTER_HEIGHT}
+                  style={{ display: isReady ? 'block' : 'none', width: '100%', height: 'auto' }}
+                />
+                {!isReady && !isProcessing && (
+                  <div style={{ height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#F8F9FA', color: 'var(--text-secondary)', textAlign: 'center', padding: '40px' }}>
+                    <div>
+                      <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.2, marginBottom: '24px' }}>
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                        <circle cx="8.5" cy="8.5" r="1.5"/>
+                        <polyline points="21 15 16 10 5 21"/>
+                      </svg>
+                      <p style={{ fontSize: '1.1rem', fontWeight: '500' }}>Success!</p>
+                      <p style={{ fontSize: '0.85rem', marginTop: '8px', opacity: 0.7 }}>Click "Generate" to see your masterpiece</p>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {isReady && (
+                <div className="reveal-celebration img-fade-in" style={{ marginTop: '40px', textAlign: 'center' }}>
+                  <button 
+                    className="btn-pill" 
+                    onClick={downloadPoster}
+                    style={{ width: '100%', background: 'var(--deep-blue)', color: '#FFFFFF', padding: '18px', fontSize: '1.1rem', marginBottom: '32px' }}
+                  >
+                    Download High-Res Poster
+                  </button>
+
+                  <div style={{ background: '#F8F9FA', padding: '24px', borderRadius: '24px', border: '1px solid rgba(25, 118, 210, 0.1)' }}>
+                    <p style={{ color: 'var(--deep-blue)', fontWeight: 'bold', marginBottom: '8px' }}>Share Your Milestone!</p>
+                    <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', marginBottom: '16px' }}>Mention us! Use the caption below:</p>
+                    <div style={{ background: '#FFFFFF', padding: '16px', borderRadius: '16px', fontSize: '0.85rem', color: 'var(--text-primary)', whiteSpace: 'pre-line', marginBottom: '20px', border: '1px solid rgba(25, 118, 210, 0.05)', textAlign: 'left', lineHeight: 1.6 }}>
+                      {captionText}
+                    </div>
+                    <button 
+                      className="copy-btn" 
+                      onClick={copyToClipboard}
+                      style={{ background: copySuccess ? '#34A853' : 'var(--google-blue)', width: '100%', borderRadius: '12px' }}
+                    >
+                      {copySuccess ? '✓ Caption Copied!' : 'Copy Caption & Hashtags'}
+                    </button>
                   </div>
                 </div>
               )}
             </div>
-
-            {isReady && (
-              <div className="reveal-celebration" style={{ marginTop: '40px', textAlign: 'center' }}>
-                <button 
-                  className="btn-pill" 
-                  onClick={downloadPoster}
-                  style={{ width: '100%', background: 'var(--deep-blue)', color: '#FFFFFF', padding: '18px', fontSize: '1.1rem', marginBottom: '32px' }}
-                >
-                  Download High-Res Poster
-                </button>
-
-                <div style={{ background: '#F8F9FA', padding: '24px', borderRadius: '24px', border: '1px solid rgba(25, 118, 210, 0.1)' }}>
-                  <p style={{ color: 'var(--deep-blue)', fontWeight: 'bold', marginBottom: '8px' }}>Share Your Milestone!</p>
-                  <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', marginBottom: '20px' }}>Mention us! Use the caption below:</p>
-                  
-                  <div style={{ background: '#FFFFFF', padding: '16px', borderRadius: '16px', fontSize: '0.85rem', color: 'var(--text-primary)', whiteSpace: 'pre-line', marginBottom: '20px', border: '1px solid rgba(25, 118, 210, 0.05)', textAlign: 'left', lineHeight: 1.6 }}>
-                    {captionText}
-                  </div>
-                  <button 
-                    className="copy-btn" 
-                    onClick={copyToClipboard}
-                    style={{ background: copySuccess ? '#34A853' : 'var(--google-blue)', width: '100%', borderRadius: '12px' }}
-                  >
-                    {copySuccess ? '✓ Caption Copied!' : 'Copy Caption & Hashtags'}
-                  </button>
-                </div>
-              </div>
-            )}
-          </div>
+          )}
 
         </div>
       </div>

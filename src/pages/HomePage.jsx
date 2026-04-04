@@ -95,8 +95,15 @@ const HomePage = () => {
             <h2 style={{ fontSize: '2rem', margin: 0, color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '2px' }}>MEET THE AMBASSADOR</h2>
           </div>
           <div className="flex-responsive" style={{ alignItems: 'center' }}>
-            <div>
-              <img src={ambassadorImg} alt="Robina Mirbahar - WTM Ambassador" className="side-frame-img" style={{ borderColor: 'var(--google-blue)' }} loading="lazy" decoding="async" />
+            <div className="skeleton-shimmer" style={{ borderRadius: '24px', overflow: 'hidden', aspectRatio: '4/5' }}>
+              <img 
+                src={ambassadorImg} 
+                alt="Robina Mirbahar - WTM Ambassador" 
+                className="side-frame-img img-fade-in" 
+                style={{ borderColor: 'var(--google-blue)', width: '100%', height: '100%', objectFit: 'cover' }} 
+                loading="lazy" 
+                decoding="async" 
+              />
             </div>
             <div>
               <h3 style={{ fontSize: '3rem', margin: 0, marginBottom: '24px', color: 'var(--deep-blue)' }}>Robina Mirbahar</h3>
@@ -141,7 +148,7 @@ const HomePage = () => {
       <section className="layout-section" style={{ position: 'relative' }}>
         <div className="grid-container" style={{ position: 'relative', zIndex: 1 }}>
           <h2 style={{ fontSize: '3rem', marginBottom: '40px', textAlign: 'center' }}>Flagship Event</h2>
-          <div className="surface-card" style={{ padding: 'clamp(32px, 8vw, 64px)', position: 'relative', overflow: 'hidden', maxWidth: '800px', margin: '0 auto', textAlign: 'center', background: `linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.85)), url("${eventBg}") center/cover` }}>
+          <div className="surface-card skeleton-shimmer" style={{ padding: 'clamp(32px, 8vw, 64px)', position: 'relative', overflow: 'hidden', maxWidth: '800px', margin: '0 auto', textAlign: 'center', background: `linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.85)), url("${eventBg}") center/cover` }}>
             <span style={{ display: 'inline-block', backgroundColor: '#00C4A3', color: '#FFFFFF', padding: '10px 24px', borderRadius: '100px', fontFamily: 'var(--font-header)', fontSize: 'clamp(0.8rem, 2vw, 1rem)', fontWeight: 'bold', marginBottom: '32px', textTransform: 'uppercase', boxShadow: '0 4px 12px rgba(0, 196, 163, 0.3)' }}>• Live Now</span>
             <h3 style={{ fontSize: 'clamp(2.2rem, 6vw, 3.5rem)', marginBottom: '24px', color: 'var(--deep-blue)' }}>Break The Pattern</h3>
             <p style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)', color: 'var(--text-secondary)', marginBottom: '40px', lineHeight: 1.6 }}>
