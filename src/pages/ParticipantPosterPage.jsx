@@ -30,38 +30,31 @@ const ParticipantPosterPage = () => {
 
   const captionText = `Im attending IWD 26 Break The Pattern Baithak Hyderabad PK.\n\nMention us @Women Techmakers Hyderabad Pakistan @Technovation @WomenTechmakers \n\n#BreakThePattern #IWD26 #WTMHydPK`;
 
-  // Dynamic TF.js Script Loading
   useEffect(() => {
-    const loadTF = async () => {
-      if (window.bodySegmentation) return;
-      
-      const scripts = [
-        'https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-core',
-        'https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-webgl',
-        'https://cdn.jsdelivr.net/npm/@mediapipe/selfie_segmentation',
-        'https://cdn.jsdelivr.net/npm/@tensorflow-models/body-segmentation'
-      ];
-
-      for (const src of scripts) {
-        await new Promise((resolve) => {
-          const script = document.createElement('script');
-          script.src = src;
-          script.async = true;
-          script.onload = resolve;
-          document.head.appendChild(script);
-        });
+    const initializeAI = async () => {
+      // Wait for global objects to be available (if not already)
+      if (!window.bodySegmentation) {
+        console.log('Waiting for AI Models...');
+        setTimeout(initializeAI, 500);
+        return;
       }
+      
+      if (segmenterRef.current) return;
 
-      // Initialize Segmenter (Optimized 'Landscape' model for maximum efficiency)
-      const model = window.bodySegmentation.SupportedModels.MediaPipeSelfieSegmentation;
-      segmenterRef.current = await window.bodySegmentation.createSegmenter(model, {
-        runtime: 'mediapipe',
-        solutionPath: 'https://cdn.jsdelivr.net/npm/@mediapipe/selfie_segmentation',
-        modelType: 'landscape'
-      });
+      try {
+        const model = window.bodySegmentation.SupportedModels.MediaPipeSelfieSegmentation;
+        segmenterRef.current = await window.bodySegmentation.createSegmenter(model, {
+          runtime: 'mediapipe',
+          solutionPath: 'https://cdn.jsdelivr.net/npm/@mediapipe/selfie_segmentation',
+          modelType: 'landscape'
+        });
+        console.log('AI Segmenter initialized successfully');
+      } catch (err) {
+        console.error('Failed to initialize AI Segmenter:', err);
+      }
     };
 
-    loadTF();
+    initializeAI();
   }, []);
 
   const handleImageUpload = (e) => {
