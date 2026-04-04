@@ -52,7 +52,7 @@ const HomePage = () => {
                 </p>
               </div>
               <div>
-                <img src={audienceImg} alt="WTM Audience" className="side-frame-img" style={{ borderColor: '#FFFFFF', height: 'clamp(250px, 40vw, 400px)' }} />
+                <img src={audienceImg} alt="WTM Audience" className="side-frame-img" style={{ borderColor: '#FFFFFF', height: 'clamp(250px, 40vw, 400px)' }} loading="lazy" decoding="async" />
               </div>
             </div>
           </div>
@@ -96,7 +96,7 @@ const HomePage = () => {
           </div>
           <div className="flex-responsive" style={{ alignItems: 'center' }}>
             <div>
-              <img src={ambassadorImg} alt="Robina Mirbahar - WTM Ambassador" className="side-frame-img" style={{ borderColor: 'var(--google-blue)' }} />
+              <img src={ambassadorImg} alt="Robina Mirbahar - WTM Ambassador" className="side-frame-img" style={{ borderColor: 'var(--google-blue)' }} loading="lazy" decoding="async" />
             </div>
             <div>
               <h3 style={{ fontSize: '3rem', margin: 0, marginBottom: '24px', color: 'var(--deep-blue)' }}>Robina Mirbahar</h3>
