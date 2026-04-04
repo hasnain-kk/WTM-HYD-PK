@@ -1,4 +1,5 @@
 import React from 'react';
+import useSEO from '../hooks/useSEO';
 
 import aboutBg from '../WTM Events Pictures/DSC09380.jpeg';
 import communityImg from '../WTM Events Pictures/RAH00558.jpeg';
@@ -19,6 +20,26 @@ const partnersData = [
 ];
 
 const AboutPage = () => {
+  useSEO({
+    title: 'About WTM Hyderabad Pakistan | Our Mission & Partners',
+    description: 'Learn about the mission of Women Techmakers Hyderabad Pakistan. Empowering women in tech across Sindh through workshops, mentorship, and flagship events such as IWD 2026.',
+    image: '/og-iwd.jpg',
+    url: window.location.href,
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "Women Techmakers Hyderabad Pakistan",
+        "description": "An inclusive ecosystem building community, visibility, and resources for women in tech across Hyderabad and Sindh.",
+        "location": {
+          "@type": "Place",
+          "name": "Hyderabad, Pakistan"
+        }
+      }
+    }
+  });
+
   return (
     <div>
       <section className="layout-section" style={{ background: `linear-gradient(rgba(0, 196, 163, 0.85), rgba(66, 133, 244, 0.85)), url("${aboutBg}") center/cover border-box` }}>

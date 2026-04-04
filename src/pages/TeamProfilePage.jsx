@@ -1,5 +1,6 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
+import useSEO from '../hooks/useSEO';
 import { sharedTeamData } from '../data';
 
 const TeamProfilePage = () => {
@@ -14,6 +15,26 @@ const TeamProfilePage = () => {
       </div>
     );
   }
+
+  useSEO({
+    title: `${member.name} | WTM Hyderabad Pakistan Team Profile`,
+    description: `Learn about ${member.name}, ${member.role} at Women Techmakers Hyderabad Pakistan. Focused on tech empowerment in Sindh.`,
+    image: member.photoUrl,
+    url: window.location.href,
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": member.name,
+      "jobTitle": member.role,
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Women Techmakers Hyderabad Pakistan"
+      },
+      "url": window.location.href,
+      "image": member.photoUrl,
+      "description": member.bio
+    }
+  });
 
   const isFemale = member.gender === 'female';
   const borderStyle = isFemale ? '4px solid #34A853' : '4px solid #4285F4';

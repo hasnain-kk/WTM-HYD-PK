@@ -1,5 +1,6 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
+import useSEO from '../hooks/useSEO';
 import { sharedEventData } from '../data';
 
 const EventProfilePage = () => {
@@ -14,6 +15,29 @@ const EventProfilePage = () => {
       </div>
     );
   }
+
+  useSEO({
+    title: `${event.title} | WTM Hyderabad Pakistan Event`,
+    description: `Join us for ${event.title} on ${event.date}. ${event.description.substring(0, 150)}... WTM Hyderabad Pakistan.`,
+    image: event.coverImage,
+    url: window.location.href,
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": event.title,
+      "startDate": event.date,
+      "location": {
+        "@type": "Place",
+        "name": "Hyderabad, Sindh, Pakistan"
+      },
+      "image": event.coverImage,
+      "description": event.description,
+      "organizer": {
+        "@type": "Organization",
+        "name": "Women Techmakers Hyderabad Pakistan"
+      }
+    }
+  });
 
   return (
     <div className="event-profile-page">

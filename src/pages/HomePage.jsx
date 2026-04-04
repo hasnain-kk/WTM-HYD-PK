@@ -19,10 +19,25 @@ const HomePage = () => {
   const pastEvents = [p23, p24, p25, p26, p27];
 
   useSEO({
-    title: 'WTM hyderabad Pakistan',
-    description: 'Official platform for WTM Hyderabad. Empowering women across all professions in Sindh with a focus on technical leadership, career scaling, and inclusive mentorship.',
+    title: 'WTM Hyderabad Pakistan | Empowering Women in Tech & Sindh',
+    description: 'Official platform for WTM Hyderabad Pakistan. Led by Robina Mirbahar & Hasnain KK. Join our inclusive tech community empowering women in tech and across Sindh.',
     image: '/og-iwd.jpg',
-    url: window.location.href
+    url: window.location.href,
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Women Techmakers Hyderabad Pakistan",
+      "url": "https://wtm-hyd-pk.vercel.app/",
+      "logo": "https://wtm-hyd-pk.vercel.app/favicon.png",
+      "sameAs": [
+        "https://www.linkedin.com/company/wtm-hyderabad-pk/",
+        "https://www.facebook.com/WTMHyderabadPakistan"
+      ],
+      "location": {
+        "@type": "Place",
+        "name": "Hyderabad, Sindh, Pakistan"
+      }
+    }
   });
 
   return (

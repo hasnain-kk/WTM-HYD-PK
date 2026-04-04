@@ -4,7 +4,7 @@ import { useEffect } from 'react';
  * useSEO Hook: Manages standard/social metadata dynamically.
  * Works even in SPAs for browsers and some modern social crawlers.
  */
-const useSEO = ({ title, description, image, url }) => {
+const useSEO = ({ title, description, image, url, schema }) => {
   useEffect(() => {
     // 1. Update Document Title
     if (title) document.title = title;
@@ -35,7 +35,24 @@ const useSEO = ({ title, description, image, url }) => {
     updateMeta('meta[property="twitter:image"]', finalImage);
     updateMeta('meta[property="twitter:url"]', url);
 
-  }, [title, description, image, url]);
+    // 4. Structured Data (JSON-LD)
+    let schemaScript = document.getElementById('json-ld-schema');
+    if (schema) {
+      if (!schemaScript) {
+        schemaScript = document.createElement('script');
+        schemaScript.id = 'json-ld-schema';
+        schemaScript.type = 'application/ld+json';
+        document.head.appendChild(schemaScript);
+      }
+      schemaScript.innerHTML = JSON.stringify(schema);
+    } else if (schemaScript) {
+      schemaScript.remove();
+    }
+
+    return () => {
+      // Optional: Cleanup schema on unmount if needed
+    };
+  }, [title, description, image, url, schema]);
 };
 
 export default useSEO;
