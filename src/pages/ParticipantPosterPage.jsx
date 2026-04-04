@@ -16,10 +16,10 @@ const ParticipantPosterPage = () => {
   const [image, setImage] = useState(null);
   const [isProcessing, setIsProcessing] = useState(false);
   const [isReady, setIsReady] = useState(false);
+  const [isCelebrating, setIsCelebrating] = useState(false);
   const [copySuccess, setCopySuccess] = useState(false);
   
   const canvasRef = useRef(null);
-  const segmenterRef = useRef(null);
 
   const POSTER_WIDTH = 1080;
   const POSTER_HEIGHT = 1440;
@@ -30,33 +30,6 @@ const ParticipantPosterPage = () => {
 
   const captionText = `Im attending IWD 26 Break The Pattern Baithak Hyderabad PK.\n\nMention us @Women Techmakers Hyderabad Pakistan @Technovation @WomenTechmakers \n\n#BreakThePattern #IWD26 #WTMHydPK`;
 
-  useEffect(() => {
-    const initializeAI = async () => {
-      // Wait for global objects to be available (if not already)
-      if (!window.bodySegmentation) {
-        console.log('Waiting for AI Models...');
-        setTimeout(initializeAI, 500);
-        return;
-      }
-      
-      if (segmenterRef.current) return;
-
-      try {
-        const model = window.bodySegmentation.SupportedModels.MediaPipeSelfieSegmentation;
-        segmenterRef.current = await window.bodySegmentation.createSegmenter(model, {
-          runtime: 'mediapipe',
-          solutionPath: 'https://cdn.jsdelivr.net/npm/@mediapipe/selfie_segmentation',
-          modelType: 'landscape'
-        });
-        console.log('AI Segmenter initialized successfully');
-      } catch (err) {
-        console.error('Failed to initialize AI Segmenter:', err);
-      }
-    };
-
-    initializeAI();
-  }, []);
-
   const handleImageUpload = (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -66,6 +39,7 @@ const ParticipantPosterPage = () => {
         img.onload = () => {
           setImage(img);
           setIsReady(false);
+          setIsCelebrating(false);
         };
         img.src = event.target.result;
       };
@@ -73,45 +47,10 @@ const ParticipantPosterPage = () => {
     }
   };
 
-  const removeBackground = async (sourceImg) => {
-    if (!window.imglyBackgroundRemoval) {
-      console.warn('Advanced AI not ready, falling back to basic...');
-      return sourceImg;
-    }
-
-    try {
-      // Convert Image to Blob for @imgly
-      const canvas = document.createElement('canvas');
-      canvas.width = sourceImg.width;
-      canvas.height = sourceImg.height;
-      const ctx = canvas.getContext('2d');
-      ctx.drawImage(sourceImg, 0, 0);
-      
-      const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
-      
-      // Perform High-Fidelity Background Removal
-      // This uses WASM for extreme precision
-      const resultBlob = await window.imglyBackgroundRemoval.removeBackground(blob, {
-        progress: (status, progress) => {
-          console.log(`AI Processing: ${status} (${Math.round(progress * 100)}%)`);
-        }
-      });
-      
-      // Convert back to Image
-      const resultUrl = URL.createObjectURL(resultBlob);
-      const resultImg = new Image();
-      await new Promise(r => resultImg.onload = r);
-      resultImg.src = resultUrl;
-      return resultImg;
-    } catch (err) {
-      console.error('Advanced AI failed:', err);
-      return sourceImg; // Fallback
-    }
-  };
-
   const generatePoster = async () => {
     if (!image) return;
     setIsProcessing(true);
+    setIsCelebrating(false);
     
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
@@ -124,9 +63,7 @@ const ParticipantPosterPage = () => {
     await new Promise(r => bgImg.onload = r);
     ctx.drawImage(bgImg, 0, 0, POSTER_WIDTH, POSTER_HEIGHT);
 
-    // 2. Process & Draw User Photo (Free Pro Quality)
-    const cutout = await removeBackground(image);
-    
+    // 2. Draw User Photo (Direct Upload - High Fidelity)
     // Exact Clip to the Photo Frame to prevent "Bleeding"
     ctx.save();
     ctx.beginPath();
@@ -134,13 +71,13 @@ const ParticipantPosterPage = () => {
     ctx.clip();
 
     // Calculate scaling to fit the box (379x408)
-    const scale = Math.max(PHOTO_FRAME.w / cutout.width, PHOTO_FRAME.h / cutout.height);
-    const drawW = cutout.width * scale;
-    const drawH = cutout.height * scale;
+    const scale = Math.max(PHOTO_FRAME.w / image.width, PHOTO_FRAME.h / image.height);
+    const drawW = image.width * scale;
+    const drawH = image.height * scale;
     const offsetX = PHOTO_FRAME.x + (PHOTO_FRAME.w - drawW) / 2;
     const offsetY = PHOTO_FRAME.y + (PHOTO_FRAME.h - drawH) / 2;
 
-    ctx.drawImage(cutout, offsetX, offsetY, drawW, drawH);
+    ctx.drawImage(image, offsetX, offsetY, drawW, drawH);
     ctx.restore(); // Exit Clip
 
     // 3. Draw Transparent Overlay
@@ -178,8 +115,11 @@ const ParticipantPosterPage = () => {
     }
     ctx.fillText(line, TEXT_FRAME.x, currentY);
 
-    setIsProcessing(false);
-    setIsReady(true);
+    setTimeout(() => {
+      setIsProcessing(false);
+      setIsReady(true);
+      setIsCelebrating(true);
+    }, 1000); // Smooth production delay
   };
 
   const downloadPoster = () => {
@@ -197,23 +137,23 @@ const ParticipantPosterPage = () => {
 
   return (
     <div className="poster-container">
-      <div className="poster-workbench">
+      <div className={`poster-workbench ${isCelebrating ? 'celebrate' : ''}`}>
         <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-          <h1 style={{ color: '#FFFFFF', fontSize: 'clamp(2rem, 5vw, 2.5rem)', fontWeight: 'bold', marginBottom: '8px' }}>Welcome!</h1>
-          <p style={{ color: 'var(--vibrant-teal)', fontSize: 'clamp(1rem, 3.5vw, 1.2rem)', opacity: 0.9, fontWeight: '500' }}>
+          <h1 style={{ color: '#FFFFFF', fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 'bold', marginBottom: '8px' }}>Welcome!</h1>
+          <p style={{ color: 'var(--vibrant-teal)', fontSize: 'clamp(1rem, 3.5vw, 1.4rem)', opacity: 1, fontWeight: '700', letterSpacing: '0.5px' }}>
             Congratulations for Being Shortlisted for IWD 26 Baithak
           </p>
           <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.9rem', marginTop: '4px', textTransform: 'uppercase', letterSpacing: '3px' }}>
             Participants Poster Generator
           </p>
-          <div style={{ height: '3px', width: '60px', background: 'var(--vibrant-teal)', margin: '20px auto' }}></div>
+          <div style={{ height: '3px', width: '80px', background: 'var(--vibrant-teal)', margin: '24px auto' }}></div>
         </div>
 
         <div className="canvas-preview-box">
           {isProcessing && (
             <div className="ai-loading-aura">
               <div className="pulsing-aura"></div>
-              <p style={{ color: '#FFFFFF', marginTop: '20px', fontWeight: 'bold', letterSpacing: '2px', fontSize: '0.8rem' }}>AI CROP & PROCESSING...</p>
+              <p style={{ color: '#FFFFFF', marginTop: '20px', fontWeight: 'bold', letterSpacing: '2px', fontSize: '0.8rem' }}>MASTERING YOUR POSTER...</p>
             </div>
           )}
           <canvas 
@@ -223,7 +163,7 @@ const ParticipantPosterPage = () => {
             style={{ display: isReady ? 'block' : 'none' }}
           />
           {!isReady && !isProcessing && (
-            <div style={{ height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#F8F9FA', color: '#5F6368', textAlign: 'center', padding: '40px' }}>
+            <div style={{ height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#FFFFFF', color: '#5F6368', textAlign: 'center', padding: '40px' }}>
               <div>
                 <p style={{ fontSize: '1.2rem', fontWeight: '500' }}>Your Poster Preview will appear here</p>
                 <p style={{ fontSize: '0.85rem', marginTop: '8px' }}>Uplode your SelfProtrait Picture Below</p>
@@ -245,7 +185,7 @@ const ParticipantPosterPage = () => {
               />
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-              <label style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.8rem', fontWeight: 'bold', marginLeft: '20px' }}>UP-LOAD PORTRAIT</label>
+              <label style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.8rem', fontWeight: 'bold', marginLeft: '20px' }}>UPLODE PORTRAIT</label>
               <div style={{ position: 'relative' }}>
                 <input 
                   type="file" 
@@ -253,7 +193,7 @@ const ParticipantPosterPage = () => {
                   onChange={handleImageUpload}
                   style={{ position: 'absolute', opacity: 0, width: '100%', height: '100%', cursor: 'pointer', zIndex: 2 }}
                 />
-                <div className="generator-input-field" style={{ background: image ? 'rgba(0, 229, 255, 0.1)' : 'rgba(255,255,255,0.05)', borderColor: image ? 'var(--vibrant-teal)' : 'rgba(255,255,255,0.1)', textAlign: 'center', cursor: 'pointer' }}>
+                <div className="generator-input-field" style={{ background: image ? 'rgba(0, 229, 255, 0.15)' : 'rgba(255,255,255,0.05)', borderColor: image ? 'var(--vibrant-teal)' : 'rgba(255,255,255,0.15)', textAlign: 'center', cursor: 'pointer' }}>
                   {image ? '✓ Photo Selected' : 'Choose Photo...'}
                 </div>
               </div>
@@ -268,13 +208,13 @@ const ParticipantPosterPage = () => {
               width: '100%', 
               background: (!image || !name || isProcessing) ? '#5F6368' : 'var(--vibrant-teal)', 
               color: '#000B29', 
-              fontSize: '1.1rem', 
-              padding: '18px',
+              fontSize: '1.2rem', 
+              padding: '20px',
               opacity: (!image || !name || isProcessing) ? 0.5 : 1,
               marginTop: '10px'
             }}
           >
-            {isProcessing ? 'AI Processing...' : 'Now Generate the Poster for Attending'}
+            {isProcessing ? 'Generating...' : 'Now Generate the Poster for Attending'}
           </button>
 
           {isReady && (
@@ -291,7 +231,7 @@ const ParticipantPosterPage = () => {
                 <p style={{ color: '#FFFFFF', fontWeight: '600', marginBottom: '8px' }}>Share this Poster on your Socials!</p>
                 <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.85rem', marginBottom: '16px' }}>Mention us! We love to see your posters.</p>
                 
-                <div style={{ background: 'rgba(255,255,255,0.05)', padding: '16px', borderRadius: '12px', fontSize: '0.85rem', color: '#FFFFFF', whiteSpace: 'pre-line', marginBottom: '16px', border: '1px solid rgba(255,255,255,0.1)', textAlign: 'left' }}>
+                <div style={{ background: 'rgba(255,255,255,0.1)', padding: '16px', borderRadius: '12px', fontSize: '0.85rem', color: '#FFFFFF', whiteSpace: 'pre-line', marginBottom: '16px', border: '1px solid rgba(255,255,255,0.1)', textAlign: 'left' }}>
                   {captionText}
                 </div>
                 <button 

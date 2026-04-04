@@ -507,29 +507,56 @@ input:focus {
 
 /* AI Poster Generator Styles */
 .poster-container {
-  max-width: 900px;
+  min-height: 100vh;
+  width: 100%;
   margin: 0 auto;
   padding: 80px 24px;
+  background-image: url('../WTM Events Pictures/Participent Poster/WhatsApp Image 2026-04-04 at 3.22.14 PM.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .poster-workbench {
-  background: #000B29;
+  background: rgba(0, 11, 41, 0.95);
+  backdrop-filter: blur(20px);
   border-radius: 48px;
   padding: clamp(32px, 8vw, 64px);
-  border: 1px solid rgba(0, 229, 255, 0.2);
-  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5);
+  border: 4px solid rgba(0, 229, 255, 0.3);
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.7), 0 0 80px rgba(0, 229, 255, 0.1);
+  max-width: 800px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.poster-workbench.celebrate {
+  animation: workbenchCelebration 1.5s ease-out;
+  border-color: var(--vibrant-teal);
+  box-shadow: 0 0 100px rgba(0, 229, 255, 0.4);
+}
+
+@keyframes workbenchCelebration {
+  0% { transform: scale(1); }
+  10% { transform: scale(1.02); }
+  20% { transform: scale(1); }
+  100% { box-shadow: 0 0 150px rgba(0, 229, 255, 0.6); }
 }
 
 .canvas-preview-box {
   width: 100%;
-  max-width: 500px;
+  max-width: 480px;
   margin: 0 auto 40px auto;
   background: #FFFFFF;
-  border-radius: 12px;
+  border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 10px 40px rgba(0, 229, 255, 0.2);
+  box-shadow: 0 20px 60px rgba(0, 229, 255, 0.3);
   position: relative;
-  aspect-ratio: 1080 / 1400;
+  aspect-ratio: 1080 / 1440;
+  border: 8px solid #FFFFFF;
 }
 
 .canvas-preview-box canvas {
