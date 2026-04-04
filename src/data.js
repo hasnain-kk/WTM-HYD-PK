@@ -1,7 +1,6 @@
 import robinaImg from './WTM Events Pictures/Robina Picture/Robina Mirbahar.jpg';
 import robinaNewImg from './WTM Events Pictures/IWD 26 Team/Robina Mirbahar.jpeg';
 import hasnainImg from './WTM Events Pictures/IWD 26 Team/Hasnain KK.jpeg';
-import dawoodImg from './WTM Events Pictures/IWD 26 Team/Muhammad Dawood.png';
 import tunjinaImg from './WTM Events Pictures/IWD 26 Team/Tunhina.jpeg';
 import hurainImg from './WTM Events Pictures/IWD 26 Team/Hurain.jpeg';
 import iwd26Img from './WTM Events Pictures/IWD26/Event lookup.jpg';
