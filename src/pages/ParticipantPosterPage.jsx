@@ -135,12 +135,25 @@ const ParticipantPosterPage = () => {
   };
 
   return (
-    <div className="poster-container">
-      <div className={`poster-workbench ${isCelebrating ? 'celebrate' : ''}`} style={{ maxWidth: image ? '1200px' : '600px' }}>
-        <div className={`workbench-dynamic-grid ${image ? 'expanded' : ''}`}>
+    <div className="poster-container" style={{ paddingTop: '140px', paddingBottom: '100px' }}>
+      <div className={`poster-workbench ${isCelebrating ? 'celebrate' : ''}`} style={{ 
+        maxWidth: image ? '1200px' : '650px',
+        margin: '0 auto',
+        display: 'block' 
+      }}>
+        <div className={`workbench-dynamic-grid ${image ? 'expanded' : ''}`} style={{ 
+          margin: '0 auto',
+          width: '100%'
+        }}>
           
           {/* Left Column: Inputs & Instructions */}
-          <div className="workbench-inputs" style={{ textAlign: image ? 'left' : 'center' }}>
+          <div className="workbench-inputs" style={{ 
+            textAlign: image ? 'left' : 'center',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            height: '100%'
+          }}>
             <div style={{ marginBottom: '40px' }}>
               <h1 style={{ color: 'var(--deep-blue)', fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', fontWeight: 'bold', marginBottom: '12px' }}>Welcome!</h1>
               <p style={{ color: 'var(--vibrant-teal)', fontSize: 'clamp(1rem, 2.5vw, 1.3rem)', fontWeight: '700', letterSpacing: '0.5px', marginBottom: '16px' }}>
@@ -152,7 +165,7 @@ const ParticipantPosterPage = () => {
               <div style={{ height: '4px', width: '80px', background: 'var(--google-blue)', marginTop: '24px', margin: image ? '24px 0 0 0' : '24px auto 0 auto' }}></div>
             </div>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', maxWidth: '500px', margin: image ? '0' : '0 auto' }}>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', textAlign: 'left' }}>
                 <label style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', fontWeight: 'bold', textTransform: 'uppercase' }}>1. Enter Your Name</label>
                 <input 
@@ -161,13 +174,13 @@ const ParticipantPosterPage = () => {
                   placeholder="Full name for the badge..." 
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  style={{ background: '#F8F9FA', color: 'var(--deep-blue)', border: '2px solid rgba(25, 118, 210, 0.1)' }}
+                  style={{ background: '#F8F9FA', color: 'var(--deep-blue)', border: '2px solid rgba(25, 118, 210, 0.1)', width: '100%', boxSizing: 'border-box' }}
                 />
               </div>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', textAlign: 'left' }}>
                 <label style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', fontWeight: 'bold', textTransform: 'uppercase' }}>2. Upload Portrait Photo</label>
-                <div style={{ position: 'relative' }}>
+                <div style={{ position: 'relative', width: '100%' }}>
                   <input 
                     type="file" 
                     accept="image/*" 
@@ -179,7 +192,9 @@ const ParticipantPosterPage = () => {
                     borderColor: image ? 'var(--vibrant-teal)' : 'rgba(25, 118, 210, 0.1)', 
                     textAlign: 'center', 
                     cursor: 'pointer',
-                    color: image ? 'var(--vibrant-teal)' : 'var(--text-secondary)'
+                    color: image ? 'var(--vibrant-teal)' : 'var(--text-secondary)',
+                    width: '100%',
+                    boxSizing: 'border-box'
                   }}>
                     {image ? '✓ Portrait Selected' : 'Choose File...'}
                   </div>
@@ -196,7 +211,8 @@ const ParticipantPosterPage = () => {
                   fontSize: '1.25rem',
                   marginTop: '16px',
                   opacity: (!image || !name || isProcessing) ? 0.4 : 1,
-                  boxShadow: '0 10px 30px rgba(25, 118, 210, 0.2)'
+                  boxShadow: '0 10px 30px rgba(25, 118, 210, 0.2)',
+                  boxSizing: 'border-box'
                 }}
               >
                 {isProcessing ? 'Mastering Your Poster...' : 'Generate My Poster'}

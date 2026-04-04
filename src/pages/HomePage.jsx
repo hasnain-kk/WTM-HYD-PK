@@ -148,7 +148,20 @@ const HomePage = () => {
       <section className="layout-section" style={{ position: 'relative' }}>
         <div className="grid-container" style={{ position: 'relative', zIndex: 1 }}>
           <h2 style={{ fontSize: '3rem', marginBottom: '40px', textAlign: 'center' }}>Flagship Event</h2>
-          <div className="surface-card skeleton-shimmer" style={{ padding: 'clamp(32px, 8vw, 64px)', position: 'relative', overflow: 'hidden', maxWidth: '800px', margin: '0 auto', textAlign: 'center', background: `linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.85)), url("${eventBg}") center/cover` }}>
+          <div className="surface-card skeleton-shimmer" style={{ 
+            padding: 'clamp(32px, 8vw, 84px)', 
+            position: 'relative', 
+            overflow: 'hidden', 
+            maxWidth: '1000px', 
+            margin: '0 auto', 
+            textAlign: 'center', 
+            backgroundImage: `linear-gradient(rgba(255,255,255,0.88), rgba(255,255,255,0.92)), url("${eventBg}")`,
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            border: '1px solid rgba(25, 118, 210, 0.1)',
+            boxShadow: '0 20px 60px rgba(0, 0, 0, 0.05)'
+          }}>
             <span style={{ display: 'inline-block', backgroundColor: '#00C4A3', color: '#FFFFFF', padding: '10px 24px', borderRadius: '100px', fontFamily: 'var(--font-header)', fontSize: 'clamp(0.8rem, 2vw, 1rem)', fontWeight: 'bold', marginBottom: '32px', textTransform: 'uppercase', boxShadow: '0 4px 12px rgba(0, 196, 163, 0.3)' }}>• Live Now</span>
             <h3 style={{ fontSize: 'clamp(2.2rem, 6vw, 3.5rem)', marginBottom: '24px', color: 'var(--deep-blue)' }}>Break The Pattern</h3>
             <p style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)', color: 'var(--text-secondary)', marginBottom: '40px', lineHeight: 1.6 }}>
