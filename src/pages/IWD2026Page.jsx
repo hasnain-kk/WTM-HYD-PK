@@ -32,7 +32,7 @@ import teamSandia from '../WTM Events Pictures/IWD 26 Team/Sandia.jpeg';
 import teamTunjina from '../WTM Events Pictures/IWD 26 Team/Tunhina.jpeg';
 import teamKashaf from '../WTM Events Pictures/IWD 26 Team/Kashaf Abdullah.jpg';
 import teamWasio from '../WTM Events Pictures/IWD 26 Team/Abdul Wasio.jpg';
-import teamDawood from '../WTM Events Pictures/IWD 26 Team/Muhammad Dawood.png';
+import teamDawood from '../WTM Events Pictures/IWD 26 Team/Muhammad Dawood.jpg';
 
 import useSEO from '../hooks/useSEO';
 
