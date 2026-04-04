@@ -511,10 +511,7 @@ input:focus {
   width: 100%;
   margin: 0 auto;
   padding: 80px 24px;
-  background-image: url('../WTM Events Pictures/Participent Poster/WhatsApp Image 2026-04-04 at 3.22.14 PM.jpeg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background: #000B29;
   display: flex;
   align-items: center;
   justify-content: center;
