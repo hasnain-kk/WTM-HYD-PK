@@ -57,7 +57,14 @@ const HomePage = () => {
         <div className="marquee-container">
           <div className="marquee-content">
             {[...pastEvents, ...pastEvents].map((img, idx) => (
-              <img key={idx} src={img} alt={`Past Event ${idx}`} className="marquee-poster" />
+              <img 
+                key={idx} 
+                src={img} 
+                alt={`Past Event ${idx}`} 
+                className="marquee-poster" 
+                loading="lazy" 
+                decoding="async" 
+              />
             ))}
           </div>
         </div>
@@ -149,6 +156,29 @@ const HomePage = () => {
         </h2>
       </section>
 
+      {/* Gallery: Our Past Event (Forced Speed & Unstoppable) */}
+      <section className="layout-section" style={{ padding: '80px 0', backgroundColor: '#FFFFFF' }}>
+        <div className="grid-container">
+          <h2 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', color: 'var(--deep-blue)', textAlign: 'center', marginBottom: '60px' }}>
+            Our <span style={{ color: 'var(--vibrant-teal)' }}>Past Event</span>
+          </h2>
+        </div>
+        <div className="marquee-container">
+          <div className="marquee-content">
+            {[...pastEvents, ...pastEvents].map((img, idx) => (
+              <img 
+                key={idx} 
+                src={img} 
+                alt={`Past Event ${idx}`} 
+                className="marquee-poster" 
+                loading="lazy" 
+                decoding="async" 
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Home Page Metrics (Impact in Numbers - Forced 3-Column) */}
       <section className="layout-section" style={{ backgroundColor: 'var(--bg-secondary)', borderTop: '1px solid var(--surface-border)', borderBottom: '1px solid var(--surface-border)' }}>
         <div className="grid-container">
@@ -170,18 +200,18 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Flagship Section (New Experience Portal) */}
+      {/* Flagship Section (Masterpiece Interaction) */}
       <section className="layout-section">
         <div className="grid-container">
           <h2 style={{ fontSize: '3rem', marginBottom: '40px', textAlign: 'center', color: 'var(--deep-blue)' }}>Flagship Event</h2>
           <div style={{ maxWidth: '1000px', margin: '0 auto', textAlign: 'center' }}>
-            <Link to="/iwd26" className="hero-entrance" style={{ display: 'block', textDecoration: 'none' }}>
+            <Link to="/iwd26" className="flagship-portal-btn">
               <img 
                 src={eventLookupImg} 
-                alt="WTM Hyderabad Flagship Event" 
-                style={{ width: '100%', height: 'auto', borderRadius: '32px', boxShadow: '0 30px 90px rgba(0,0,0,0.12)', transition: 'transform 0.4s ease' }}
-                onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.01)'}
-                onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+                alt="WTM Hyderabad Flagship Event - Click it" 
+                style={{ width: '100%', height: 'auto', display: 'block' }}
+                loading="lazy"
+                decoding="async"
               />
             </Link>
           </div>

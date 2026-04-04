@@ -8,9 +8,11 @@ import wtmLogo from '../WTM Events Pictures/Partners/WTM.png';
 import nicLogo from '../WTM Events Pictures/Partners/Nic Hyderabad.png';
 import sheCloudLogo from '../WTM Events Pictures/Partners/She Cloud.jpg';
 import vibeCodersLogo from '../WTM Events Pictures/Partners/Vibe Coders Pakistan.png';
+import technovationLogo from '../WTM Events Pictures/Partners/Technovation.png';
 
 const partnersData = [
   { name: 'WTM', logo: wtmLogo },
+  { name: 'Technovation', logo: technovationLogo },
   { name: 'NIC Hyderabad', logo: nicLogo },
   { name: 'SheCloud', logo: sheCloudLogo },
   { name: 'Vibe Coders Pakistan', logo: vibeCodersLogo }
