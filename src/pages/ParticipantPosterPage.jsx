@@ -20,6 +20,14 @@ const ParticipantPosterPage = () => {
   const [copySuccess, setCopySuccess] = useState(false);
   
   const canvasRef = useRef(null);
+  const workbenchRef = useRef(null);
+
+  // Auto-scroll on upload (Perfect for Mobile)
+  useEffect(() => {
+    if (image && window.innerWidth < 992) {
+      workbenchRef.current?.scrollBy({ top: 300, behavior: 'smooth' });
+    }
+  }, [image]);
 
   const POSTER_WIDTH = 1080;
   const POSTER_HEIGHT = 1440;
@@ -47,47 +55,51 @@ const ParticipantPosterPage = () => {
     }
   };
 
-  const generatePoster = async () => {
-    if (!image) return;
-    setIsProcessing(true);
-    setIsCelebrating(false);
+  const bgRef = useRef(null);
+  const overlayRef = useRef(null);
+
+  // 1. Pre-load Assets for Instant Rendering
+  useEffect(() => {
+    const bg = new Image();
+    bg.crossOrigin = "anonymous";
+    bg.src = posterBg;
+    bg.onload = () => { bgRef.current = bg; };
+
+    const ov = new Image();
+    ov.crossOrigin = "anonymous";
+    ov.src = posterOverlay;
+    ov.onload = () => { overlayRef.current = ov; };
+  }, []);
+
+  // 2. Optimized "Live" Drawing Engine
+  const drawPoster = () => {
+    if (!name || !image || !bgRef.current || !overlayRef.current) return;
     
     const canvas = canvasRef.current;
+    if (!canvas) return;
     const ctx = canvas.getContext('2d');
     
-    // 1. Clear & Draw Background
+    // 1. Background
     ctx.clearRect(0, 0, POSTER_WIDTH, POSTER_HEIGHT);
-    const bgImg = new Image();
-    bgImg.crossOrigin = "anonymous";
-    bgImg.src = posterBg;
-    await new Promise(r => bgImg.onload = r);
-    ctx.drawImage(bgImg, 0, 0, POSTER_WIDTH, POSTER_HEIGHT);
+    ctx.drawImage(bgRef.current, 0, 0, POSTER_WIDTH, POSTER_HEIGHT);
 
-    // 2. Draw User Photo (Direct Upload - High Fidelity)
-    // Exact Clip to the Photo Frame to prevent "Bleeding"
+    // 2. User Photo
     ctx.save();
     ctx.beginPath();
     ctx.rect(PHOTO_FRAME.x, PHOTO_FRAME.y, PHOTO_FRAME.w, PHOTO_FRAME.h);
     ctx.clip();
-
-    // Calculate scaling to fit the box (379x408)
     const scale = Math.max(PHOTO_FRAME.w / image.width, PHOTO_FRAME.h / image.height);
     const drawW = image.width * scale;
     const drawH = image.height * scale;
     const offsetX = PHOTO_FRAME.x + (PHOTO_FRAME.w - drawW) / 2;
     const offsetY = PHOTO_FRAME.y + (PHOTO_FRAME.h - drawH) / 2;
-
     ctx.drawImage(image, offsetX, offsetY, drawW, drawH);
-    ctx.restore(); // Exit Clip
+    ctx.restore();
 
-    // 3. Draw Transparent Overlay
-    const overlayImg = new Image();
-    overlayImg.crossOrigin = "anonymous";
-    overlayImg.src = posterOverlay;
-    await new Promise(r => overlayImg.onload = r);
-    ctx.drawImage(overlayImg, 0, 0, POSTER_WIDTH, POSTER_HEIGHT);
+    // 3. Overlay
+    ctx.drawImage(overlayRef.current, 0, 0, POSTER_WIDTH, POSTER_HEIGHT);
 
-    // 4. Draw Name Text (BOLD, MULTI-LINE WRAPPING)
+    // 4. Name Text (Live Sync)
     ctx.fillStyle = '#FFFFFF';
     const fontSize = 70;
     const lineHeight = fontSize * 1.1;
@@ -103,9 +115,7 @@ const ParticipantPosterPage = () => {
     for (let n = 0; n < words.length; n++) {
       let testLine = line + words[n] + ' ';
       let metrics = ctx.measureText(testLine);
-      let testWidth = metrics.width;
-
-      if (testWidth > MAX_TEXT_WIDTH && n > 0) {
+      if (metrics.width > MAX_TEXT_WIDTH && n > 0) {
         ctx.fillText(line, TEXT_FRAME.x, currentY);
         line = words[n] + ' ';
         currentY += lineHeight;
@@ -114,12 +124,18 @@ const ParticipantPosterPage = () => {
       }
     }
     ctx.fillText(line, TEXT_FRAME.x, currentY);
-
-    setIsProcessing(false);
+    
     setIsReady(true);
-    setIsCelebrating(true);
-    setTimeout(() => setIsCelebrating(false), 2000);
   };
+
+  // 3. Effect: Live Update on Input
+  useEffect(() => {
+    if (name && image) {
+      drawPoster();
+    } else {
+      setIsReady(false);
+    }
+  }, [name, image]);
 
   const downloadPoster = () => {
     const link = document.createElement('a');
@@ -136,7 +152,7 @@ const ParticipantPosterPage = () => {
 
   return (
     <div className="poster-container" style={{ paddingTop: '140px', paddingBottom: '100px' }}>
-      <div className={`poster-workbench ${isCelebrating ? 'celebrate' : ''}`} style={{ 
+      <div ref={workbenchRef} className={`poster-workbench ${isCelebrating ? 'celebrate' : ''}`} style={{ 
         maxWidth: image ? '1200px' : '650px',
         margin: '0 auto',
         display: 'block' 
@@ -167,7 +183,10 @@ const ParticipantPosterPage = () => {
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', maxWidth: '500px', margin: image ? '0' : '0 auto' }}>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', textAlign: 'left' }}>
-                <label style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', fontWeight: 'bold', textTransform: 'uppercase' }}>1. Enter Your Name</label>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '4px' }}>
+                  <span style={{ background: 'var(--google-blue)', color: '#FFF', width: '24px', height: '24px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.75rem', fontWeight: 'bold' }}>1</span>
+                  <label style={{ color: 'var(--deep-blue)', fontSize: '0.85rem', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '1px' }}>Verify Your Name</label>
+                </div>
                 <input 
                   type="text" 
                   className="generator-input-field" 
@@ -179,7 +198,10 @@ const ParticipantPosterPage = () => {
               </div>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', textAlign: 'left' }}>
-                <label style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', fontWeight: 'bold', textTransform: 'uppercase' }}>2. Upload Portrait Photo</label>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '4px' }}>
+                  <span style={{ background: 'var(--google-blue)', color: '#FFF', width: '24px', height: '24px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.75rem', fontWeight: 'bold' }}>2</span>
+                  <label style={{ color: 'var(--deep-blue)', fontSize: '0.85rem', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '1px' }}>Professional Portrait</label>
+                </div>
                 <div style={{ position: 'relative', width: '100%' }}>
                   <input 
                     type="file" 
@@ -188,35 +210,26 @@ const ParticipantPosterPage = () => {
                     style={{ position: 'absolute', opacity: 0, width: '100%', height: '100%', cursor: 'pointer', zIndex: 2 }}
                   />
                   <div className="generator-input-field" style={{ 
-                    background: image ? 'rgba(0, 196, 163, 0.05)' : '#F8F9FA', 
+                    background: image ? 'rgba(0, 196, 163, 0.08)' : '#F8F9FA', 
                     borderColor: image ? 'var(--vibrant-teal)' : 'rgba(25, 118, 210, 0.1)', 
                     textAlign: 'center', 
                     cursor: 'pointer',
                     color: image ? 'var(--vibrant-teal)' : 'var(--text-secondary)',
                     width: '100%',
-                    boxSizing: 'border-box'
+                    boxSizing: 'border-box',
+                    fontWeight: 'bold',
+                    transition: 'all 0.3s ease'
                   }}>
                     {image ? '✓ Portrait Selected' : 'Choose File...'}
                   </div>
                 </div>
               </div>
 
-              <button 
-                className="btn-pill primary" 
-                onClick={generatePoster}
-                disabled={!image || !name || isProcessing}
-                style={{ 
-                  width: '100%', 
-                  padding: '24px',
-                  fontSize: '1.25rem',
-                  marginTop: '16px',
-                  opacity: (!image || !name || isProcessing) ? 0.4 : 1,
-                  boxShadow: '0 10px 30px rgba(25, 118, 210, 0.2)',
-                  boxSizing: 'border-box'
-                }}
-              >
-                {isProcessing ? 'Mastering Your Poster...' : 'Generate My Poster'}
-              </button>
+              <div style={{ marginTop: '16px', padding: '20px', background: 'rgba(0, 196, 163, 0.05)', borderRadius: '16px', border: '1px dashed var(--vibrant-teal)', textAlign: 'center' }}>
+                <p style={{ color: 'var(--vibrant-teal)', fontSize: '0.9rem', fontWeight: 'bold', margin: 0 }}>
+                  {isReady ? '✓ Real-Time Studio Active' : 'Waiting for Name & Portrait...'}
+                </p>
+              </div>
             </div>
           </div>
 
@@ -224,34 +237,21 @@ const ParticipantPosterPage = () => {
           {image && (
             <div className="workbench-preview img-fade-in" style={{ animationDelay: '0.2s' }}>
               <div className="canvas-preview-box" style={{ boxShadow: isReady ? '0 30px 80px rgba(0, 196, 163, 0.2)' : '0 30px 80px rgba(25, 118, 210, 0.1)' }}>
-                {isProcessing && (
-                  <div style={{ position: 'absolute', inset: 0, background: 'rgba(255,255,255,0.9)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 10 }}>
-                    <div style={{ textAlign: 'center' }}>
-                      <div className="dot-loader" style={{ marginBottom: '16px' }}>
-                        <div className="dot" style={{ background: 'var(--google-blue)' }}></div>
-                        <div className="dot" style={{ background: 'var(--vibrant-teal)' }}></div>
-                        <div className="dot" style={{ background: 'var(--google-red)' }}></div>
-                      </div>
-                      <p style={{ color: 'var(--google-blue)', fontWeight: 'bold', fontSize: '0.8rem', letterSpacing: '2px' }}>PROCESSING...</p>
-                    </div>
-                  </div>
-                )}
                 <canvas 
                   ref={canvasRef} 
                   width={POSTER_WIDTH} 
                   height={POSTER_HEIGHT}
                   style={{ display: isReady ? 'block' : 'none', width: '100%', height: 'auto' }}
                 />
-                {!isReady && !isProcessing && (
+                {!isReady && (
                   <div style={{ height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#F8F9FA', color: 'var(--text-secondary)', textAlign: 'center', padding: '40px' }}>
                     <div>
-                      <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.2, marginBottom: '24px' }}>
-                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                        <circle cx="8.5" cy="8.5" r="1.5"/>
-                        <polyline points="21 15 16 10 5 21"/>
-                      </svg>
-                      <p style={{ fontSize: '1.1rem', fontWeight: '500' }}>Success!</p>
-                      <p style={{ fontSize: '0.85rem', marginTop: '8px', opacity: 0.7 }}>Click "Generate" to see your masterpiece</p>
+                      <div className="dot-loader" style={{ marginBottom: '24px' }}>
+                        <div className="dot" style={{ background: 'var(--google-blue)' }}></div>
+                        <div className="dot" style={{ background: 'var(--vibrant-teal)' }}></div>
+                        <div className="dot" style={{ background: 'var(--google-red)' }}></div>
+                      </div>
+                      <p style={{ fontSize: '1.1rem', fontWeight: '500' }}>Mastering Identity...</p>
                     </div>
                   </div>
                 )}
@@ -259,17 +259,22 @@ const ParticipantPosterPage = () => {
 
               {isReady && (
                 <div className="reveal-celebration img-fade-in" style={{ marginTop: '40px', textAlign: 'center' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '24px', justifyContent: 'center' }}>
+                    <span style={{ background: 'var(--google-blue)', color: '#FFF', width: '24px', height: '24px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.75rem', fontWeight: 'bold' }}>3</span>
+                    <label style={{ color: 'var(--deep-blue)', fontSize: '0.85rem', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '1px' }}>Take Your Milestone Home</label>
+                  </div>
+
                   <button 
                     className="btn-pill" 
                     onClick={downloadPoster}
-                    style={{ width: '100%', background: 'var(--deep-blue)', color: '#FFFFFF', padding: '18px', fontSize: '1.1rem', marginBottom: '32px' }}
+                    style={{ width: '100%', background: 'var(--deep-blue)', color: '#FFFFFF', padding: '18px', fontSize: '1.1rem', marginBottom: '32px', boxShadow: '0 10px 30px rgba(25, 118, 210, 0.3)' }}
                   >
                     Download High-Res Poster
                   </button>
 
                   <div style={{ background: '#F8F9FA', padding: '24px', borderRadius: '24px', border: '1px solid rgba(25, 118, 210, 0.1)' }}>
-                    <p style={{ color: 'var(--deep-blue)', fontWeight: 'bold', marginBottom: '8px' }}>Share Your Milestone!</p>
-                    <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', marginBottom: '16px' }}>Mention us! Use the caption below:</p>
+                    <p style={{ color: 'var(--deep-blue)', fontWeight: 'bold', marginBottom: '8px' }}>Share Your Pride!</p>
+                    <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', marginBottom: '16px' }}>Use the caption below:</p>
                     <div style={{ background: '#FFFFFF', padding: '16px', borderRadius: '16px', fontSize: '0.85rem', color: 'var(--text-primary)', whiteSpace: 'pre-line', marginBottom: '20px', border: '1px solid rgba(25, 118, 210, 0.05)', textAlign: 'left', lineHeight: 1.6 }}>
                       {captionText}
                     </div>
