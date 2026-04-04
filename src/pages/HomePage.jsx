@@ -6,9 +6,18 @@ import heroBg from '../WTM Events Pictures/RAH00576.jpg';
 import missionBg from '../WTM Events Pictures/DSC00684.jpg';
 import audienceImg from '../WTM Events Pictures/DSC09677.jpg';
 import ambassadorImg from '../WTM Events Pictures/Robina Picture/Robina Mirbahar.jpg';
-import eventBg from '../WTM Events Pictures/477327603_592980400364678_3971829522026014964_n.jpg';
+import eventLookupImg from '../WTM Events Pictures/IWD26/Event lookup.jpg';
+
+// Past Event Posters
+import p23 from '../WTM Events Pictures/New folder/23.png';
+import p24 from '../WTM Events Pictures/New folder/24.png';
+import p25 from '../WTM Events Pictures/New folder/25.png';
+import p26 from '../WTM Events Pictures/New folder/26.png';
+import p27 from '../WTM Events Pictures/New folder/27.png';
 
 const HomePage = () => {
+  const pastEvents = [p23, p24, p25, p26, p27];
+
   useSEO({
     title: 'WTM hyderabad Pakistan',
     description: 'Official platform for WTM Hyderabad. Empowering women across all professions in Sindh with a focus on technical leadership, career scaling, and inclusive mentorship.',
@@ -34,6 +43,22 @@ const HomePage = () => {
             <div className="hero-entrance" style={{ display: 'flex', gap: '24px', justifyContent: 'center', flexWrap: 'wrap' }}>
               <Link to="/events" className="btn-pill primary" style={{ fontSize: '1.125rem' }}>Explore Events</Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery: We are Coming long way */}
+      <section className="layout-section" style={{ padding: '80px 0', backgroundColor: '#FFFFFF' }}>
+        <div className="grid-container">
+          <h2 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', color: 'var(--deep-blue)', textAlign: 'center', marginBottom: '60px' }}>
+            We are Coming <span style={{ color: 'var(--vibrant-teal)' }}>Long Way</span>
+          </h2>
+        </div>
+        <div className="marquee-container">
+          <div className="marquee-content">
+            {[...pastEvents, ...pastEvents].map((img, idx) => (
+              <img key={idx} src={img} alt={`Past Event ${idx}`} className="marquee-poster" />
+            ))}
           </div>
         </div>
       </section>
@@ -66,7 +91,7 @@ const HomePage = () => {
             <p style={{ fontSize: '1.125rem', color: 'var(--text-secondary)', lineHeight: 1.8, marginBottom: '24px' }}>
               Women Techmakers Hyderabad organizes high-impact events for professionals and enthusiasts who are interested in continuous knowledge transfer and professional networking.
             </p>
-            <Link to="/events" className="btn-pill" style={{ borderColor: 'var(--vibrant-teal)', display: 'inline-block', color: 'var(--vibrant-teal)' }}>Learn More</Link>
+            <Link to="/about" className="btn-pill" style={{ borderColor: 'var(--vibrant-teal)', display: 'inline-block', color: 'var(--vibrant-teal)' }}>Learn More</Link>
           </div>
 
           <div style={{ flex: '2 1 500px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(clamp(150px, 40%, 250px), 1fr))', gap: 'clamp(20px, 4vw, 40px)', textAlign: 'center' }}>
@@ -124,50 +149,41 @@ const HomePage = () => {
         </h2>
       </section>
 
-      {/* Home Page Metrics (Impact in Numbers - V23) */}
+      {/* Home Page Metrics (Impact in Numbers - Forced 3-Column) */}
       <section className="layout-section" style={{ backgroundColor: 'var(--bg-secondary)', borderTop: '1px solid var(--surface-border)', borderBottom: '1px solid var(--surface-border)' }}>
         <div className="grid-container">
           <h2 style={{ fontSize: 'clamp(2.2rem, 6vw, 3rem)', textAlign: 'center', marginBottom: 'clamp(40px, 8vw, 80px)', color: 'var(--deep-blue)' }}>Impact in Numbers</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(clamp(250px, 100%, 1fr), 1fr))', gap: 'clamp(24px, 4vw, 48px)' }}>
-            <div className="surface-card" style={{ padding: 'clamp(40px, 8vw, 64px) clamp(20px, 5vw, 32px)', textAlign: 'center' }}>
-              <h3 style={{ fontSize: '4.5rem', margin: 0, color: 'var(--deep-blue)', animation: 'pulse 2s infinite' }}>1000+</h3>
-              <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '1px' }}>Participants Engaged</p>
+          <div className="impact-metrics-row">
+            <div className="surface-card" style={{ padding: 'clamp(40px, 8vw, 64px) clamp(10px, 5vw, 32px)', textAlign: 'center' }}>
+              <h3 style={{ fontSize: 'clamp(2.5rem, 6vw, 4.5rem)', margin: 0, color: 'var(--deep-blue)' }}>1000+</h3>
+              <p style={{ fontSize: '1rem', color: 'var(--text-secondary)', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '1px' }}>Participants</p>
             </div>
-            <div className="surface-card" style={{ padding: 'clamp(40px, 8vw, 64px) clamp(20px, 5vw, 32px)', textAlign: 'center' }}>
-              <h3 style={{ fontSize: '4.5rem', margin: 0, color: 'var(--vibrant-teal)' }}>6+</h3>
-              <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '1px' }}>High-Impact Events</p>
+            <div className="surface-card" style={{ padding: 'clamp(40px, 8vw, 64px) clamp(10px, 5vw, 32px)', textAlign: 'center' }}>
+              <h3 style={{ fontSize: 'clamp(2.5rem, 6vw, 4.5rem)', margin: 0, color: 'var(--vibrant-teal)' }}>6+</h3>
+              <p style={{ fontSize: '1rem', color: 'var(--text-secondary)', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '1px' }}>Major Events</p>
             </div>
-            <div className="surface-card" style={{ padding: 'clamp(40px, 8vw, 64px) clamp(20px, 5vw, 32px)', textAlign: 'center' }}>
-              <h3 style={{ fontSize: '4.5rem', margin: 0, color: 'var(--deep-blue)' }}>4+</h3>
-              <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '1px' }}>Years of Empowerment</p>
+            <div className="surface-card" style={{ padding: 'clamp(40px, 8vw, 64px) clamp(10px, 5vw, 32px)', textAlign: 'center' }}>
+              <h3 style={{ fontSize: 'clamp(2.5rem, 6vw, 4.5rem)', margin: 0, color: 'var(--deep-blue)' }}>4+</h3>
+              <p style={{ fontSize: '1rem', color: 'var(--text-secondary)', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '1px' }}>Years Scaling</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="layout-section" style={{ position: 'relative' }}>
-        <div className="grid-container" style={{ position: 'relative', zIndex: 1 }}>
-          <h2 style={{ fontSize: '3rem', marginBottom: '40px', textAlign: 'center' }}>Flagship Event</h2>
-          <div className="surface-card skeleton-shimmer" style={{ 
-            padding: 'clamp(32px, 8vw, 84px)', 
-            position: 'relative', 
-            overflow: 'hidden', 
-            maxWidth: '1000px', 
-            margin: '0 auto', 
-            textAlign: 'center', 
-            backgroundImage: `linear-gradient(rgba(255,255,255,0.88), rgba(255,255,255,0.92)), url("${eventBg}")`,
-            backgroundPosition: 'center',
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-            border: '1px solid rgba(25, 118, 210, 0.1)',
-            boxShadow: '0 20px 60px rgba(0, 0, 0, 0.05)'
-          }}>
-            <span style={{ display: 'inline-block', backgroundColor: '#00C4A3', color: '#FFFFFF', padding: '10px 24px', borderRadius: '100px', fontFamily: 'var(--font-header)', fontSize: 'clamp(0.8rem, 2vw, 1rem)', fontWeight: 'bold', marginBottom: '32px', textTransform: 'uppercase', boxShadow: '0 4px 12px rgba(0, 196, 163, 0.3)' }}>• Live Now</span>
-            <h3 style={{ fontSize: 'clamp(2.2rem, 6vw, 3.5rem)', marginBottom: '24px', color: 'var(--deep-blue)' }}>Break The Pattern</h3>
-            <p style={{ fontSize: 'clamp(1rem, 2.5vw, 1.25rem)', color: 'var(--text-secondary)', marginBottom: '40px', lineHeight: 1.6 }}>
-              Step into the high-frequency ecosystem of Women Techmakers Hyderabad. Register for our 2026 flagship annual milestone focused on technical leadership and professional scaling.
-            </p>
-            <Link to="/iwd26" className="btn-pill primary" style={{ display: 'inline-block' }}>Join the Flagship</Link>
+      {/* Flagship Section (New Experience Portal) */}
+      <section className="layout-section">
+        <div className="grid-container">
+          <h2 style={{ fontSize: '3rem', marginBottom: '40px', textAlign: 'center', color: 'var(--deep-blue)' }}>Flagship Event</h2>
+          <div style={{ maxWidth: '1000px', margin: '0 auto', textAlign: 'center' }}>
+            <Link to="/iwd26" className="hero-entrance" style={{ display: 'block', textDecoration: 'none' }}>
+              <img 
+                src={eventLookupImg} 
+                alt="WTM Hyderabad Flagship Event" 
+                style={{ width: '100%', height: 'auto', borderRadius: '32px', boxShadow: '0 30px 90px rgba(0,0,0,0.12)', transition: 'transform 0.4s ease' }}
+                onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.01)'}
+                onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+              />
+            </Link>
           </div>
         </div>
       </section>
