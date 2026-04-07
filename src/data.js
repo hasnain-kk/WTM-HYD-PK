@@ -14,11 +14,14 @@ export const sharedTeamData = [
     name: 'Robina Mirbahar',
     role: 'Ambassador',
     gender: 'female',
+    seoTitle: 'Robina Mirbahar | WTM Ambassador & Tech Leader Sindh',
+    seoKeywords: 'Robina Mirbahar, WTM Hyderabad Ambassador, Women in Tech Pakistan, Tech Leadership Sindh, Female Tech Founders Hyderabad',
     bio: 'Robina serves as a crucial bridge between local talent and global technical ecosystems. Her drive to empower marginalized professionals natively within Sindh has scaled the WTM operations profoundly. She actively curates safe spaces for learning and leads mentorship pipelines directly prioritizing young girls.',
     photoUrl: robinaNewImg,
     socials: [
       { platform: 'LinkedIn', url: 'https://www.linkedin.com/in/robinamirbahar/' }
-    ]
+    ],
+    sameAs: ['https://www.linkedin.com/in/robinamirbahar/']
   },
   {
     id: 2,
@@ -26,12 +29,15 @@ export const sharedTeamData = [
     name: 'Hasnain KK',
     role: 'Organizer',
     gender: 'male',
+    seoTitle: 'Hasnain KK | WTM Organizer & Web Developer Hyderabad',
+    seoKeywords: 'Hasnain KK, WTM Hyderabad Organizer, Web Developer Hyderabad, Tech Lead Pakistan, Community Builder Sindh',
     bio: 'Hasnain is a technical architect overseeing the expansion of Women Techmakers Hyderabad. His focus is on establishing robust technical pipelines and promoting inclusive leadership across Sindh. He is deeply committed to empowering juniors and mapping community growth with real-world developer tools.',
     photoUrl: hasnainImg,
     socials: [
       { platform: 'LinkedIn', url: 'https://www.linkedin.com/in/hasnainkk/' },
       { platform: 'Website', url: 'https://hasnainkk.bio.link' }
-    ]
+    ],
+    sameAs: ['https://www.linkedin.com/in/hasnainkk/', 'https://hasnainkk.bio.link']
   },
   {
     id: 3,
@@ -39,11 +45,14 @@ export const sharedTeamData = [
     name: 'Tunjina Ali',
     role: 'Organizer',
     gender: 'female',
+    seoTitle: 'Tunjina Ali | Community Outreach Lead WTM Hyderabad',
+    seoKeywords: 'Tunjina Ali, WTM Hyderabad Organizer, Community Outreach Sindh, Women Techmakers Pakistan, Tech Education Hyderabad',
     bio: 'Tunjina Ali serves as a lead organizer for Women Techmakers Hyderabad, focusing on community outreach and educational curriculum design. She is passionate about closing the gender gap in technology through accessible mentorship and technical skill-sharing.',
     photoUrl: tunjinaImg,
     socials: [
       { platform: 'LinkedIn', url: 'https://www.linkedin.com/in/tunjinaali07/' }
-    ]
+    ],
+    sameAs: ['https://www.linkedin.com/in/tunjinaali07/']
   },
   {
     id: 4,
@@ -51,11 +60,14 @@ export const sharedTeamData = [
     name: 'Hurrain Soomro',
     role: 'Organizer',
     gender: 'female',
+    seoTitle: 'Hurrain Soomro | Core Organizer & Event Strategist WTM',
+    seoKeywords: 'Hurrain Soomro, Hurain Soomro, WTM Hyderabad Organizer, Event Management Sindh, Diversity in Tech Pakistan',
     bio: 'Hurrain Soomro is a core organizer at WTM Hyderabad, facilitating large-scale technical gatherings and local meetups. She works on optimizing the attendee experience and ensuring every event fosters a culture of inclusivity and professional growth.',
     photoUrl: hurainImg,
     socials: [
       { platform: 'LinkedIn', url: 'https://www.linkedin.com/in/hurrainsoomro/' }
-    ]
+    ],
+    sameAs: ['https://www.linkedin.com/in/hurrainsoomro/']
   }
 ];
 

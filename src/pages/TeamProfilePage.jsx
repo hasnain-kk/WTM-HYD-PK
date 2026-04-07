@@ -17,10 +17,11 @@ const TeamProfilePage = () => {
   }
 
   useSEO({
-    title: `${member.name} | WTM Hyderabad Pakistan Team Profile`,
-    description: `Learn about ${member.name}, ${member.role} at Women Techmakers Hyderabad Pakistan. Focused on tech empowerment in Sindh.`,
+    title: member.seoTitle,
+    description: member.bio.substring(0, 160),
     image: member.photoUrl,
     url: window.location.href,
+    keywords: member.seoKeywords,
     schema: {
       "@context": "https://schema.org",
       "@type": "Person",
@@ -28,11 +29,13 @@ const TeamProfilePage = () => {
       "jobTitle": member.role,
       "worksFor": {
         "@type": "Organization",
-        "name": "Women Techmakers Hyderabad Pakistan"
+        "name": "Women Techmakers Hyderabad Pakistan",
+        "url": "https://wtm-hyd-pk.vercel.app/"
       },
       "url": window.location.href,
       "image": member.photoUrl,
-      "description": member.bio
+      "description": member.bio,
+      "sameAs": member.sameAs
     }
   });
 
