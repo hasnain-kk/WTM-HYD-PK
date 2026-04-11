@@ -41,7 +41,7 @@ const Header = () => {
         <nav style={{ display: 'flex', alignItems: 'center' }}>
           {isIWDPage ? (
             <div 
-              style={{ fontWeight: 'bold', color: '#FFFFFF', background: 'rgba(255,255,255,0.1)', padding: '8px clamp(12px, 2.5vw, 24px)', borderRadius: '100px', fontSize: '0.85rem', border: '2px solid rgba(255,255,255,0.2)', whiteSpace: 'nowrap', cursor: 'not-allowed' }}
+              style={{ fontWeight: 'bold', color: '#FFFFFF', background: 'rgba(255,255,255,0.25)', padding: '8px clamp(12px, 2.5vw, 24px)', borderRadius: '100px', fontSize: '0.85rem', border: '2px solid rgba(255,255,255,0.5)', whiteSpace: 'nowrap', cursor: 'not-allowed', boxShadow: '0 4px 15px rgba(0,0,0,0.1)' }}
             >
               Registration Closed
             </div>
