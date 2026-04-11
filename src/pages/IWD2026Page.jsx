@@ -245,7 +245,7 @@ const IWD2026Page = () => {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(clamp(250px, 45%, 320px), 1fr))', gap: 'clamp(24px, 5vw, 48px)', justifyContent: 'center' }}>
               {speakers.map((speaker, i) => (
                 <div key={i} className="surface-card" style={{ padding: '32px', display: 'flex', flexDirection: 'column', alignItems: 'center', background: 'rgba(255,255,255,0.05)', backdropFilter: 'blur(10px)', border: '1px solid rgba(255,255,255,0.1)', transition: 'transform 0.3s ease' }}>
-                  <div style={{ width: '220px', height: '220px', borderRadius: '40px', overflow: 'hidden', marginBottom: '24px', border: `4px solid ${accentTeal}`, boxShadow: `0 0 30px ${accentTeal}44` }}>
+                  <div style={{ width: '220px', height: '220px', borderRadius: '50%', overflow: 'hidden', marginBottom: '24px', border: `4px solid ${accentTeal}`, boxShadow: `0 0 30px ${accentTeal}44` }}>
                     <img src={speaker.img} alt={speaker.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   </div>
                   <h3 style={{ fontSize: '1.75rem', color: accentTeal, margin: '0 0 12px 0', fontWeight: 'bold' }}>{speaker.name}</h3>
