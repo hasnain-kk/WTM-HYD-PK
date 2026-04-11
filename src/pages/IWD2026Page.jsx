@@ -34,6 +34,16 @@ import teamKashaf from '../WTM Events Pictures/IWD 26 Team/Kashaf Abdullah.jpg';
 import teamWasio from '../WTM Events Pictures/IWD 26 Team/Abdul Wasio.jpg';
 import teamDawood from '../WTM Events Pictures/IWD 26 Team/Muhammad Dawood.jpg';
 
+// IWD 2026 Speaker Imports
+import speakerSana from '../WTM Events Pictures/Speakers/Sana Shah.png';
+import speakerRobina from '../WTM Events Pictures/Speakers/Robina Mirbahar.png';
+import speakerErum from '../WTM Events Pictures/Speakers/Erum Sikander.png';
+import speakerHira from '../WTM Events Pictures/Speakers/Hira Abid.png';
+import speakerUmama from '../WTM Events Pictures/Speakers/Umama Iftikhar.png';
+import speakerHasnain from '../WTM Events Pictures/Speakers/Hasnain KK.png';
+import speakerKashaf from '../WTM Events Pictures/Speakers/Kashaf Abdullah.png';
+import speakerTunjina from '../WTM Events Pictures/Speakers/Tunjina Ali.png';
+
 import useSEO from '../hooks/useSEO';
 
 
@@ -69,6 +79,17 @@ const IWD2026Page = () => {
     { name: 'Sandia', img: teamSandia },
     { name: 'Abdul Wasio', img: teamWasio },
     { name: 'Muhammad Dawood', img: teamDawood }
+  ];
+
+  const speakers = [
+    { name: 'Sana Shah', title: 'Project Director @NIC Hyderabad', img: speakerSana },
+    { name: 'Robina Mirbahar', title: 'Google Developer Expert in Cloud & AI\nAmbassador @Women Techmakers', img: speakerRobina },
+    { name: 'Erum Sikander', title: 'Speech Therapist at Liaquat University of Medical & Health Sciences', img: speakerErum },
+    { name: 'Hira Abid', title: 'Project Manager @COLAB Army', img: speakerHira },
+    { name: 'Umama Iftikhar', title: 'Former Google Developer Student Club Lead & Mentor (UoK) | Double Medalist', img: speakerUmama },
+    { name: 'Hasnain KK', title: 'Junior Project Manager @Stelalliance\nCommunity Manager @WTM Hyderabad PK', img: speakerHasnain },
+    { name: 'Kashaf Abdullah', title: 'Software Engineer @ScaleBrands', img: speakerKashaf },
+    { name: 'Tunjina Ali', title: 'Organizer @WTM Hyderabad PK', img: speakerTunjina },
   ];
 
   return (
@@ -209,24 +230,28 @@ const IWD2026Page = () => {
             </div>
 
             <div style={{ marginTop: 'clamp(40px, 10vw, 100px)' }}>
-              <a
-                href="https://luma.com/event/evt-WbCg1FNBS1W7OdG"
-                className="luma-checkout--button btn-pill"
-                data-luma-action="checkout"
-                data-luma-event-id="evt-WbCg1FNBS1W7OdG"
-                style={{ backgroundColor: accentTeal, border: 'none', color: bgBlue, padding: 'clamp(16px, 4vw, 24px) clamp(32px, 10vw, 100px)', fontSize: 'clamp(1.2rem, 5vw, 2rem)', fontWeight: 'bold', cursor: 'pointer', display: 'inline-block', borderRadius: '100px', textDecoration: 'none', boxShadow: `0 20px 80px rgba(0,229,255,0.4)` }}
+              <div
+                style={{ backgroundColor: 'rgba(255,255,255,0.1)', border: '2px solid rgba(255,255,255,0.2)', color: '#FFFFFF', padding: 'clamp(16px, 4vw, 24px) clamp(32px, 10vw, 100px)', fontSize: 'clamp(1.2rem, 5vw, 2rem)', fontWeight: 'bold', display: 'inline-block', borderRadius: '100px', textDecoration: 'none', cursor: 'not-allowed' }}
               >
-                Register Now
-              </a>
+                Registration Closed
+              </div>
             </div>
           </div>
         </section>
 
         <section className="layout-section">
           <div className="grid-container" style={{ textAlign: 'center' }}>
-            <h2 style={{ fontSize: 'clamp(2.5rem, 8vw, 3.5rem)', marginBottom: '40px', color: '#FFFFFF' }}>Our Speakers</h2>
-            <div style={{ padding: 'clamp(32px, 8vw, 64px)', borderRadius: '48px', background: 'rgba(255,255,255,0.1)', border: '1px dashed rgba(255,255,255,0.3)' }}>
-              <p style={{ fontSize: 'clamp(1.5rem, 5vw, 2.5rem)', fontWeight: 'bold', color: '#FFFFFF', margin: 0 }}>Note: Coming Soon</p>
+            <h2 style={{ fontSize: 'clamp(2.5rem, 8vw, 3.5rem)', marginBottom: '60px', color: '#FFFFFF' }}>Our Speakers</h2>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(clamp(250px, 45%, 320px), 1fr))', gap: 'clamp(24px, 5vw, 48px)', justifyContent: 'center' }}>
+              {speakers.map((speaker, i) => (
+                <div key={i} className="surface-card" style={{ padding: '32px', display: 'flex', flexDirection: 'column', alignItems: 'center', background: 'rgba(255,255,255,0.05)', backdropFilter: 'blur(10px)', border: '1px solid rgba(255,255,255,0.1)', transition: 'transform 0.3s ease' }}>
+                  <div style={{ width: '220px', height: '220px', borderRadius: '40px', overflow: 'hidden', marginBottom: '24px', border: `4px solid ${accentTeal}`, boxShadow: `0 0 30px ${accentTeal}44` }}>
+                    <img src={speaker.img} alt={speaker.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  </div>
+                  <h3 style={{ fontSize: '1.75rem', color: accentTeal, margin: '0 0 12px 0', fontWeight: 'bold' }}>{speaker.name}</h3>
+                  <p style={{ fontSize: '1.1rem', color: '#FFFFFF', margin: 0, opacity: 0.9, lineHeight: 1.4, whiteSpace: 'pre-line' }}>{speaker.title}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
