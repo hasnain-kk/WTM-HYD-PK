@@ -231,7 +231,7 @@ const IWD2026Page = () => {
 
             <div style={{ marginTop: 'clamp(40px, 10vw, 100px)' }}>
               <div
-                style={{ backgroundColor: 'rgba(255,255,255,0.2)', border: '3px solid rgba(255,255,255,0.4)', color: '#FFFFFF', padding: 'clamp(16px, 4vw, 24px) clamp(32px, 10vw, 100px)', fontSize: 'clamp(1.2rem, 5vw, 2rem)', fontWeight: 'bold', display: 'inline-block', borderRadius: '100px', textDecoration: 'none', cursor: 'not-allowed', boxShadow: '0 10px 40px rgba(0,0,0,0.2)' }}
+                style={{ backgroundColor: 'rgba(255,255,255,0.9)', border: '3px solid rgba(255,255,255,0.4)', color: '#0033BD', padding: 'clamp(16px, 4vw, 24px) clamp(32px, 10vw, 100px)', fontSize: 'clamp(1.2rem, 5vw, 2rem)', fontWeight: 'bold', display: 'inline-block', borderRadius: '100px', textDecoration: 'none', cursor: 'not-allowed', boxShadow: '0 10px 40px rgba(0,0,0,0.2)' }}
               >
                 Registration Closed
               </div>
