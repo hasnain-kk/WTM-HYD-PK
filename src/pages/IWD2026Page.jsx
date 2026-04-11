@@ -35,14 +35,14 @@ import teamWasio from '../WTM Events Pictures/IWD 26 Team/Abdul Wasio.jpg';
 import teamDawood from '../WTM Events Pictures/IWD 26 Team/Muhammad Dawood.jpg';
 
 // IWD 2026 Speaker Imports
-import speakerSana from '../WTM Events Pictures/Speakers/Sana Shah.png';
-import speakerRobina from '../WTM Events Pictures/Speakers/Robina Mirbahar.png';
-import speakerErum from '../WTM Events Pictures/Speakers/Erum Sikander.png';
-import speakerHira from '../WTM Events Pictures/Speakers/Hira Abid.png';
-import speakerUmama from '../WTM Events Pictures/Speakers/Umama Iftikhar.png';
-import speakerHasnain from '../WTM Events Pictures/Speakers/Hasnain KK.png';
-import speakerKashaf from '../WTM Events Pictures/Speakers/Kashaf Abdullah.png';
-import speakerTunjina from '../WTM Events Pictures/Speakers/Tunjina Ali.png';
+import speakerSana from '../WTM Events Pictures/Speakers/Sana Shah.jpg';
+import speakerRobina from '../WTM Events Pictures/Speakers/Robina Mirbahar.jpg';
+import speakerErum from '../WTM Events Pictures/Speakers/Erum Sikander.jpg';
+import speakerHira from '../WTM Events Pictures/Speakers/Hira Abid.jpg';
+import speakerUmama from '../WTM Events Pictures/Speakers/Umama Iftikhar.jpg';
+import speakerHasnain from '../WTM Events Pictures/Speakers/Hasnain KK.jpg';
+import speakerKashaf from '../WTM Events Pictures/Speakers/Kashaf Abdullah.jpg';
+import speakerTunjina from '../WTM Events Pictures/Speakers/Tunjina Ali.jpg';
 
 import useSEO from '../hooks/useSEO';
 
